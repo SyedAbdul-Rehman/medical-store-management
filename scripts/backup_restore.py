@@ -36,16 +36,13 @@ class BackupRestoreManager:
         """Get commit history with details"""
         try:
             result = subprocess.run([
-                "git", "log", "--oneline", "--graph", "--all", 
-                "--pretty=format:%H|%s|%an|%ad", "--date=short"
+                "git", "log", "--pretty=format:%H|%s|%an|%ad", "--date=short", "-20"
             ], cwd=self.project_root, capture_output=True, text=True, check=True)
             
             commits = []
             for line in result.stdout.strip().split('\n'):
-                if '|' in line:
-                    # Remove graph characters
-                    clean_line = line.split('|', 1)[1] if line.startswith('*') else line
-                    parts = clean_line.split('|')
+                if '|' in line and line.strip():
+                    parts = line.split('|')
                     if len(parts) >= 4:
                         commits.append({
                             'hash': parts[0].strip(),
