@@ -1,0 +1,1 @@
+# Resources package for Medical Store Management Application

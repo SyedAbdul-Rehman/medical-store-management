@@ -1,0 +1,1 @@
+# User interface package for Medical Store Management Application

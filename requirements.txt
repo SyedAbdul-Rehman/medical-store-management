@@ -1,0 +1,9 @@
+# Medical Store Management Application Dependencies
+
+# GUI Framework
+PySide6>=6.5.0
+
+# Additional utilities that may be needed later
+# (These will be added as we implement more features)
+# pytest>=7.0.0  # For testing
+# pyinstaller>=5.0  # For building executable

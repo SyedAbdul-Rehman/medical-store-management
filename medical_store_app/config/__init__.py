@@ -1,0 +1,1 @@
+# Configuration package for Medical Store Management Application
