@@ -1,401 +1,255 @@
-# Version Control & Backup/Restore Guide
+# Version Control & Backup System
 
-This document provides a comprehensive guide for managing versions, creating backups, and restoring to any development step in the Medical Store Management System project.
+This document provides comprehensive version control and backup procedures for the Medical Store Management System.
 
-## 📋 Table of Contents
-- [Git Version History](#git-version-history)
-- [Development Milestones](#development-milestones)
-- [Backup & Restore Commands](#backup--restore-commands)
-- [Branch Management](#branch-management)
-- [Release Management](#release-management)
-- [Emergency Recovery](#emergency-recovery)
+## 🚀 Quick Commands
 
-## 🔄 Git Version History
-
-### Current Repository Status
-- **Repository**: https://github.com/SyedAbdul-Rehman/medical-store-management.git
-- **Main Branch**: `main`
-- **Current Version**: v1.0.0-beta
-- **Last Updated**: January 2025
-
-### Commit History & Restoration Points
-
-#### 📌 Major Milestones
-
-| Version | Commit Hash | Date | Description | Restore Command |
-|---------|-------------|------|-------------|-----------------|
-| v1.0.0-beta | `db0a9e1` | 2025-01-13 | Complete UI framework with documentation | `git checkout db0a9e1` |
-| v0.9.0 | `732fa9a` | 2025-01-13 | Initial commit with core components | `git checkout 732fa9a` |
-
-#### 🏗️ Development Steps (Detailed)
-
-| Step | Feature | Commit | Files Changed | Restore Command |
-|------|---------|--------|---------------|-----------------|
-| 1 | Project Setup | `732fa9a` | 91 files | `git checkout 732fa9a` |
-| 2 | Documentation | `db0a9e1` | +2 files | `git checkout db0a9e1` |
-
-## 🎯 Development Milestones
-
-### ✅ Completed Milestones
-
-#### Milestone 1: Foundation Setup (v0.9.0)
-- **Commit**: `732fa9a`
-- **Date**: 2025-01-13
-- **Features**:
-  - Project structure and configuration
-  - Database models and repositories
-  - Business logic managers
-  - Core UI framework
-  - Main window with header, sidebar, content areas
-  - Reusable UI components with validation
-  - Base dialog system
-  - Comprehensive test suite (38 tests)
-  - Authentication system
-  - Medicine and sales backend
-
-**Restore Command**:
+### Create Backup
 ```bash
-git checkout 732fa9a
+# Quick backup with description
+python scripts/backup.py "sidebar toggle fix completed"
+
+# Create development snapshot
+python scripts/backup_restore.py snapshot "phase4" "Bug fixes and improvements"
 ```
 
-#### Milestone 2: Documentation & Release Prep (v1.0.0-beta)
-- **Commit**: `db0a9e1`
-- **Date**: 2025-01-13
-- **Features**:
-  - Comprehensive README documentation
-  - MIT License
-  - Installation and usage guides
-  - Project structure documentation
-
-**Restore Command**:
+### List Available Versions
 ```bash
-git checkout db0a9e1
+# List recent commits and backup branches
+python scripts/backup_restore.py list
+
+# Show project status
+python scripts/backup_restore.py status
 ```
 
-### 🔄 Upcoming Milestones
-
-#### Milestone 3: Medicine Management UI (Planned)
-- **Target**: v1.1.0
-- **Features**:
-  - Medicine inventory screens
-  - Add/Edit/Delete medicine forms
-  - Search and filtering
-  - Stock management
-
-#### Milestone 4: Billing System UI (Planned)
-- **Target**: v1.2.0
-- **Features**:
-  - Sales interface
-  - Receipt generation
-  - Payment processing
-  - Customer management
-
-#### Milestone 5: Reports Dashboard (Planned)
-- **Target**: v1.3.0
-- **Features**:
-  - Sales reports
-  - Inventory reports
-  - Analytics dashboard
-  - Export functionality
-
-## 🔧 Backup & Restore Commands
-
-### Quick Restore to Any Point
-
-#### 1. View All Available Restore Points
+### Restore from Backup
 ```bash
-# View commit history with one-line format
-git log --oneline
+# Restore to specific commit (creates new branch)
+python scripts/backup_restore.py restore <commit-hash>
 
-# View detailed commit history
-git log --graph --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit
-
-# View commits with file changes
-git log --stat
+# Restore specific files only
+git checkout <commit-hash> -- medical_store_app/ui/components/sidebar.py
 ```
 
-#### 2. Restore to Specific Commit
+## 📋 Version History
+
+### Current Version: 1.0.0-beta
+**Latest Commit**: `2d6dc5a`  
+**Status**: Stable  
+**Features**: Core UI framework with sidebar navigation fix
+
+### Available Restore Points
+
+#### Phase 1: Foundation (Commit: 732fa9a)
+- Complete project structure
+- Database layer and business logic
+- Core models and repositories
+- Authentication system
+- Basic UI framework
+
+#### Phase 2: Documentation (Commit: db0a9e1)
+- Comprehensive README
+- MIT License
+- GitHub repository setup
+
+#### Phase 3: Bug Fixes (Commit: 2d6dc5a) - **CURRENT**
+- Fixed sidebar toggle text restoration
+- Added development history tracking
+- Enhanced test coverage
+- Backup and restore utilities
+
+## 🛠️ Backup Strategies
+
+### 1. Automatic Daily Backups
 ```bash
-# Restore to specific commit (temporary)
-git checkout <commit-hash>
-
-# Create new branch from specific commit
-git checkout -b restore-point-<date> <commit-hash>
-
-# Restore to specific commit permanently (CAUTION: This will lose newer changes)
-git reset --hard <commit-hash>
+# Add to crontab for daily backups
+0 2 * * * cd /path/to/project && python scripts/backup.py "daily_backup"
 ```
 
-#### 3. Restore Specific Files
+### 2. Feature Development Backups
 ```bash
-# Restore specific file from commit
-git checkout <commit-hash> -- <file-path>
+# Before starting new feature
+python scripts/backup_restore.py snapshot "pre_feature" "Before implementing medicine UI"
 
-# Restore multiple files
-git checkout <commit-hash> -- file1.py file2.py
-
-# Restore entire directory
-git checkout <commit-hash> -- medical_store_app/ui/
+# After completing feature
+python scripts/backup_restore.py snapshot "post_feature" "Medicine UI implementation complete"
 ```
 
-### Creating Backup Points
-
-#### 1. Create Development Snapshots
+### 3. Release Backups
 ```bash
-# Create snapshot with descriptive message
-git add .
-git commit -m "SNAPSHOT: <feature-name> - <description>"
+# Create release branch
+git checkout -b release-v1.0.0
+git push origin release-v1.0.0
 
-# Tag important milestones
+# Tag release
 git tag -a v1.0.0 -m "Release version 1.0.0"
 git push origin v1.0.0
 ```
 
-#### 2. Create Feature Branches
+## 🔄 Restore Procedures
+
+### Full Project Restore
 ```bash
-# Create feature branch
-git checkout -b feature/medicine-ui
-git push -u origin feature/medicine-ui
-
-# Create backup branch
-git checkout -b backup/before-major-changes
-git push -u origin backup/before-major-changes
-```
-
-## 🌿 Branch Management Strategy
-
-### Branch Types
-
-#### Main Branches
-- **`main`**: Production-ready code
-- **`develop`**: Integration branch for features
-
-#### Supporting Branches
-- **`feature/*`**: New features (e.g., `feature/medicine-ui`)
-- **`hotfix/*`**: Critical fixes (e.g., `hotfix/login-bug`)
-- **`release/*`**: Release preparation (e.g., `release/v1.1.0`)
-- **`backup/*`**: Backup points (e.g., `backup/before-ui-refactor`)
-
-### Branch Commands
-
-```bash
-# Create and switch to feature branch
-git checkout -b feature/new-feature
-
-# Switch between branches
-git checkout main
-git checkout develop
-git checkout feature/medicine-ui
-
-# Merge feature to main
-git checkout main
-git merge feature/medicine-ui
-
-# Delete branch after merge
-git branch -d feature/medicine-ui
-git push origin --delete feature/medicine-ui
-```
-
-## 🏷️ Release Management
-
-### Semantic Versioning
-- **MAJOR.MINOR.PATCH** (e.g., 1.2.3)
-- **MAJOR**: Breaking changes
-- **MINOR**: New features (backward compatible)
-- **PATCH**: Bug fixes
-
-### Release Process
-
-#### 1. Prepare Release
-```bash
-# Create release branch
-git checkout -b release/v1.1.0
-
-# Update version numbers in files
-# Update CHANGELOG.md
-# Run tests
-python -m pytest
-
-# Commit release changes
-git commit -m "Prepare release v1.1.0"
-```
-
-#### 2. Create Release
-```bash
-# Merge to main
-git checkout main
-git merge release/v1.1.0
-
-# Create tag
-git tag -a v1.1.0 -m "Release version 1.1.0"
-
-# Push to GitHub
-git push origin main
-git push origin v1.1.0
-```
-
-#### 3. GitHub Release
-```bash
-# Create GitHub release (using GitHub CLI)
-gh release create v1.1.0 --title "Version 1.1.0" --notes "Release notes here"
-```
-
-## 🚨 Emergency Recovery
-
-### Scenario 1: Accidental File Deletion
-```bash
-# Restore deleted file from last commit
-git checkout HEAD -- <deleted-file>
-
-# Restore from specific commit
-git checkout <commit-hash> -- <deleted-file>
-```
-
-### Scenario 2: Bad Commit
-```bash
-# Undo last commit (keep changes)
-git reset --soft HEAD~1
-
-# Undo last commit (discard changes)
-git reset --hard HEAD~1
-
-# Undo multiple commits
-git reset --hard HEAD~3
-```
-
-### Scenario 3: Corrupted Working Directory
-```bash
-# Clean untracked files
-git clean -fd
-
-# Reset to last known good state
-git reset --hard HEAD
-
-# Reset to specific commit
-git reset --hard <commit-hash>
-```
-
-### Scenario 4: Complete Repository Recovery
-```bash
-# Re-clone repository
+# 1. Clone fresh copy
 git clone https://github.com/SyedAbdul-Rehman/medical-store-management.git
-
-# Restore to specific version
 cd medical-store-management
-git checkout <commit-hash>
+
+# 2. Restore to specific version
+python scripts/backup_restore.py restore 2d6dc5a
+
+# 3. Set up environment
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+
+# 4. Verify installation
+python -m pytest
+python medical_store_app/main.py
 ```
 
-## 📊 Version Tracking Template
-
-### For Each Major Development Step
-
-```markdown
-## Version X.Y.Z - [Date]
-
-### 🎯 Milestone: [Milestone Name]
-- **Commit Hash**: `<hash>`
-- **Branch**: `<branch-name>`
-- **Developer**: [Name]
-
-### ✅ Features Added
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-
-### 🔧 Technical Changes
-- [ ] Database changes
-- [ ] UI modifications
-- [ ] API updates
-
-### 🧪 Testing
-- [ ] Unit tests: X/Y passing
-- [ ] Integration tests: X/Y passing
-- [ ] Manual testing completed
-
-### 📝 Notes
-- Any important notes or considerations
-- Breaking changes
-- Migration steps required
-
-### 🔄 Restore Command
+### Partial Restore (Specific Components)
 ```bash
-git checkout <commit-hash>
+# Restore only UI components
+git checkout 2d6dc5a -- medical_store_app/ui/
+
+# Restore only database layer
+git checkout 732fa9a -- medical_store_app/models/ medical_store_app/repositories/
+
+# Restore only tests
+git checkout 2d6dc5a -- tests/
 ```
-```
 
-## 🛠️ Automated Backup Script
-
-Create this script for automated backups:
-
+### Emergency Restore
 ```bash
-#!/bin/bash
-# backup.sh - Automated backup script
+# If main branch is corrupted, restore from backup branch
+git checkout backup_20250113_143022_sidebar_fix
+git checkout -b main-restored
+git push origin main-restored
 
-DATE=$(date +%Y%m%d_%H%M%S)
-BACKUP_BRANCH="backup/auto_$DATE"
-
-echo "Creating automated backup: $BACKUP_BRANCH"
-
-# Create backup branch
-git checkout -b $BACKUP_BRANCH
-git push -u origin $BACKUP_BRANCH
-
-# Return to main branch
+# Then merge back to main after verification
 git checkout main
-
-echo "Backup created successfully: $BACKUP_BRANCH"
-echo "Restore command: git checkout $BACKUP_BRANCH"
+git reset --hard main-restored
+git push --force-with-lease origin main
 ```
 
-## 📋 Checklist for Each Development Phase
+## 📊 Backup Verification
 
-### Before Starting New Feature
-- [ ] Create backup branch
-- [ ] Document current state
-- [ ] Run all tests
-- [ ] Commit current changes
-
-### After Completing Feature
-- [ ] Run full test suite
-- [ ] Update documentation
-- [ ] Create descriptive commit
-- [ ] Tag if milestone reached
-- [ ] Push to GitHub
-
-### Before Major Changes
-- [ ] Create comprehensive backup
-- [ ] Document rollback plan
-- [ ] Notify team members
-- [ ] Test in separate branch first
-
----
-
-## 🔗 Quick Reference Commands
-
+### Test Backup Integrity
 ```bash
-# View current status
-git status
-git log --oneline -10
+# Run full test suite
+python -m pytest -v
 
-# Create backup point
-git add . && git commit -m "BACKUP: Before major changes"
+# Test application startup
+python medical_store_app/main.py --help
 
-# Restore to previous commit
-git checkout <commit-hash>
+# Check database integrity
+python -c "from medical_store_app.config.database import DatabaseManager; db = DatabaseManager(); print('DB OK' if db.initialize() else 'DB Error')"
+```
 
-# Create restore branch
-git checkout -b restore-$(date +%Y%m%d) <commit-hash>
+### Verify Backup Contents
+```bash
+# Check file count
+find . -name "*.py" | wc -l
 
-# Emergency reset
-git reset --hard HEAD
+# Check test coverage
+python -m pytest --cov=medical_store_app
 
-# View all branches
-git branch -a
+# Verify git history
+git log --oneline --graph --all
+```
 
-# View all tags
-git tag -l
+## 🔐 Security & Best Practices
+
+### Sensitive Data Protection
+- ✅ Database files excluded from git (.gitignore)
+- ✅ No hardcoded passwords or API keys
+- ✅ Environment variables for configuration
+- ✅ Secure backup storage
+
+### Backup Retention Policy
+- **Daily Backups**: Keep for 30 days
+- **Weekly Backups**: Keep for 12 weeks
+- **Monthly Backups**: Keep for 12 months
+- **Release Backups**: Keep permanently
+
+### Access Control
+```bash
+# Set proper permissions on backup scripts
+chmod +x scripts/backup.py
+chmod +x scripts/backup_restore.py
+
+# Secure backup directories
+chmod 700 backups/
+```
+
+## 📱 Mobile/Remote Access
+
+### GitHub Codespaces
+```bash
+# Open in GitHub Codespaces for remote development
+# All backups and restore points available via git
+```
+
+### Cloud Backup Integration
+```bash
+# Sync to cloud storage (example with rclone)
+rclone sync . remote:medical-store-backup --exclude ".git/**" --exclude ".venv/**"
+```
+
+## 🚨 Disaster Recovery
+
+### Complete System Loss
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/SyedAbdul-Rehman/medical-store-management.git
+   ```
+
+2. **Restore to Last Known Good State**
+   ```bash
+   python scripts/backup_restore.py restore 2d6dc5a
+   ```
+
+3. **Verify System Integrity**
+   ```bash
+   python -m pytest
+   python medical_store_app/main.py
+   ```
+
+4. **Resume Development**
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
+
+### Database Corruption
+```bash
+# Restore database from backup
+cp backups/medical_store_backup.db medical_store_app/data/medical_store.db
+
+# Or reinitialize from schema
+python -c "from medical_store_app.config.database import DatabaseManager; DatabaseManager().initialize()"
+```
+
+## 📞 Support Contacts
+
+**Primary Developer**: Syed Abdul Rehman  
+**GitHub**: [@SyedAbdul-Rehman](https://github.com/SyedAbdul-Rehman)  
+**Repository**: [medical-store-management](https://github.com/SyedAbdul-Rehman/medical-store-management)
+
+## 📝 Backup Log Template
+
+```
+Date: YYYY-MM-DD HH:MM:SS
+Version: X.X.X
+Commit: xxxxxxxx
+Description: Brief description of changes
+Files Changed: N files
+Test Status: PASS/FAIL
+Backup Branch: backup_YYYYMMDD_HHMMSS_description
+Notes: Any additional notes
 ```
 
 ---
 
-**Remember**: Always test your restore commands in a separate directory or branch before applying them to your main development environment!
+*Last Updated: January 2025*  
+*Document Version: 1.0*
