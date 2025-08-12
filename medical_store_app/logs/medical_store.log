@@ -135,3 +135,26 @@
 2025-08-13 00:14:21,779 [INFO] ui.components.sidebar: Sidebar toggled: expanded
 2025-08-13 00:14:22,084 [INFO] ui.main_window: Sidebar expanded
 2025-08-13 00:18:03,440 [INFO] ui.main_window: Application closing...
+2025-08-13 00:35:48,981 [INFO] __main__: Initializing database...
+2025-08-13 00:35:48,982 [INFO] config.database: Initializing database tables...
+2025-08-13 00:35:48,984 [INFO] config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-13 00:35:48,990 [INFO] config.database: Database initialization completed successfully
+2025-08-13 00:35:48,991 [INFO] __main__: Loading application settings...
+2025-08-13 00:35:48,991 [INFO] __main__: Starting main application window...
+2025-08-13 00:35:49,017 [INFO] ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 00:35:49,027 [INFO] ui.components.sidebar: Sidebar navigation component initialized
+2025-08-13 00:35:49,044 [INFO] ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-13 00:35:49,651 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-13 00:35:56,022 [INFO] ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-13 00:35:56,327 [INFO] ui.main_window: Sidebar collapsed
+2025-08-13 00:35:56,886 [INFO] ui.components.sidebar: Sidebar toggled: expanded
+2025-08-13 00:35:57,192 [INFO] ui.main_window: Sidebar expanded
+2025-08-13 00:35:57,925 [INFO] ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-13 00:35:58,232 [INFO] ui.main_window: Sidebar collapsed
+2025-08-13 00:35:58,693 [INFO] ui.components.sidebar: Sidebar toggled: expanded
+2025-08-13 00:35:58,999 [INFO] ui.main_window: Sidebar expanded
+2025-08-13 00:35:59,557 [INFO] ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-13 00:35:59,863 [INFO] ui.main_window: Sidebar collapsed
+2025-08-13 00:36:00,582 [INFO] ui.components.sidebar: Sidebar toggled: expanded
+2025-08-13 00:36:00,887 [INFO] ui.main_window: Sidebar expanded
+2025-08-13 00:36:04,219 [INFO] ui.main_window: Application closing...

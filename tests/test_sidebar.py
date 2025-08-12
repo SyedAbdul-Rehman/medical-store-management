@@ -74,6 +74,26 @@ class TestNavigationButton:
         
         button.deleteLater()
         button_no_icon.deleteLater()
+    
+    def test_navigation_button_text_storage(self):
+        """Test that NavigationButton properly stores original text"""
+        button = NavigationButton("Dashboard", "📊")
+        
+        # Test original text storage
+        assert button.get_original_text() == "Dashboard"
+        assert button.get_icon_text() == "📊"
+        
+        # Test that changing button text doesn't affect original text
+        button.setText("📊")
+        assert button.text() == "📊"
+        assert button.get_original_text() == "Dashboard"  # Should remain unchanged
+        
+        # Test display text formatting
+        display_text = button.get_display_text()
+        assert "📊" in display_text
+        assert "Dashboard" in display_text
+        
+        button.deleteLater()
 
 
 class TestSidebar:
@@ -185,6 +205,49 @@ class TestSidebar:
         # Note: Animation might not complete in test environment
         # So we check the intended state rather than actual width
         assert not sidebar.is_expanded
+        
+        sidebar.deleteLater()
+    
+    def test_sidebar_text_toggle_behavior(self):
+        """Test that sidebar properly toggles between full text and icons"""
+        sidebar = Sidebar()
+        
+        # Get a navigation button to test
+        dashboard_button = sidebar.navigation_buttons["dashboard"]
+        
+        # Initially expanded - should show full text
+        assert sidebar.is_expanded
+        assert dashboard_button.text() == "Dashboard"
+        assert dashboard_button.get_original_text() == "Dashboard"
+        assert dashboard_button.get_icon_text() == "📊"
+        
+        # Collapse sidebar
+        sidebar.toggle_sidebar()
+        sidebar._update_content_visibility()  # Manually trigger for testing
+        
+        # Should now show only icon
+        assert not sidebar.is_expanded
+        assert dashboard_button.text() == "📊"
+        
+        # Expand sidebar again
+        sidebar.toggle_sidebar()
+        sidebar._update_content_visibility()  # Manually trigger for testing
+        
+        # Should restore full text
+        assert sidebar.is_expanded
+        assert dashboard_button.text() == "Dashboard"
+        
+        # Test multiple toggles
+        for _ in range(3):
+            # Collapse
+            sidebar.toggle_sidebar()
+            sidebar._update_content_visibility()
+            assert dashboard_button.text() == "📊"
+            
+            # Expand
+            sidebar.toggle_sidebar()
+            sidebar._update_content_visibility()
+            assert dashboard_button.text() == "Dashboard"
         
         sidebar.deleteLater()
     

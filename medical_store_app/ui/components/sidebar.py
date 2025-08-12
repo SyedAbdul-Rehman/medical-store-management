@@ -19,6 +19,7 @@ class NavigationButton(QPushButton):
     def __init__(self, text: str, icon_text: str = "", parent=None):
         """Initialize navigation button"""
         super().__init__(parent)
+        self.original_text = text  # Store original text for toggle functionality
         self.setText(text)
         self.icon_text = icon_text
         self.is_active = False
@@ -69,8 +70,16 @@ class NavigationButton(QPushButton):
     def get_display_text(self) -> str:
         """Get the display text with icon if available"""
         if self.icon_text:
-            return f"{self.icon_text}  {self.text()}"
-        return self.text()
+            return f"{self.icon_text}  {self.original_text}"
+        return self.original_text
+    
+    def get_original_text(self) -> str:
+        """Get the original full text"""
+        return self.original_text
+    
+    def get_icon_text(self) -> str:
+        """Get just the icon text"""
+        return self.icon_text
 
 
 class Sidebar(QWidget):
@@ -241,14 +250,21 @@ class Sidebar(QWidget):
         """Update content visibility based on sidebar state"""
         # Show/hide text labels based on expanded state
         if self.is_expanded:
+            # Expanded state: show navigation title and full text labels
             self.nav_title.show()
             for button in self.navigation_buttons.values():
-                button.setText(button.text() if button.text() else button.get_display_text())
+                # Restore original full text
+                button.setText(button.get_original_text())
         else:
+            # Collapsed state: hide navigation title and show only icons
             self.nav_title.hide()
             for button in self.navigation_buttons.values():
                 # Show only icon in collapsed state
-                button.setText(button.icon_text if button.icon_text else button.text()[:1])
+                if button.get_icon_text():
+                    button.setText(button.get_icon_text())
+                else:
+                    # Fallback to first character if no icon available
+                    button.setText(button.get_original_text()[:1])
     
     def _apply_styling(self):
         """Apply styling to the sidebar"""
@@ -299,6 +315,10 @@ class Sidebar(QWidget):
         
         # Add to layout
         self.menu_frame.layout().addWidget(button)
+        
+        # Update button text based on current sidebar state
+        if not self.is_expanded:
+            button.setText(button.get_icon_text() if button.get_icon_text() else button.get_original_text()[:1])
         
         self.logger.info(f"Menu item added: {name} ({key})")
     
