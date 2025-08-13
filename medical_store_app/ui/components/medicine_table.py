@@ -1046,7 +1046,19 @@ Status: {medicine.get_stock_status()}
     
     def remove_medicine_from_table(self, medicine_id: int):
         """Remove medicine from table"""
+        # Clear selection if the deleted medicine was selected
+        if self.selected_medicine and self.selected_medicine.id == medicine_id:
+            self.selected_medicine = None
+            self.medicine_selected.emit(None)
+        
+        # Remove from medicines list
         self.medicines = [m for m in self.medicines if m.id != medicine_id]
+        
+        # Update filters and display
         self._update_category_filter()
         self._apply_filters()
+        
+        # Clear table selection to ensure UI is in sync
+        self.table.clearSelection()
+        
         self.logger.info(f"Removed medicine from table: ID {medicine_id}")

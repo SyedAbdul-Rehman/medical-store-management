@@ -319,3 +319,184 @@
 2025-08-13 11:32:28,260 [ERROR] medical_store_app.ui.dialogs.medicine_dialog: Medicine deletion failed: Medicine with ID 3 not found
 2025-08-13 11:32:29,309 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog cancelled for: Panadol
 2025-08-13 11:32:35,925 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-13 11:45:41,121 [INFO] __main__: Initializing database...
+2025-08-13 11:45:41,122 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-13 11:45:41,125 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-13 11:45:41,127 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-13 11:45:41,128 [INFO] __main__: Loading application settings...
+2025-08-13 11:45:41,129 [INFO] __main__: Starting main application window...
+2025-08-13 11:45:41,167 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 11:45:41,170 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-13 11:45:41,187 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-13 11:45:41,200 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-13 11:45:41,345 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-13 11:45:42,786 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 11:45:42,788 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 11:45:42,789 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-13 11:45:42,951 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-13 11:45:42,981 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 2 medicines loaded
+2025-08-13 11:45:43,118 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 2 medicines loaded
+2025-08-13 11:45:43,119 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-13 11:45:43,120 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-13 11:45:43,211 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 2 medicines loaded
+2025-08-13 11:45:43,212 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-13 11:45:43,212 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-13 11:45:50,044 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-13 11:45:50,349 [INFO] medical_store_app.ui.main_window: Sidebar collapsed
+2025-08-13 11:45:54,921 [INFO] medical_store_app.repositories.medicine_repository: Medicine deleted successfully (ID: 5)
+2025-08-13 11:45:54,922 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Paracetamol' deleted successfully
+2025-08-13 11:45:56,252 [INFO] medical_store_app.ui.components.medicine_table: Removed medicine from table: ID 5
+2025-08-13 11:45:56,253 [INFO] medical_store_app.ui.main_window: Medicine deleted: ID 5
+2025-08-13 11:45:56,254 [INFO] medical_store_app.ui.components.medicine_management: Medicine deleted from dialog: ID 5
+2025-08-13 11:45:56,261 [INFO] medical_store_app.ui.dialogs.medicine_dialog: Medicine deleted successfully: Medicine 'Paracetamol' deleted successfully
+2025-08-13 11:45:56,264 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog completed for: Paracetamol
+2025-08-13 11:45:59,858 [INFO] medical_store_app.repositories.medicine_repository: Medicine deleted successfully (ID: 4)
+2025-08-13 11:45:59,859 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Amoxal' deleted successfully
+2025-08-13 11:46:00,841 [INFO] medical_store_app.ui.components.medicine_table: Removed medicine from table: ID 4
+2025-08-13 11:46:00,842 [INFO] medical_store_app.ui.main_window: Medicine deleted: ID 4
+2025-08-13 11:46:00,843 [INFO] medical_store_app.ui.components.medicine_management: Medicine deleted from dialog: ID 4
+2025-08-13 11:46:00,849 [INFO] medical_store_app.ui.dialogs.medicine_dialog: Medicine deleted successfully: Medicine 'Amoxal' deleted successfully
+2025-08-13 11:46:00,850 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog completed for: Amoxal
+2025-08-13 11:46:32,315 [INFO] medical_store_app.ui.components.medicine_form: Started add medicine operation
+2025-08-13 11:46:32,317 [INFO] medical_store_app.repositories.medicine_repository: Medicine saved successfully: Panadole (ID: 6)
+2025-08-13 11:46:32,376 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Panadole' added successfully
+2025-08-13 11:46:33,751 [INFO] medical_store_app.ui.components.medicine_table: Added medicine to table: Panadole
+2025-08-13 11:46:33,752 [INFO] medical_store_app.ui.main_window: Medicine added: Panadole
+2025-08-13 11:46:33,753 [INFO] medical_store_app.ui.components.medicine_management: Medicine added: Panadole
+2025-08-13 11:46:33,802 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-13 11:46:33,803 [INFO] medical_store_app.ui.components.medicine_management: Form operation completed: Medicine 'Panadole' added successfully
+2025-08-13 11:46:33,823 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-13 11:46:33,824 [INFO] medical_store_app.ui.components.medicine_form: Medicine operation completed successfully: Medicine 'Panadole' added successfully
+2025-08-13 11:47:02,163 [INFO] medical_store_app.ui.components.medicine_form: Started add medicine operation
+2025-08-13 11:47:02,165 [INFO] medical_store_app.repositories.medicine_repository: Medicine saved successfully: Paracitamole (ID: 7)
+2025-08-13 11:47:02,222 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Paracitamole' added successfully
+2025-08-13 11:47:04,527 [INFO] medical_store_app.ui.components.medicine_table: Added medicine to table: Paracitamole
+2025-08-13 11:47:04,528 [INFO] medical_store_app.ui.main_window: Medicine added: Paracitamole
+2025-08-13 11:47:04,529 [INFO] medical_store_app.ui.components.medicine_management: Medicine added: Paracitamole
+2025-08-13 11:47:04,548 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-13 11:47:04,549 [INFO] medical_store_app.ui.components.medicine_management: Form operation completed: Medicine 'Paracitamole' added successfully
+2025-08-13 11:47:04,570 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-13 11:47:04,571 [INFO] medical_store_app.ui.components.medicine_form: Medicine operation completed successfully: Medicine 'Paracitamole' added successfully
+2025-08-13 11:47:15,093 [INFO] medical_store_app.repositories.medicine_repository: Medicine deleted successfully (ID: 6)
+2025-08-13 11:47:15,094 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Panadole' deleted successfully
+2025-08-13 11:47:16,475 [INFO] medical_store_app.ui.components.medicine_table: Removed medicine from table: ID 6
+2025-08-13 11:47:16,476 [INFO] medical_store_app.ui.main_window: Medicine deleted: ID 6
+2025-08-13 11:47:16,476 [INFO] medical_store_app.ui.components.medicine_management: Medicine deleted from dialog: ID 6
+2025-08-13 11:47:16,482 [INFO] medical_store_app.ui.dialogs.medicine_dialog: Medicine deleted successfully: Medicine 'Panadole' deleted successfully
+2025-08-13 11:47:16,485 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog completed for: Panadole
+2025-08-13 11:47:20,506 [WARNING] medical_store_app.managers.medicine_manager: Medicine with ID 6 not found
+2025-08-13 11:47:22,151 [ERROR] medical_store_app.ui.dialogs.medicine_dialog: Medicine deletion failed: Medicine with ID 6 not found
+2025-08-13 11:47:22,954 [WARNING] medical_store_app.managers.medicine_manager: Medicine with ID 6 not found
+2025-08-13 11:47:25,295 [ERROR] medical_store_app.ui.dialogs.medicine_dialog: Medicine deletion failed: Medicine with ID 6 not found
+2025-08-13 11:48:37,473 [WARNING] medical_store_app.managers.medicine_manager: Medicine with ID 6 not found
+2025-08-13 11:50:23,293 [ERROR] medical_store_app.ui.dialogs.medicine_dialog: Medicine deletion failed: Medicine with ID 6 not found
+2025-08-13 11:50:24,711 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog cancelled for: Panadole
+2025-08-13 11:50:25,460 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-13 11:55:49,757 [INFO] __main__: Initializing database...
+2025-08-13 11:55:49,760 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-13 11:55:49,762 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-13 11:55:49,765 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-13 11:55:49,766 [INFO] __main__: Loading application settings...
+2025-08-13 11:55:49,767 [INFO] __main__: Starting main application window...
+2025-08-13 11:55:49,813 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 11:55:49,817 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-13 11:55:49,832 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-13 11:55:49,837 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-13 11:55:49,945 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-13 12:00:59,036 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 12:00:59,038 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 12:00:59,039 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-13 12:00:59,178 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-13 12:00:59,207 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 1 medicines loaded
+2025-08-13 12:00:59,315 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 1 medicines loaded
+2025-08-13 12:00:59,316 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-13 12:00:59,316 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-13 12:00:59,394 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 1 medicines loaded
+2025-08-13 12:00:59,395 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-13 12:00:59,395 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-13 12:01:03,213 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-13 12:01:03,531 [INFO] medical_store_app.ui.main_window: Sidebar collapsed
+2025-08-13 12:01:40,965 [INFO] medical_store_app.ui.components.medicine_form: Started add medicine operation
+2025-08-13 12:01:40,968 [INFO] medical_store_app.repositories.medicine_repository: Medicine saved successfully: Pada (ID: 8)
+2025-08-13 12:01:41,047 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Pada' added successfully
+2025-08-13 12:01:42,569 [INFO] medical_store_app.ui.components.medicine_table: Added medicine to table: Pada
+2025-08-13 12:01:42,570 [INFO] medical_store_app.ui.main_window: Medicine added: Pada
+2025-08-13 12:01:42,571 [INFO] medical_store_app.ui.components.medicine_management: Medicine added: Pada
+2025-08-13 12:01:42,616 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-13 12:01:42,616 [INFO] medical_store_app.ui.components.medicine_management: Form operation completed: Medicine 'Pada' added successfully
+2025-08-13 12:01:42,637 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-13 12:01:42,638 [INFO] medical_store_app.ui.components.medicine_form: Medicine operation completed successfully: Medicine 'Pada' added successfully
+2025-08-13 12:01:48,889 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog cancelled for: Paracitamole
+2025-08-13 12:01:57,387 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog cancelled for: Paracitamole
+2025-08-13 12:02:02,010 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog cancelled for: Paracitamole
+2025-08-13 12:02:31,741 [INFO] medical_store_app.ui.components.medicine_form: Started add medicine operation
+2025-08-13 12:02:31,744 [INFO] medical_store_app.repositories.medicine_repository: Medicine saved successfully: Aligie (ID: 9)
+2025-08-13 12:02:31,848 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Aligie' added successfully
+2025-08-13 12:02:33,015 [INFO] medical_store_app.ui.components.medicine_table: Added medicine to table: Aligie
+2025-08-13 12:02:33,016 [INFO] medical_store_app.ui.main_window: Medicine added: Aligie
+2025-08-13 12:02:33,017 [INFO] medical_store_app.ui.components.medicine_management: Medicine added: Aligie
+2025-08-13 12:02:33,040 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-13 12:02:33,042 [INFO] medical_store_app.ui.components.medicine_management: Form operation completed: Medicine 'Aligie' added successfully
+2025-08-13 12:02:33,066 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-13 12:02:33,067 [INFO] medical_store_app.ui.components.medicine_form: Medicine operation completed successfully: Medicine 'Aligie' added successfully
+2025-08-13 12:02:37,680 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog cancelled for: Aligie
+2025-08-13 12:02:40,809 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog cancelled for: Pada
+2025-08-13 12:02:43,674 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog cancelled for: Paracitamole
+2025-08-13 12:02:48,524 [INFO] medical_store_app.repositories.medicine_repository: Medicine deleted successfully (ID: 9)
+2025-08-13 12:02:48,525 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Aligie' deleted successfully
+2025-08-13 12:02:49,514 [INFO] medical_store_app.ui.components.medicine_table: Removed medicine from table: ID 9
+2025-08-13 12:02:49,515 [INFO] medical_store_app.ui.main_window: Medicine deleted: ID 9
+2025-08-13 12:02:49,515 [INFO] medical_store_app.ui.components.medicine_management: Medicine deleted from dialog: ID 9
+2025-08-13 12:02:49,520 [INFO] medical_store_app.ui.dialogs.medicine_dialog: Medicine deleted successfully: Medicine 'Aligie' deleted successfully
+2025-08-13 12:02:49,525 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog completed for: Aligie
+2025-08-13 12:02:54,035 [INFO] medical_store_app.repositories.medicine_repository: Medicine deleted successfully (ID: 8)
+2025-08-13 12:02:54,036 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Pada' deleted successfully
+2025-08-13 12:02:54,976 [INFO] medical_store_app.ui.components.medicine_table: Removed medicine from table: ID 8
+2025-08-13 12:02:54,976 [INFO] medical_store_app.ui.main_window: Medicine deleted: ID 8
+2025-08-13 12:02:54,977 [INFO] medical_store_app.ui.components.medicine_management: Medicine deleted from dialog: ID 8
+2025-08-13 12:02:54,982 [INFO] medical_store_app.ui.dialogs.medicine_dialog: Medicine deleted successfully: Medicine 'Pada' deleted successfully
+2025-08-13 12:02:54,987 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog completed for: Pada
+2025-08-13 12:02:58,756 [INFO] medical_store_app.repositories.medicine_repository: Medicine deleted successfully (ID: 7)
+2025-08-13 12:02:58,757 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Paracitamole' deleted successfully
+2025-08-13 12:02:59,636 [INFO] medical_store_app.ui.components.medicine_table: Removed medicine from table: ID 7
+2025-08-13 12:02:59,637 [INFO] medical_store_app.ui.main_window: Medicine deleted: ID 7
+2025-08-13 12:02:59,638 [INFO] medical_store_app.ui.components.medicine_management: Medicine deleted from dialog: ID 7
+2025-08-13 12:02:59,643 [INFO] medical_store_app.ui.dialogs.medicine_dialog: Medicine deleted successfully: Medicine 'Paracitamole' deleted successfully
+2025-08-13 12:02:59,645 [INFO] medical_store_app.ui.components.medicine_management: Medicine delete dialog completed for: Paracitamole
+2025-08-13 12:03:01,835 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-13 12:03:01,837 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-13 12:03:01,837 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-13 12:03:01,842 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Billing System
+2025-08-13 12:03:02,332 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: settings
+2025-08-13 12:03:02,334 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: settings
+2025-08-13 12:03:02,334 [INFO] medical_store_app.ui.main_window: Menu item selected: settings
+2025-08-13 12:03:02,337 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Settings
+2025-08-13 12:03:02,723 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: settings
+2025-08-13 12:03:02,725 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: settings
+2025-08-13 12:03:02,725 [INFO] medical_store_app.ui.main_window: Menu item selected: settings
+2025-08-13 12:03:02,728 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Settings
+2025-08-13 12:03:03,067 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: reports
+2025-08-13 12:03:03,069 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-13 12:03:03,070 [INFO] medical_store_app.ui.main_window: Menu item selected: reports
+2025-08-13 12:03:03,073 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Reports
+2025-08-13 12:03:03,427 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-13 12:03:03,429 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-13 12:03:03,430 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-13 12:03:03,434 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Billing System
+2025-08-13 12:03:03,771 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 12:03:03,773 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 12:03:03,774 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-13 12:03:03,780 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-13 12:03:03,781 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-13 12:03:03,782 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-13 12:03:04,379 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-13 12:03:04,382 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 12:03:04,383 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-13 12:03:04,386 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-13 12:03:04,859 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 12:03:04,861 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 12:03:04,861 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-13 12:03:04,867 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-13 12:03:04,867 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-13 12:03:04,868 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-13 12:03:11,743 [INFO] medical_store_app.ui.main_window: Application closing...

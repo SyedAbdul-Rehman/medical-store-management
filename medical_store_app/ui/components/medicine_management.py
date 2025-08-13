@@ -140,7 +140,7 @@ class MedicineManagementWidget(QWidget):
         """Handle medicine selection from table"""
         self.current_medicine = medicine
         if medicine:
-            self.logger.debug(f"Medicine selected: {medicine.name}")
+            self.logger.debug(f"Medicine selected: {medicine.name} (ID: {medicine.id})")
         else:
             self.logger.debug("Medicine selection cleared")
     
@@ -220,7 +220,9 @@ class MedicineManagementWidget(QWidget):
             self.medicine_form.current_medicine.id == medicine_id):
             self.medicine_form.clear_form()
         
+        # Clear current selection
         self.current_medicine = None
+        
         self.logger.info(f"Medicine deleted from dialog: ID {medicine_id}")
     
     def refresh_data(self):
@@ -250,9 +252,11 @@ class MedicineManagementWidget(QWidget):
     def delete_selected_medicine(self):
         """Delete currently selected medicine"""
         if self.current_medicine:
+            self.logger.info(f"Attempting to delete selected medicine: {self.current_medicine.name} (ID: {self.current_medicine.id})")
             self.delete_medicine(self.current_medicine)
         else:
             QMessageBox.information(self, "No Selection", "Please select a medicine to delete.")
+            self.logger.warning("Delete attempted with no medicine selected")
     
     def show_selected_medicine_details(self):
         """Show details of currently selected medicine"""
