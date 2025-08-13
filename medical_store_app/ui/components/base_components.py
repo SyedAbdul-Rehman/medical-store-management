@@ -170,7 +170,7 @@ class ValidatedComboBox(QComboBox, ValidationMixin):
                 height: 6px;
                 border-top: none;
                 border-right: none;
-                transform: rotate(-45deg);
+                /* Note: transform property is not supported in Qt stylesheets */
             }
         """)
     

@@ -9,9 +9,10 @@ from datetime import datetime, date
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QHeaderView, QTableWidgetItem,
     QMessageBox, QMenu, QLineEdit, QComboBox, QPushButton, QLabel,
-    QFrame, QSizePolicy, QAbstractItemView
+    QFrame, QSizePolicy, QAbstractItemView, QDoubleSpinBox, QSpinBox,
+    QDateEdit, QGridLayout
 )
-from PySide6.QtCore import Qt, Signal, QTimer
+from PySide6.QtCore import Qt, Signal, QTimer, QDate
 from PySide6.QtGui import QAction, QFont, QColor, QBrush
 
 from .base_components import StyledTable, StyledButton, ValidatedLineEdit
@@ -40,8 +41,16 @@ class MedicineTableWidget(QWidget):
         
         # Search and filter state
         self.search_query = ""
+        self.search_type = "All Fields"
         self.category_filter = ""
         self.stock_filter = ""
+        self.min_price = 0.0
+        self.max_price = 999999.99
+        self.min_quantity = 0
+        self.max_quantity = 999999
+        self.expiry_filter = "All"
+        self.sort_option = "Name (A-Z)"
+        self.saved_filters = {}
         
         # Table columns
         self.columns = [
@@ -120,24 +129,42 @@ class MedicineTableWidget(QWidget):
         # Container frame
         filter_frame = QFrame()
         filter_frame.setFrameStyle(QFrame.StyledPanel)
-        filter_layout = QHBoxLayout(filter_frame)
+        filter_layout = QVBoxLayout(filter_frame)
         filter_layout.setContentsMargins(15, 10, 15, 10)
+        filter_layout.setSpacing(10)
         
-        # Search field
+        # First row - Basic search and filters
+        first_row = QHBoxLayout()
+        
+        # Search field with advanced options
         search_label = QLabel("Search:")
-        self.search_field = ValidatedLineEdit("Search by name or barcode...")
-        self.search_field.setMaximumWidth(250)
+        self.search_field = ValidatedLineEdit("Search by name, category, batch, or barcode...")
+        self.search_field.setMaximumWidth(300)
         
-        filter_layout.addWidget(search_label)
-        filter_layout.addWidget(self.search_field)
+        # Search type selector
+        self.search_type_combo = QComboBox()
+        self.search_type_combo.addItems(["All Fields", "Name Only", "Category Only", "Batch Number", "Barcode Only"])
+        self.search_type_combo.setMaximumWidth(120)
+        
+        first_row.addWidget(search_label)
+        first_row.addWidget(self.search_field)
+        first_row.addWidget(QLabel("in:"))
+        first_row.addWidget(self.search_type_combo)
         
         # Category filter
         category_label = QLabel("Category:")
         self.category_filter_combo = QComboBox()
         self.category_filter_combo.setMaximumWidth(150)
         
-        filter_layout.addWidget(category_label)
-        filter_layout.addWidget(self.category_filter_combo)
+        first_row.addWidget(category_label)
+        first_row.addWidget(self.category_filter_combo)
+        
+        first_row.addStretch()
+        
+        filter_layout.addLayout(first_row)
+        
+        # Second row - Advanced filters
+        second_row = QHBoxLayout()
         
         # Stock status filter
         stock_label = QLabel("Stock Status:")
@@ -145,17 +172,183 @@ class MedicineTableWidget(QWidget):
         self.stock_filter_combo.addItems(["All", "In Stock", "Low Stock", "Out of Stock", "Expired", "Expiring Soon"])
         self.stock_filter_combo.setMaximumWidth(120)
         
-        filter_layout.addWidget(stock_label)
-        filter_layout.addWidget(self.stock_filter_combo)
+        second_row.addWidget(stock_label)
+        second_row.addWidget(self.stock_filter_combo)
         
-        filter_layout.addStretch()
+        # Price range filter
+        price_label = QLabel("Price Range:")
+        self.min_price_spinbox = QDoubleSpinBox()
+        self.min_price_spinbox.setRange(0.0, 999999.99)
+        self.min_price_spinbox.setPrefix("$")
+        self.min_price_spinbox.setMaximumWidth(100)
         
-        # Clear filters button
+        self.max_price_spinbox = QDoubleSpinBox()
+        self.max_price_spinbox.setRange(0.0, 999999.99)
+        self.max_price_spinbox.setValue(999999.99)
+        self.max_price_spinbox.setPrefix("$")
+        self.max_price_spinbox.setMaximumWidth(100)
+        
+        second_row.addWidget(price_label)
+        second_row.addWidget(self.min_price_spinbox)
+        second_row.addWidget(QLabel("to"))
+        second_row.addWidget(self.max_price_spinbox)
+        
+        # Quantity range filter
+        qty_label = QLabel("Quantity:")
+        self.min_qty_spinbox = QSpinBox()
+        self.min_qty_spinbox.setRange(0, 999999)
+        self.min_qty_spinbox.setMaximumWidth(80)
+        
+        self.max_qty_spinbox = QSpinBox()
+        self.max_qty_spinbox.setRange(0, 999999)
+        self.max_qty_spinbox.setValue(999999)
+        self.max_qty_spinbox.setMaximumWidth(80)
+        
+        second_row.addWidget(qty_label)
+        second_row.addWidget(self.min_qty_spinbox)
+        second_row.addWidget(QLabel("to"))
+        second_row.addWidget(self.max_qty_spinbox)
+        
+        # Expiry date filter
+        expiry_label = QLabel("Expiry:")
+        self.expiry_filter_combo = QComboBox()
+        self.expiry_filter_combo.addItems(["All", "Next 30 Days", "Next 60 Days", "Next 90 Days", "Past Due"])
+        self.expiry_filter_combo.setMaximumWidth(120)
+        
+        second_row.addWidget(expiry_label)
+        second_row.addWidget(self.expiry_filter_combo)
+        
+        second_row.addStretch()
+        
+        filter_layout.addLayout(second_row)
+        
+        # Third row - Sort and action buttons
+        third_row = QHBoxLayout()
+        
+        # Sort options
+        sort_label = QLabel("Sort by:")
+        self.sort_combo = QComboBox()
+        self.sort_combo.addItems([
+            "Name (A-Z)", "Name (Z-A)", 
+            "Category (A-Z)", "Category (Z-A)",
+            "Quantity (Low-High)", "Quantity (High-Low)",
+            "Price (Low-High)", "Price (High-Low)",
+            "Expiry (Earliest)", "Expiry (Latest)",
+            "Recently Added", "Oldest First"
+        ])
+        self.sort_combo.setMaximumWidth(150)
+        
+        third_row.addWidget(sort_label)
+        third_row.addWidget(self.sort_combo)
+        
+        third_row.addStretch()
+        
+        # Action buttons
         self.clear_filters_button = StyledButton("Clear Filters", "outline")
         self.clear_filters_button.setMaximumWidth(120)
-        filter_layout.addWidget(self.clear_filters_button)
+        
+        self.save_filter_button = StyledButton("Save Filter", "outline")
+        self.save_filter_button.setMaximumWidth(100)
+        
+        self.advanced_search_button = StyledButton("Advanced", "outline")
+        self.advanced_search_button.setMaximumWidth(80)
+        self.advanced_search_button.setCheckable(True)
+        
+        third_row.addWidget(self.clear_filters_button)
+        third_row.addWidget(self.save_filter_button)
+        third_row.addWidget(self.advanced_search_button)
+        
+        filter_layout.addLayout(third_row)
+        
+        # Advanced search panel (initially hidden)
+        self._create_advanced_search_panel(filter_layout)
         
         self.main_layout.addWidget(filter_frame)
+    
+    def _create_advanced_search_panel(self, parent_layout):
+        """Create advanced search panel"""
+        self.advanced_panel = QFrame()
+        self.advanced_panel.setFrameStyle(QFrame.StyledPanel)
+        self.advanced_panel.hide()  # Initially hidden
+        
+        advanced_layout = QVBoxLayout(self.advanced_panel)
+        advanced_layout.setContentsMargins(15, 10, 15, 10)
+        advanced_layout.setSpacing(10)
+        
+        # Advanced search title
+        title_label = QLabel("Advanced Search Options")
+        title_font = QFont()
+        title_font.setBold(True)
+        title_label.setFont(title_font)
+        advanced_layout.addWidget(title_label)
+        
+        # Multi-criteria search
+        criteria_layout = QGridLayout()
+        
+        # Batch number search
+        criteria_layout.addWidget(QLabel("Batch Number:"), 0, 0)
+        self.batch_search_field = ValidatedLineEdit("Search by batch number...")
+        self.batch_search_field.textChanged.connect(self._apply_filters)
+        criteria_layout.addWidget(self.batch_search_field, 0, 1)
+        
+        # Barcode search
+        criteria_layout.addWidget(QLabel("Barcode:"), 0, 2)
+        self.barcode_search_field = ValidatedLineEdit("Search by barcode...")
+        self.barcode_search_field.textChanged.connect(self._apply_filters)
+        criteria_layout.addWidget(self.barcode_search_field, 0, 3)
+        
+        # Profit margin filter
+        criteria_layout.addWidget(QLabel("Profit Margin:"), 1, 0)
+        self.min_margin_spinbox = QDoubleSpinBox()
+        self.min_margin_spinbox.setRange(-100.0, 1000.0)
+        self.min_margin_spinbox.setSuffix("%")
+        self.min_margin_spinbox.valueChanged.connect(self._apply_filters)
+        criteria_layout.addWidget(self.min_margin_spinbox, 1, 1)
+        
+        self.max_margin_spinbox = QDoubleSpinBox()
+        self.max_margin_spinbox.setRange(-100.0, 1000.0)
+        self.max_margin_spinbox.setValue(1000.0)
+        self.max_margin_spinbox.setSuffix("%")
+        self.max_margin_spinbox.valueChanged.connect(self._apply_filters)
+        criteria_layout.addWidget(self.max_margin_spinbox, 1, 3)
+        
+        criteria_layout.addWidget(QLabel("to"), 1, 2)
+        
+        # Date range filters
+        criteria_layout.addWidget(QLabel("Added After:"), 2, 0)
+        self.added_after_date = QDateEdit()
+        self.added_after_date.setDate(QDate.currentDate().addDays(-365))
+        self.added_after_date.setCalendarPopup(True)
+        self.added_after_date.dateChanged.connect(self._apply_filters)
+        criteria_layout.addWidget(self.added_after_date, 2, 1)
+        
+        criteria_layout.addWidget(QLabel("Added Before:"), 2, 2)
+        self.added_before_date = QDateEdit()
+        self.added_before_date.setDate(QDate.currentDate())
+        self.added_before_date.setCalendarPopup(True)
+        self.added_before_date.dateChanged.connect(self._apply_filters)
+        criteria_layout.addWidget(self.added_before_date, 2, 3)
+        
+        advanced_layout.addLayout(criteria_layout)
+        
+        # Saved filters section
+        saved_filters_layout = QHBoxLayout()
+        saved_filters_layout.addWidget(QLabel("Saved Filters:"))
+        
+        self.saved_filters_combo = QComboBox()
+        self.saved_filters_combo.addItem("Select saved filter...")
+        self.saved_filters_combo.currentTextChanged.connect(self._load_saved_filter)
+        saved_filters_layout.addWidget(self.saved_filters_combo)
+        
+        self.delete_filter_button = StyledButton("Delete", "danger")
+        self.delete_filter_button.setMaximumWidth(80)
+        self.delete_filter_button.clicked.connect(self._delete_saved_filter)
+        saved_filters_layout.addWidget(self.delete_filter_button)
+        
+        saved_filters_layout.addStretch()
+        advanced_layout.addLayout(saved_filters_layout)
+        
+        parent_layout.addWidget(self.advanced_panel)
     
     def _create_table_section(self):
         """Create the main table"""
@@ -231,11 +424,20 @@ class MedicineTableWidget(QWidget):
         self.refresh_button.clicked.connect(self.refresh_data)
         self.auto_refresh_button.toggled.connect(self._toggle_auto_refresh)
         self.clear_filters_button.clicked.connect(self.clear_filters)
+        self.save_filter_button.clicked.connect(self._save_current_filter)
+        self.advanced_search_button.toggled.connect(self._toggle_advanced_search)
         
         # Search and filter signals
         self.search_field.textChanged.connect(self._on_search_changed)
+        self.search_type_combo.currentTextChanged.connect(self._on_search_type_changed)
         self.category_filter_combo.currentTextChanged.connect(self._on_category_filter_changed)
         self.stock_filter_combo.currentTextChanged.connect(self._on_stock_filter_changed)
+        self.min_price_spinbox.valueChanged.connect(self._on_price_filter_changed)
+        self.max_price_spinbox.valueChanged.connect(self._on_price_filter_changed)
+        self.min_qty_spinbox.valueChanged.connect(self._on_quantity_filter_changed)
+        self.max_qty_spinbox.valueChanged.connect(self._on_quantity_filter_changed)
+        self.expiry_filter_combo.currentTextChanged.connect(self._on_expiry_filter_changed)
+        self.sort_combo.currentTextChanged.connect(self._on_sort_changed)
         
         # Table signals
         self.table.itemSelectionChanged.connect(self._on_selection_changed)
@@ -262,6 +464,11 @@ class MedicineTableWidget(QWidget):
         self.search_query = text.strip()
         self._apply_filters()
     
+    def _on_search_type_changed(self, search_type: str):
+        """Handle search type change"""
+        self.search_type = search_type
+        self._apply_filters()
+    
     def _on_category_filter_changed(self, category: str):
         """Handle category filter change"""
         self.category_filter = category if category != "All Categories" else ""
@@ -271,6 +478,125 @@ class MedicineTableWidget(QWidget):
         """Handle stock status filter change"""
         self.stock_filter = status if status != "All" else ""
         self._apply_filters()
+    
+    def _on_price_filter_changed(self):
+        """Handle price filter change"""
+        self.min_price = self.min_price_spinbox.value()
+        self.max_price = self.max_price_spinbox.value()
+        self._apply_filters()
+    
+    def _on_quantity_filter_changed(self):
+        """Handle quantity filter change"""
+        self.min_quantity = self.min_qty_spinbox.value()
+        self.max_quantity = self.max_qty_spinbox.value()
+        self._apply_filters()
+    
+    def _on_expiry_filter_changed(self, expiry_filter: str):
+        """Handle expiry filter change"""
+        self.expiry_filter = expiry_filter
+        self._apply_filters()
+    
+    def _on_sort_changed(self, sort_option: str):
+        """Handle sort option change"""
+        self.sort_option = sort_option
+        self._apply_filters()
+    
+    def _toggle_advanced_search(self, enabled: bool):
+        """Toggle advanced search panel"""
+        if enabled:
+            self.advanced_panel.show()
+            self.advanced_search_button.setText("Hide Advanced")
+        else:
+            self.advanced_panel.hide()
+            self.advanced_search_button.setText("Advanced")
+    
+    def _save_current_filter(self):
+        """Save current filter settings"""
+        from PySide6.QtWidgets import QInputDialog
+        
+        name, ok = QInputDialog.getText(self, "Save Filter", "Enter filter name:")
+        if ok and name.strip():
+            filter_settings = {
+                'search_query': self.search_query,
+                'search_type': self.search_type,
+                'category_filter': self.category_filter,
+                'stock_filter': self.stock_filter,
+                'min_price': self.min_price,
+                'max_price': self.max_price,
+                'min_quantity': self.min_quantity,
+                'max_quantity': self.max_quantity,
+                'expiry_filter': self.expiry_filter,
+                'sort_option': self.sort_option
+            }
+            
+            self.saved_filters[name.strip()] = filter_settings
+            self._update_saved_filters_combo()
+            self.logger.info(f"Filter saved: {name.strip()}")
+    
+    def _load_saved_filter(self, filter_name: str):
+        """Load saved filter settings"""
+        if filter_name in self.saved_filters:
+            settings = self.saved_filters[filter_name]
+            
+            # Apply settings to UI controls
+            self.search_field.setText(settings.get('search_query', ''))
+            
+            # Find and set search type
+            search_type_index = self.search_type_combo.findText(settings.get('search_type', 'All Fields'))
+            if search_type_index >= 0:
+                self.search_type_combo.setCurrentIndex(search_type_index)
+            
+            # Find and set category
+            category_index = self.category_filter_combo.findText(settings.get('category_filter', '') or 'All Categories')
+            if category_index >= 0:
+                self.category_filter_combo.setCurrentIndex(category_index)
+            
+            # Find and set stock filter
+            stock_index = self.stock_filter_combo.findText(settings.get('stock_filter', '') or 'All')
+            if stock_index >= 0:
+                self.stock_filter_combo.setCurrentIndex(stock_index)
+            
+            # Set price range
+            self.min_price_spinbox.setValue(settings.get('min_price', 0.0))
+            self.max_price_spinbox.setValue(settings.get('max_price', 999999.99))
+            
+            # Set quantity range
+            self.min_qty_spinbox.setValue(settings.get('min_quantity', 0))
+            self.max_qty_spinbox.setValue(settings.get('max_quantity', 999999))
+            
+            # Find and set expiry filter
+            expiry_index = self.expiry_filter_combo.findText(settings.get('expiry_filter', 'All'))
+            if expiry_index >= 0:
+                self.expiry_filter_combo.setCurrentIndex(expiry_index)
+            
+            # Find and set sort option
+            sort_index = self.sort_combo.findText(settings.get('sort_option', 'Name (A-Z)'))
+            if sort_index >= 0:
+                self.sort_combo.setCurrentIndex(sort_index)
+            
+            self.logger.info(f"Filter loaded: {filter_name}")
+    
+    def _delete_saved_filter(self):
+        """Delete selected saved filter"""
+        current_filter = self.saved_filters_combo.currentText()
+        if current_filter in self.saved_filters:
+            del self.saved_filters[current_filter]
+            self._update_saved_filters_combo()
+            self.logger.info(f"Filter deleted: {current_filter}")
+    
+    def _update_saved_filters_combo(self):
+        """Update saved filters combo box"""
+        current_selection = self.saved_filters_combo.currentText()
+        self.saved_filters_combo.clear()
+        self.saved_filters_combo.addItem("Select saved filter...")
+        
+        for filter_name in sorted(self.saved_filters.keys()):
+            self.saved_filters_combo.addItem(filter_name)
+        
+        # Restore selection if still valid
+        index = self.saved_filters_combo.findText(current_selection)
+        if index >= 0:
+            self.saved_filters_combo.setCurrentIndex(index)
     
     def _on_selection_changed(self):
         """Handle table selection change"""
@@ -372,14 +698,84 @@ Status: {medicine.get_stock_status()}
         """Apply search and filter criteria"""
         self.filtered_medicines = self.medicines.copy()
         
-        # Apply search filter
+        # Apply search filter based on search type
         if self.search_query:
             query_lower = self.search_query.lower()
-            self.filtered_medicines = [
-                medicine for medicine in self.filtered_medicines
-                if (query_lower in medicine.name.lower() or 
-                    (medicine.barcode and query_lower in medicine.barcode.lower()))
-            ]
+            
+            if self.search_type == "All Fields":
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if (query_lower in medicine.name.lower() or 
+                        query_lower in medicine.category.lower() or
+                        query_lower in medicine.batch_no.lower() or
+                        (medicine.barcode and query_lower in medicine.barcode.lower()))
+                ]
+            elif self.search_type == "Name Only":
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if query_lower in medicine.name.lower()
+                ]
+            elif self.search_type == "Category Only":
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if query_lower in medicine.category.lower()
+                ]
+            elif self.search_type == "Batch Number":
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if query_lower in medicine.batch_no.lower()
+                ]
+            elif self.search_type == "Barcode Only":
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if medicine.barcode and query_lower in medicine.barcode.lower()
+                ]
+        
+        # Apply advanced search filters if panel is visible or if fields have values (for testing)
+        apply_advanced = (hasattr(self, 'advanced_panel') and 
+                         (self.advanced_panel.isVisible() or 
+                          (hasattr(self, 'batch_search_field') and self.batch_search_field.text().strip()) or
+                          (hasattr(self, 'barcode_search_field') and self.barcode_search_field.text().strip())))
+        
+        if apply_advanced:
+            # Batch number filter
+            if hasattr(self, 'batch_search_field') and self.batch_search_field.text().strip():
+                batch_query = self.batch_search_field.text().strip().lower()
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if batch_query in medicine.batch_no.lower()
+                ]
+            
+            # Barcode filter
+            if hasattr(self, 'barcode_search_field') and self.barcode_search_field.text().strip():
+                barcode_query = self.barcode_search_field.text().strip().lower()
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if medicine.barcode and barcode_query in medicine.barcode.lower()
+                ]
+            
+            # Profit margin filter (only if panel is actually visible or values are non-default)
+            if (hasattr(self, 'min_margin_spinbox') and hasattr(self, 'max_margin_spinbox') and
+                hasattr(self, 'advanced_panel') and self.advanced_panel.isVisible()):
+                min_margin = self.min_margin_spinbox.value()
+                max_margin = self.max_margin_spinbox.value()
+                if min_margin != 0.0 or max_margin != 1000.0:  # Only apply if values changed from defaults
+                    self.filtered_medicines = [
+                        medicine for medicine in self.filtered_medicines
+                        if min_margin <= medicine.get_profit_margin() <= max_margin
+                    ]
+            
+            # Date range filter (only if panel is actually visible)
+            if (hasattr(self, 'added_after_date') and hasattr(self, 'added_before_date') and
+                hasattr(self, 'advanced_panel') and self.advanced_panel.isVisible()):
+                from datetime import datetime
+                start_date = self.added_after_date.date().toPython()
+                end_date = self.added_before_date.date().toPython()
+                
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if medicine.created_at and start_date <= datetime.strptime(medicine.created_at, "%Y-%m-%d").date() <= end_date
+                ]
         
         # Apply category filter
         if self.category_filter:
@@ -401,8 +797,79 @@ Status: {medicine.get_stock_status()}
             elif self.stock_filter == "Expiring Soon":
                 self.filtered_medicines = [m for m in self.filtered_medicines if m.is_expiring_soon()]
         
+        # Apply price range filter
+        self.filtered_medicines = [
+            medicine for medicine in self.filtered_medicines
+            if self.min_price <= medicine.selling_price <= self.max_price
+        ]
+        
+        # Apply quantity range filter
+        self.filtered_medicines = [
+            medicine for medicine in self.filtered_medicines
+            if self.min_quantity <= medicine.quantity <= self.max_quantity
+        ]
+        
+        # Apply expiry filter
+        if self.expiry_filter != "All":
+            from datetime import date, timedelta, datetime
+            today = date.today()
+            
+            if self.expiry_filter == "Next 30 Days":
+                future_date = today + timedelta(days=30)
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if today <= datetime.strptime(medicine.expiry_date, "%Y-%m-%d").date() <= future_date
+                ]
+            elif self.expiry_filter == "Next 60 Days":
+                future_date = today + timedelta(days=60)
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if today <= datetime.strptime(medicine.expiry_date, "%Y-%m-%d").date() <= future_date
+                ]
+            elif self.expiry_filter == "Next 90 Days":
+                future_date = today + timedelta(days=90)
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if today <= datetime.strptime(medicine.expiry_date, "%Y-%m-%d").date() <= future_date
+                ]
+            elif self.expiry_filter == "Past Due":
+                self.filtered_medicines = [
+                    medicine for medicine in self.filtered_medicines
+                    if medicine.is_expired()
+                ]
+        
+        # Apply sorting
+        self._sort_medicines()
+        
         self._populate_table()
         self._update_statistics()
+    
+    def _sort_medicines(self):
+        """Sort filtered medicines based on selected option"""
+        if self.sort_option == "Name (A-Z)":
+            self.filtered_medicines.sort(key=lambda m: m.name.lower())
+        elif self.sort_option == "Name (Z-A)":
+            self.filtered_medicines.sort(key=lambda m: m.name.lower(), reverse=True)
+        elif self.sort_option == "Category (A-Z)":
+            self.filtered_medicines.sort(key=lambda m: (m.category.lower(), m.name.lower()))
+        elif self.sort_option == "Category (Z-A)":
+            self.filtered_medicines.sort(key=lambda m: (m.category.lower(), m.name.lower()), reverse=True)
+        elif self.sort_option == "Quantity (Low-High)":
+            self.filtered_medicines.sort(key=lambda m: m.quantity)
+        elif self.sort_option == "Quantity (High-Low)":
+            self.filtered_medicines.sort(key=lambda m: m.quantity, reverse=True)
+        elif self.sort_option == "Price (Low-High)":
+            self.filtered_medicines.sort(key=lambda m: m.selling_price)
+        elif self.sort_option == "Price (High-Low)":
+            self.filtered_medicines.sort(key=lambda m: m.selling_price, reverse=True)
+        elif self.sort_option == "Expiry (Earliest)":
+            self.filtered_medicines.sort(key=lambda m: m.expiry_date)
+        elif self.sort_option == "Expiry (Latest)":
+            self.filtered_medicines.sort(key=lambda m: m.expiry_date, reverse=True)
+        elif self.sort_option == "Recently Added":
+            self.filtered_medicines.sort(key=lambda m: m.created_at or "", reverse=True)
+        elif self.sort_option == "Oldest First":
+            self.filtered_medicines.sort(key=lambda m: m.created_at or "")
     
     def _populate_table(self):
         """Populate table with filtered medicine data"""
@@ -503,14 +970,50 @@ Status: {medicine.get_stock_status()}
     
     def clear_filters(self):
         """Clear all filters and search"""
+        # Clear basic filters
         self.search_field.clear()
+        self.search_type_combo.setCurrentIndex(0)
         self.category_filter_combo.setCurrentIndex(0)
         self.stock_filter_combo.setCurrentIndex(0)
+        
+        # Clear price and quantity ranges
+        self.min_price_spinbox.setValue(0.0)
+        self.max_price_spinbox.setValue(999999.99)
+        self.min_qty_spinbox.setValue(0)
+        self.max_qty_spinbox.setValue(999999)
+        
+        # Clear expiry and sort filters
+        self.expiry_filter_combo.setCurrentIndex(0)
+        self.sort_combo.setCurrentIndex(0)
+        
+        # Clear advanced search fields if they exist
+        if hasattr(self, 'batch_search_field'):
+            self.batch_search_field.clear()
+        if hasattr(self, 'barcode_search_field'):
+            self.barcode_search_field.clear()
+        if hasattr(self, 'min_margin_spinbox'):
+            self.min_margin_spinbox.setValue(-100.0)
+        if hasattr(self, 'max_margin_spinbox'):
+            self.max_margin_spinbox.setValue(1000.0)
+        
+        # Reset filter state
         self.search_query = ""
+        self.search_type = "All Fields"
         self.category_filter = ""
         self.stock_filter = ""
+        self.min_price = 0.0
+        self.max_price = 999999.99
+        self.min_quantity = 0
+        self.max_quantity = 999999
+        self.expiry_filter = "All"
+        self.sort_option = "Name (A-Z)"
+        
+        # Clear saved filter selection
+        if hasattr(self, 'saved_filters_combo'):
+            self.saved_filters_combo.setCurrentIndex(0)
+        
         self._apply_filters()
-        self.logger.info("Filters cleared")
+        self.logger.info("All filters cleared")
     
     def get_selected_medicine(self) -> Optional[Medicine]:
         """Get currently selected medicine"""

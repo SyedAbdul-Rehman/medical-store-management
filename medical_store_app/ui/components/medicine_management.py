@@ -6,7 +6,7 @@ Integrates medicine form, table, and dialog components for complete medicine man
 import logging
 from typing import Optional
 from PySide6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QSplitter, QMessageBox, QFrame
+    QWidget, QVBoxLayout, QHBoxLayout, QSplitter, QMessageBox, QFrame, QDialog
 )
 from PySide6.QtCore import Qt, Signal
 
@@ -159,7 +159,7 @@ class MedicineManagementWidget(QWidget):
             dialog.medicine_updated.connect(self._on_medicine_updated_from_dialog)
             
             result = dialog.exec()
-            if result == dialog.Accepted:
+            if result == QDialog.Accepted:
                 self.logger.info(f"Medicine edit dialog completed for: {medicine.name}")
             else:
                 self.logger.info(f"Medicine edit dialog cancelled for: {medicine.name}")
@@ -176,7 +176,7 @@ class MedicineManagementWidget(QWidget):
             dialog.medicine_deleted.connect(self._on_medicine_deleted_from_dialog)
             
             result = dialog.exec()
-            if result == dialog.Accepted:
+            if result == QDialog.Accepted:
                 self.logger.info(f"Medicine delete dialog completed for: {medicine.name}")
             else:
                 self.logger.info(f"Medicine delete dialog cancelled for: {medicine.name}")

@@ -12,12 +12,12 @@ from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon
 
 # Add the project root to Python path
-project_root = Path(__file__).parent
+project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from .config.database import DatabaseManager
-from .config.settings import AppSettings
-from .ui.main_window import MainWindow
+from medical_store_app.config.database import DatabaseManager
+from medical_store_app.config.settings import AppSettings
+from medical_store_app.ui.main_window import MainWindow
 
 
 def setup_logging():
@@ -49,8 +49,20 @@ def main():
         app.setOrganizationName("Medical Store Solutions")
         
         # Set application properties for high DPI displays
-        app.setAttribute(Qt.AA_EnableHighDpiScaling, True)
-        app.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
+        # Note: These attributes are deprecated in Qt 6 as high DPI is enabled by default
+        # Only set them if they exist and we're not using Qt 6
+        try:
+            from PySide6 import __version__ as pyside_version
+            major_version = int(pyside_version.split('.')[0])
+            
+            if major_version < 6:
+                if hasattr(Qt, 'AA_EnableHighDpiScaling'):
+                    app.setAttribute(Qt.AA_EnableHighDpiScaling, True)
+                if hasattr(Qt, 'AA_UseHighDpiPixmaps'):
+                    app.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
+        except (ImportError, ValueError, AttributeError):
+            # Fallback for older versions or if version detection fails
+            pass
         
         # Initialize database
         logger.info("Initializing database...")

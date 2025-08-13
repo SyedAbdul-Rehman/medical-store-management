@@ -142,9 +142,15 @@
     - Write integration tests for edit and delete workflows
     - _Requirements: 2.4, 2.5_
 
-- [ ] 7. Enhance inventory management features (Phase 2)
+- [x] 7. Enhance inventory management features (Phase 2)
 
-  - [ ] 7.1 Implement low-stock and expiry alert system
+
+
+
+
+  - [x] 7.1 Implement low-stock and expiry alert system
+
+
 
     - Create alert widgets displaying low-stock medicines
     - Add expiry date monitoring and warning displays
@@ -152,7 +158,11 @@
     - Write tests for alert generation and display logic
     - _Requirements: 2.6, 2.7_
 
-  - [ ] 7.2 Add inventory filtering and search capabilities
+  - [x] 7.2 Add inventory filtering and search capabilities
+
+
+
+
     - Enhance medicine table with advanced filtering options
     - Implement category-based filtering and multi-criteria search
     - Add sorting by various fields (name, expiry, quantity, etc.)
