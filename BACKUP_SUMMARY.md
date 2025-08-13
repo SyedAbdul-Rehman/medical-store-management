@@ -22,11 +22,11 @@ python scripts/backup_restore.py restore <commit-hash>
 
 ## 📋 Available Restore Points
 
-### Current Version: `d0387d7` (Latest)
+### Current Version: `1a586e5` (Latest)
 - **Status**: ✅ Active
-- **Features**: Complete Medicine Management UI + all previous features
+- **Features**: Enhanced inventory management + Medicine UI + all previous features
 - **Date**: 2025-08-13
-- **Major Milestone**: Phase 1 Medicine Management Complete
+- **Major Milestone**: Phase 2 Inventory Management Complete
 
 ### Version: `e17e685` (Backup System Complete)
 - **Status**: ✅ Stable
@@ -129,6 +129,13 @@ python medical_store_app/main.py
 - Integrated with existing business logic and navigation
 - Added comprehensive test coverage (4 new test files)
 
+### ✅ Phase 6: Enhanced Inventory Management (Complete)
+- Low-stock and expiry alert system
+- Advanced filtering and multi-criteria search
+- Category-based filtering options
+- Enhanced medicine table with sorting capabilities
+- Alert widgets and threshold configuration
+
 ## 🔮 Next Steps
 
 When you're ready to continue development:
@@ -150,7 +157,7 @@ If you need to restore or have any issues:
 
 **Developer**: Syed Abdul Rehman  
 **Repository**: https://github.com/SyedAbdul-Rehman/medical-store-management  
-**Latest Commit**: `d0387d7`
+**Latest Commit**: `1a586e5`
 
 ---
 
