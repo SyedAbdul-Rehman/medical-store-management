@@ -15,9 +15,9 @@ from PySide6.QtGui import QIcon
 project_root = Path(__file__).parent
 sys.path.insert(0, str(project_root))
 
-from config.database import DatabaseManager
-from config.settings import AppSettings
-from ui.main_window import MainWindow
+from .config.database import DatabaseManager
+from .config.settings import AppSettings
+from .ui.main_window import MainWindow
 
 
 def setup_logging():

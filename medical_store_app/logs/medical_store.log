@@ -158,3 +158,177 @@
 2025-08-13 00:36:00,582 [INFO] ui.components.sidebar: Sidebar toggled: expanded
 2025-08-13 00:36:00,887 [INFO] ui.main_window: Sidebar expanded
 2025-08-13 00:36:04,219 [INFO] ui.main_window: Application closing...
+2025-08-13 00:45:33,404 [INFO] __main__: Initializing database...
+2025-08-13 00:45:33,405 [INFO] config.database: Initializing database tables...
+2025-08-13 00:45:33,406 [INFO] config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-13 00:45:33,408 [INFO] config.database: Database initialization completed successfully
+2025-08-13 00:45:33,408 [INFO] __main__: Loading application settings...
+2025-08-13 00:45:33,409 [INFO] __main__: Starting main application window...
+2025-08-13 00:45:33,437 [INFO] ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 00:45:33,439 [INFO] ui.components.sidebar: Sidebar navigation component initialized
+2025-08-13 00:45:33,447 [INFO] ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-13 00:45:33,558 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-13 00:45:35,650 [INFO] ui.components.sidebar: Menu item clicked: billing
+2025-08-13 00:45:35,651 [INFO] ui.components.sidebar: Active menu item set to: billing
+2025-08-13 00:45:35,652 [INFO] ui.main_window: Menu item selected: billing
+2025-08-13 00:45:36,338 [INFO] ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 00:45:36,339 [INFO] ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 00:45:36,340 [INFO] ui.main_window: Menu item selected: medicine
+2025-08-13 00:45:36,842 [INFO] ui.components.sidebar: Menu item clicked: reports
+2025-08-13 00:45:36,843 [INFO] ui.components.sidebar: Active menu item set to: reports
+2025-08-13 00:45:36,844 [INFO] ui.main_window: Menu item selected: reports
+2025-08-13 00:45:37,250 [INFO] ui.components.sidebar: Menu item clicked: settings
+2025-08-13 00:45:37,251 [INFO] ui.components.sidebar: Active menu item set to: settings
+2025-08-13 00:45:37,252 [INFO] ui.main_window: Menu item selected: settings
+2025-08-13 00:45:37,778 [INFO] ui.components.sidebar: Menu item clicked: billing
+2025-08-13 00:45:37,779 [INFO] ui.components.sidebar: Active menu item set to: billing
+2025-08-13 00:45:37,780 [INFO] ui.main_window: Menu item selected: billing
+2025-08-13 00:45:38,378 [INFO] ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 00:45:38,379 [INFO] ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 00:45:38,380 [INFO] ui.main_window: Menu item selected: medicine
+2025-08-13 00:45:39,274 [INFO] ui.components.sidebar: Menu item clicked: dashboard
+2025-08-13 00:45:39,275 [INFO] ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 00:45:39,276 [INFO] ui.main_window: Menu item selected: dashboard
+2025-08-13 00:45:40,243 [INFO] ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-13 00:45:40,548 [INFO] ui.main_window: Sidebar collapsed
+2025-08-13 00:45:42,338 [INFO] ui.components.sidebar: Sidebar toggled: expanded
+2025-08-13 00:45:42,643 [INFO] ui.main_window: Sidebar expanded
+2025-08-13 00:45:47,069 [INFO] ui.main_window: Application closing...
+2025-08-13 10:07:16,468 [INFO] __main__: Initializing database...
+2025-08-13 10:07:16,478 [INFO] config.database: Initializing database tables...
+2025-08-13 10:07:16,499 [INFO] config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-13 10:07:16,506 [INFO] config.database: Database initialization completed successfully
+2025-08-13 10:07:16,506 [INFO] __main__: Loading application settings...
+2025-08-13 10:07:16,507 [INFO] __main__: Starting main application window...
+2025-08-13 10:07:16,627 [INFO] ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 10:07:16,628 [INFO] ui.components.sidebar: Sidebar navigation component initialized
+2025-08-13 10:07:16,644 [INFO] ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-13 10:07:17,091 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-13 10:07:20,082 [INFO] ui.components.sidebar: Menu item clicked: dashboard
+2025-08-13 10:07:20,101 [INFO] ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 10:07:20,103 [INFO] ui.main_window: Menu item selected: dashboard
+2025-08-13 10:07:21,001 [INFO] ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 10:07:21,003 [INFO] ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 10:07:21,004 [INFO] ui.main_window: Menu item selected: medicine
+2025-08-13 10:07:21,738 [INFO] ui.components.sidebar: Menu item clicked: billing
+2025-08-13 10:07:21,740 [INFO] ui.components.sidebar: Active menu item set to: billing
+2025-08-13 10:07:21,740 [INFO] ui.main_window: Menu item selected: billing
+2025-08-13 10:07:22,330 [INFO] ui.components.sidebar: Menu item clicked: settings
+2025-08-13 10:07:22,331 [INFO] ui.components.sidebar: Active menu item set to: settings
+2025-08-13 10:07:22,332 [INFO] ui.main_window: Menu item selected: settings
+2025-08-13 10:07:23,257 [INFO] ui.components.sidebar: Menu item clicked: settings
+2025-08-13 10:07:23,260 [INFO] ui.components.sidebar: Active menu item set to: settings
+2025-08-13 10:07:23,260 [INFO] ui.main_window: Menu item selected: settings
+2025-08-13 10:07:23,721 [INFO] ui.components.sidebar: Menu item clicked: reports
+2025-08-13 10:07:23,723 [INFO] ui.components.sidebar: Active menu item set to: reports
+2025-08-13 10:07:23,724 [INFO] ui.main_window: Menu item selected: reports
+2025-08-13 10:07:24,217 [INFO] ui.components.sidebar: Menu item clicked: billing
+2025-08-13 10:07:24,219 [INFO] ui.components.sidebar: Active menu item set to: billing
+2025-08-13 10:07:24,220 [INFO] ui.main_window: Menu item selected: billing
+2025-08-13 10:07:24,689 [INFO] ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 10:07:24,691 [INFO] ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 10:07:24,692 [INFO] ui.main_window: Menu item selected: medicine
+2025-08-13 10:07:25,217 [INFO] ui.components.sidebar: Menu item clicked: dashboard
+2025-08-13 10:07:25,219 [INFO] ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 10:07:25,220 [INFO] ui.main_window: Menu item selected: dashboard
+2025-08-13 10:07:26,676 [INFO] ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-13 10:07:26,981 [INFO] ui.main_window: Sidebar collapsed
+2025-08-13 10:07:27,410 [INFO] ui.components.sidebar: Sidebar toggled: expanded
+2025-08-13 10:07:27,727 [INFO] ui.main_window: Sidebar expanded
+2025-08-13 10:07:35,865 [INFO] ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 10:07:35,867 [INFO] ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 10:07:35,867 [INFO] ui.main_window: Menu item selected: medicine
+2025-08-13 10:07:36,498 [INFO] ui.components.sidebar: Menu item clicked: reports
+2025-08-13 10:07:36,499 [INFO] ui.components.sidebar: Active menu item set to: reports
+2025-08-13 10:07:36,500 [INFO] ui.main_window: Menu item selected: reports
+2025-08-13 10:07:37,566 [INFO] ui.main_window: Application closing...
+2025-08-13 10:08:27,798 [INFO] __main__: Initializing database...
+2025-08-13 10:08:27,798 [INFO] config.database: Initializing database tables...
+2025-08-13 10:08:27,799 [INFO] config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-13 10:08:27,801 [INFO] config.database: Database initialization completed successfully
+2025-08-13 10:08:27,802 [INFO] __main__: Loading application settings...
+2025-08-13 10:08:27,802 [INFO] __main__: Starting main application window...
+2025-08-13 10:08:27,833 [INFO] ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 10:08:27,835 [INFO] ui.components.sidebar: Sidebar navigation component initialized
+2025-08-13 10:08:27,844 [INFO] ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-13 10:08:27,936 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-13 10:08:30,497 [INFO] ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 10:08:30,499 [INFO] ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 10:08:30,499 [INFO] ui.main_window: Menu item selected: medicine
+2025-08-13 10:08:38,049 [INFO] ui.components.sidebar: Menu item clicked: dashboard
+2025-08-13 10:08:38,051 [INFO] ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 10:08:38,051 [INFO] ui.main_window: Menu item selected: dashboard
+2025-08-13 10:08:38,553 [INFO] ui.components.sidebar: Menu item clicked: reports
+2025-08-13 10:08:38,554 [INFO] ui.components.sidebar: Active menu item set to: reports
+2025-08-13 10:08:38,555 [INFO] ui.main_window: Menu item selected: reports
+2025-08-13 10:08:38,945 [INFO] ui.components.sidebar: Menu item clicked: settings
+2025-08-13 10:08:38,946 [INFO] ui.components.sidebar: Active menu item set to: settings
+2025-08-13 10:08:38,947 [INFO] ui.main_window: Menu item selected: settings
+2025-08-13 10:08:39,369 [INFO] ui.components.sidebar: Menu item clicked: reports
+2025-08-13 10:08:39,370 [INFO] ui.components.sidebar: Active menu item set to: reports
+2025-08-13 10:08:39,371 [INFO] ui.main_window: Menu item selected: reports
+2025-08-13 10:08:39,753 [INFO] ui.components.sidebar: Menu item clicked: billing
+2025-08-13 10:08:39,755 [INFO] ui.components.sidebar: Active menu item set to: billing
+2025-08-13 10:08:39,756 [INFO] ui.main_window: Menu item selected: billing
+2025-08-13 10:08:40,185 [INFO] ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 10:08:40,186 [INFO] ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 10:08:40,187 [INFO] ui.main_window: Menu item selected: medicine
+2025-08-13 10:08:42,220 [INFO] ui.main_window: Application closing...
+2025-08-13 10:15:34,659 [INFO] __main__: Initializing database...
+2025-08-13 10:15:34,659 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-13 10:15:34,660 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-13 10:15:34,663 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-13 10:15:34,663 [INFO] __main__: Loading application settings...
+2025-08-13 10:15:34,665 [INFO] __main__: Starting main application window...
+2025-08-13 10:15:34,691 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 10:15:34,697 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-13 10:15:34,720 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-13 10:15:34,730 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-13 10:15:34,823 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-13 10:18:04,445 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 10:18:04,448 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 10:18:04,448 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-13 10:18:04,571 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-13 10:18:04,573 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-13 10:18:04,641 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-13 10:18:04,642 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-13 10:18:04,643 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-13 10:18:04,730 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-13 10:18:04,730 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-13 10:18:04,731 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-13 10:18:52,568 [INFO] medical_store_app.ui.components.medicine_form: Started add medicine operation
+2025-08-13 10:18:52,585 [INFO] medical_store_app.repositories.medicine_repository: Medicine saved successfully: Pandole (ID: 1)
+2025-08-13 10:18:52,670 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Pandole' added successfully
+2025-08-13 10:18:54,447 [INFO] medical_store_app.ui.components.medicine_table: Added medicine to table: Pandole
+2025-08-13 10:18:54,448 [INFO] medical_store_app.ui.main_window: Medicine added: Pandole
+2025-08-13 10:18:54,448 [INFO] medical_store_app.ui.components.medicine_management: Medicine added: Pandole
+2025-08-13 10:18:54,460 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-13 10:18:54,462 [INFO] medical_store_app.ui.components.medicine_management: Form operation completed: Medicine 'Pandole' added successfully
+2025-08-13 10:18:54,464 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-13 10:18:54,465 [INFO] medical_store_app.ui.components.medicine_form: Medicine operation completed successfully: Medicine 'Pandole' added successfully
+2025-08-13 10:19:21,069 [INFO] medical_store_app.ui.components.medicine_table: Auto-refresh enabled
+2025-08-13 10:19:21,876 [INFO] medical_store_app.ui.components.medicine_table: Auto-refresh disabled
+2025-08-13 10:19:22,804 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 1 medicines loaded
+2025-08-13 10:19:24,661 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-13 10:19:24,663 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-13 10:19:24,664 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-13 10:19:24,673 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Billing System
+2025-08-13 10:19:25,189 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: reports
+2025-08-13 10:19:25,191 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-13 10:19:25,191 [INFO] medical_store_app.ui.main_window: Menu item selected: reports
+2025-08-13 10:19:25,195 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Reports
+2025-08-13 10:19:25,597 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: settings
+2025-08-13 10:19:25,598 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: settings
+2025-08-13 10:19:25,599 [INFO] medical_store_app.ui.main_window: Menu item selected: settings
+2025-08-13 10:19:25,604 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Settings
+2025-08-13 10:19:26,141 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-13 10:19:26,144 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-13 10:19:26,145 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-13 10:19:26,148 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-13 10:19:26,636 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-13 10:19:26,638 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-13 10:19:26,639 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-13 10:19:26,646 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 1 medicines loaded
+2025-08-13 10:19:26,646 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-13 10:19:26,647 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-13 10:19:28,248 [INFO] medical_store_app.ui.main_window: Application closing...

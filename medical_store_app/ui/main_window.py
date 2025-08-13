@@ -11,7 +11,11 @@ from PySide6.QtWidgets import (
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtGui import QFont, QPalette
 
-from ui.components.sidebar import Sidebar
+from .components.sidebar import Sidebar
+from .components.medicine_management import MedicineManagementWidget
+from ..managers.medicine_manager import MedicineManager
+from ..repositories.medicine_repository import MedicineRepository
+from ..config.database import DatabaseManager
 
 
 class MainWindow(QMainWindow):
@@ -35,6 +39,15 @@ class MainWindow(QMainWindow):
         self.sidebar = None
         self.content_area = None
         self.main_layout = None
+        
+        # Initialize managers and repositories
+        self.db_manager = DatabaseManager()
+        self.medicine_repository = MedicineRepository(self.db_manager)
+        self.medicine_manager = MedicineManager(self.medicine_repository)
+        
+        # Content widgets
+        self.medicine_management_widget = None
+        self.current_content_widget = None
         
         # Center the window on screen
         self._center_window()
@@ -144,31 +157,13 @@ class MainWindow(QMainWindow):
         self.content_area.setObjectName("contentArea")
         self.content_area.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         
-        content_layout = QVBoxLayout(self.content_area)
-        content_layout.setContentsMargins(20, 20, 20, 20)
+        # Create layout for content area
+        self.content_layout = QVBoxLayout(self.content_area)
+        self.content_layout.setContentsMargins(0, 0, 0, 0)
+        self.content_layout.setSpacing(0)
         
-        # Welcome content (placeholder)
-        welcome_label = QLabel("Welcome to Medical Store Management System")
-        welcome_label.setAlignment(Qt.AlignCenter)
-        welcome_label.setObjectName("welcomeLabel")
-        
-        font = QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        welcome_label.setFont(font)
-        
-        content_layout.addWidget(welcome_label)
-        
-        # Status message
-        status_label = QLabel("Main window layout initialized successfully.\nSidebar and content areas are ready.")
-        status_label.setAlignment(Qt.AlignCenter)
-        status_label.setObjectName("statusLabel")
-        status_label.setStyleSheet("color: #27AE60; font-size: 14px; margin-top: 20px;")
-        
-        content_layout.addWidget(status_label)
-        
-        # Add stretch to center content vertically
-        content_layout.addStretch()
+        # Show dashboard by default
+        self._show_dashboard_content()
     
     def _on_sidebar_toggle(self):
         """Handle sidebar toggle button click"""
@@ -179,17 +174,21 @@ class MainWindow(QMainWindow):
     def _on_menu_item_selected(self, item_key: str):
         """Handle menu item selection from sidebar"""
         self.logger.info(f"Menu item selected: {item_key}")
-        # TODO: Switch content area based on selected item
-        # This will be implemented when content widgets are created
         
-        # Update content area with selected item info for now
-        if hasattr(self, 'content_area'):
-            # Find and update the welcome label
-            labels = self.content_area.findChildren(QLabel)
-            for label in labels:
-                if "Welcome" in label.text():
-                    label.setText(f"Welcome to Medical Store Management System\nSelected: {item_key.title()}")
-                    break
+        # Switch content based on selected item
+        if item_key == "dashboard":
+            self._show_dashboard_content()
+        elif item_key == "medicine":
+            self._show_medicine_management()
+        elif item_key == "billing":
+            self._show_billing_content()
+        elif item_key == "reports":
+            self._show_reports_content()
+        elif item_key == "settings":
+            self._show_settings_content()
+        else:
+            self.logger.warning(f"Unknown menu item: {item_key}")
+            self._show_dashboard_content()
     
     def _on_sidebar_toggled(self, is_expanded: bool):
         """Handle sidebar toggle state change"""
@@ -272,6 +271,174 @@ class MainWindow(QMainWindow):
     def get_header_widget(self):
         """Get the header widget"""
         return self.header_widget
+    
+    def _clear_content_area(self):
+        """Clear the current content from content area"""
+        if self.current_content_widget:
+            self.content_layout.removeWidget(self.current_content_widget)
+            self.current_content_widget.hide()
+            self.current_content_widget = None
+    
+    def _show_dashboard_content(self):
+        """Show dashboard content"""
+        self._clear_content_area()
+        
+        # Create dashboard widget
+        dashboard_widget = QWidget()
+        dashboard_layout = QVBoxLayout(dashboard_widget)
+        dashboard_layout.setContentsMargins(20, 20, 20, 20)
+        
+        # Welcome content
+        welcome_label = QLabel("Welcome to Medical Store Management System")
+        welcome_label.setAlignment(Qt.AlignCenter)
+        welcome_label.setObjectName("welcomeLabel")
+        
+        font = QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        welcome_label.setFont(font)
+        
+        dashboard_layout.addWidget(welcome_label)
+        
+        # Status message
+        status_label = QLabel("Select 'Medicine Management' from the sidebar to manage your medicine inventory.")
+        status_label.setAlignment(Qt.AlignCenter)
+        status_label.setObjectName("statusLabel")
+        status_label.setStyleSheet("color: #27AE60; font-size: 14px; margin-top: 20px;")
+        
+        dashboard_layout.addWidget(status_label)
+        dashboard_layout.addStretch()
+        
+        # Add to content area
+        self.content_layout.addWidget(dashboard_widget)
+        self.current_content_widget = dashboard_widget
+        dashboard_widget.show()
+        
+        self.logger.info("Dashboard content displayed")
+    
+    def _show_medicine_management(self):
+        """Show medicine management content"""
+        self._clear_content_area()
+        
+        # Create medicine management widget if not exists
+        if not self.medicine_management_widget:
+            try:
+                self.medicine_management_widget = MedicineManagementWidget(self.medicine_manager)
+                
+                # Connect signals for logging
+                self.medicine_management_widget.medicine_added.connect(
+                    lambda medicine: self.logger.info(f"Medicine added: {medicine.name}")
+                )
+                self.medicine_management_widget.medicine_updated.connect(
+                    lambda medicine: self.logger.info(f"Medicine updated: {medicine.name}")
+                )
+                self.medicine_management_widget.medicine_deleted.connect(
+                    lambda medicine_id: self.logger.info(f"Medicine deleted: ID {medicine_id}")
+                )
+                
+                self.logger.info("Medicine management widget created successfully")
+                
+            except Exception as e:
+                self.logger.error(f"Failed to create medicine management widget: {e}")
+                self._show_error_content("Medicine Management", str(e))
+                return
+        
+        # Add to content area
+        self.content_layout.addWidget(self.medicine_management_widget)
+        self.current_content_widget = self.medicine_management_widget
+        self.medicine_management_widget.show()
+        
+        # Refresh data
+        try:
+            self.medicine_management_widget.refresh_data()
+        except Exception as e:
+            self.logger.error(f"Failed to refresh medicine data: {e}")
+        
+        self.logger.info("Medicine management content displayed")
+    
+    def _show_billing_content(self):
+        """Show billing content (placeholder)"""
+        self._show_placeholder_content("Billing System", "Billing functionality will be implemented in a future update.")
+    
+    def _show_reports_content(self):
+        """Show reports content (placeholder)"""
+        self._show_placeholder_content("Reports", "Reports functionality will be implemented in a future update.")
+    
+    def _show_settings_content(self):
+        """Show settings content (placeholder)"""
+        self._show_placeholder_content("Settings", "Settings functionality will be implemented in a future update.")
+    
+    def _show_placeholder_content(self, title: str, message: str):
+        """Show placeholder content for unimplemented features"""
+        self._clear_content_area()
+        
+        # Create placeholder widget
+        placeholder_widget = QWidget()
+        placeholder_layout = QVBoxLayout(placeholder_widget)
+        placeholder_layout.setContentsMargins(20, 20, 20, 20)
+        
+        # Title
+        title_label = QLabel(title)
+        title_label.setAlignment(Qt.AlignCenter)
+        title_label.setObjectName("placeholderTitle")
+        
+        font = QFont()
+        font.setPointSize(18)
+        font.setBold(True)
+        title_label.setFont(font)
+        
+        placeholder_layout.addWidget(title_label)
+        
+        # Message
+        message_label = QLabel(message)
+        message_label.setAlignment(Qt.AlignCenter)
+        message_label.setObjectName("placeholderMessage")
+        message_label.setStyleSheet("color: #666666; font-size: 14px; margin-top: 20px;")
+        message_label.setWordWrap(True)
+        
+        placeholder_layout.addWidget(message_label)
+        placeholder_layout.addStretch()
+        
+        # Add to content area
+        self.content_layout.addWidget(placeholder_widget)
+        self.current_content_widget = placeholder_widget
+        placeholder_widget.show()
+        
+        self.logger.info(f"Placeholder content displayed: {title}")
+    
+    def _show_error_content(self, title: str, error_message: str):
+        """Show error content when something fails to load"""
+        self._clear_content_area()
+        
+        # Create error widget
+        error_widget = QWidget()
+        error_layout = QVBoxLayout(error_widget)
+        error_layout.setContentsMargins(20, 20, 20, 20)
+        
+        # Error title
+        title_label = QLabel(f"Error Loading {title}")
+        title_label.setAlignment(Qt.AlignCenter)
+        title_label.setObjectName("errorTitle")
+        title_label.setStyleSheet("color: #E74C3C; font-size: 18px; font-weight: bold;")
+        
+        error_layout.addWidget(title_label)
+        
+        # Error message
+        message_label = QLabel(f"An error occurred while loading the {title.lower()} module:\n\n{error_message}")
+        message_label.setAlignment(Qt.AlignCenter)
+        message_label.setObjectName("errorMessage")
+        message_label.setStyleSheet("color: #666666; font-size: 14px; margin-top: 20px;")
+        message_label.setWordWrap(True)
+        
+        error_layout.addWidget(message_label)
+        error_layout.addStretch()
+        
+        # Add to content area
+        self.content_layout.addWidget(error_widget)
+        self.current_content_widget = error_widget
+        error_widget.show()
+        
+        self.logger.error(f"Error content displayed: {title} - {error_message}")
     
     def closeEvent(self, event):
         """Handle window close event"""
