@@ -51,6 +51,16 @@ class ValidationMixin:
         if self.error_label:
             self.error_label.clear()
             self.error_label.hide()
+    
+    def reset_validation(self):
+        """Reset validation state without triggering validation"""
+        self.clear_error()
+        if hasattr(self, 'setProperty'):
+            self.setProperty("error", False)
+            # Update styling
+            if hasattr(self, 'style'):
+                self.style().unpolish(self)
+                self.style().polish(self)
 
 
 class ValidatedLineEdit(QLineEdit, ValidationMixin):
@@ -198,6 +208,11 @@ class ValidatedComboBox(QComboBox, ValidationMixin):
     def get_error_label(self):
         """Get the error label widget"""
         return self.error_label
+    
+    def clearEditText(self):
+        """Clear the edit text for editable combo boxes"""
+        if self.isEditable():
+            self.setEditText("")
 
 
 class ValidatedSpinBox(QSpinBox, ValidationMixin):
@@ -689,6 +704,10 @@ class FormContainer(QWidget):
     def clear_form(self):
         """Clear all form fields"""
         for widget in self.form_fields.values():
+            # Reset validation state first
+            if hasattr(widget, 'reset_validation'):
+                widget.reset_validation()
+            
             if hasattr(widget, 'clear') and not hasattr(widget, 'setValue'):
                 # For line edits and text edits
                 widget.clear()
@@ -696,8 +715,12 @@ class FormContainer(QWidget):
                 # For spin boxes
                 widget.setValue(widget.minimum())
             elif hasattr(widget, 'setCurrentIndex'):
-                # For combo boxes
-                widget.setCurrentIndex(0)
+                # For combo boxes - set to first item if available, or clear text if editable
+                if widget.count() > 0:
+                    widget.setCurrentIndex(0)
+                if hasattr(widget, 'isEditable') and widget.isEditable():
+                    # For editable combo boxes, clear the text to show placeholder
+                    widget.clearEditText()
             elif hasattr(widget, 'setDate'):
                 # For date edits
                 from PySide6.QtCore import QDate

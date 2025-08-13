@@ -99,8 +99,12 @@ class MedicineForm(QWidget):
         self.form_container.add_field("Medicine Name *", self.name_field, "name")
         
         # Category field
-        self.category_field = ValidatedComboBox(self.medicine_categories)
+        self.category_field = ValidatedComboBox()
         self.category_field.setEditable(True)  # Allow custom categories
+        self.category_field.addItems(self.medicine_categories)
+        self.category_field.setCurrentIndex(-1)  # No selection initially
+        self.category_field.setEditText("")  # Clear text
+        self.category_field.lineEdit().setPlaceholderText("Select Category")
         self.form_container.add_field("Category *", self.category_field, "category")
         
         # Batch number field
@@ -300,16 +304,41 @@ class MedicineForm(QWidget):
     
     def clear_form(self):
         """Clear all form fields"""
+        # Clear form fields first
         self.form_container.clear_form()
-        self.current_medicine = None
-        self.is_editing = False
-        self.form_container.title = "Add Medicine"
-        self._update_save_button_state()
         
+        # Reset specific fields that need special handling
         # Reset expiry date to default
         self.expiry_field.setDate(QDate.currentDate().addDays(365))
         
+        # Ensure category dropdown is properly reset and repopulated
+        self.category_field.clear()
+        self.category_field.addItems(self.medicine_categories)
+        self.category_field.setCurrentIndex(-1)  # No selection
+        if self.category_field.isEditable():
+            self.category_field.setEditText("")
+            self.category_field.setPlaceholderText("Select Category")
+        
+        # Reset form state
+        self.current_medicine = None
+        self.is_editing = False
+        self.form_container.title = "Add Medicine"
+        self.save_button.setText("Save Medicine")
+        
+        # Clear all validation messages without triggering validation
+        self._clear_all_validation_messages()
+        
+        self._update_save_button_state()
+        
         self.logger.info("Medicine form cleared")
+    
+    def _clear_all_validation_messages(self):
+        """Clear all validation messages without triggering validation"""
+        for field in [self.name_field, self.category_field, self.batch_field, 
+                     self.expiry_field, self.quantity_field, self.purchase_price_field, 
+                     self.selling_price_field, self.barcode_field]:
+            if hasattr(field, 'reset_validation'):
+                field.reset_validation()
     
     def load_medicine(self, medicine):
         """Load medicine data into form for editing"""
@@ -416,9 +445,9 @@ class MedicineForm(QWidget):
             self.medicine_saved.emit(medicine)
             self.operation_finished.emit(True, message)
             
-            # Clear form if adding new medicine
-            if not self.is_editing:
-                self.clear_form()
+            # Clear form after successful operation (both add and edit)
+            # This ensures the form is ready for the next operation
+            self.clear_form()
             
             self.logger.info(f"Medicine operation completed successfully: {message}")
         else:
