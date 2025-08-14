@@ -1111,3 +1111,173 @@
 2025-08-14 23:31:29,988 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
 2025-08-14 23:31:34,883 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
 2025-08-14 23:31:34,885 [INFO] medical_store_app.ui.main_window: Login cancelled after logout, closing application
+2025-08-15 00:32:56,727 [INFO] __main__: Initializing database...
+2025-08-15 00:32:56,727 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-15 00:32:56,729 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 00:32:56,731 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-15 00:32:56,731 [INFO] __main__: Loading application settings...
+2025-08-15 00:32:56,731 [INFO] __main__: Creating main application window...
+2025-08-15 00:32:56,757 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 00:32:56,762 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-15 00:32:57,017 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:32:57,018 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 00:32:57,020 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:32:57,155 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:32:57,156 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:32:57,195 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 00:32:57,237 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-15 00:32:57,237 [INFO] __main__: Starting login process...
+2025-08-15 00:32:57,239 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-15 00:32:57,251 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-15 00:33:02,780 [WARNING] medical_store_app.repositories.user_repository: Authentication failed for username: admin
+2025-08-15 00:33:02,781 [WARNING] medical_store_app.managers.auth_manager: Failed login attempt for admin. Count: 1
+2025-08-15 00:33:02,782 [WARNING] medical_store_app.ui.dialogs.base_dialog: Login failed for user: admin. Attempt 1
+2025-08-15 00:33:02,796 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-15 00:33:02,849 [INFO] medical_store_app.ui.main_window: Login cancelled or failed
+2025-08-15 00:33:02,863 [INFO] __main__: Application startup cancelled by user
+2025-08-15 00:33:10,266 [INFO] __main__: Initializing database...
+2025-08-15 00:33:10,267 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-15 00:33:10,269 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 00:33:10,271 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-15 00:33:10,271 [INFO] __main__: Loading application settings...
+2025-08-15 00:33:10,272 [INFO] __main__: Creating main application window...
+2025-08-15 00:33:10,309 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 00:33:10,314 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-15 00:33:10,582 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:33:10,583 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 00:33:10,586 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:33:10,717 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:33:10,719 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:33:10,759 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 00:33:10,828 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-15 00:33:10,829 [INFO] __main__: Starting login process...
+2025-08-15 00:33:10,830 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-15 00:33:10,842 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-15 00:33:19,317 [WARNING] medical_store_app.repositories.user_repository: Authentication failed for username: admin
+2025-08-15 00:33:19,318 [WARNING] medical_store_app.managers.auth_manager: Failed login attempt for admin. Count: 1
+2025-08-15 00:33:19,319 [WARNING] medical_store_app.ui.dialogs.base_dialog: Login failed for user: admin. Attempt 1
+2025-08-15 00:33:40,323 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:33:40,326 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:33:40,453 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:33:40,455 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:33:41,943 [INFO] medical_store_app.repositories.user_repository: User authenticated successfully: AbdulRehman
+2025-08-15 00:33:41,945 [INFO] medical_store_app.managers.auth_manager: User logged in: AbdulRehman (ID: 1)
+2025-08-15 00:33:41,946 [INFO] medical_store_app.ui.dialogs.base_dialog: Login successful for user: AbdulRehman
+2025-08-15 00:33:41,985 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog completed successfully for user: AbdulRehman
+2025-08-15 00:33:41,987 [INFO] medical_store_app.ui.main_window: Menu item shown: users
+2025-08-15 00:33:41,998 [INFO] medical_store_app.ui.main_window: Menu item shown: reports
+2025-08-15 00:33:42,062 [INFO] medical_store_app.ui.main_window: Menu item shown: settings
+2025-08-15 00:33:42,064 [INFO] medical_store_app.ui.main_window: Menu item shown: medicine
+2025-08-15 00:33:42,078 [INFO] medical_store_app.ui.main_window: Menu item enabled: users
+2025-08-15 00:33:42,081 [INFO] medical_store_app.ui.main_window: Menu item enabled: medicine
+2025-08-15 00:33:42,322 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:33:42,323 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:33:42,453 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:33:42,455 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:33:42,497 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 00:33:42,497 [INFO] medical_store_app.ui.main_window: User logged in successfully: AbdulRehman
+2025-08-15 00:33:42,527 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-15 00:33:46,735 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:33:47,367 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:33:47,759 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:33:56,728 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:33:57,376 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:34:10,310 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:34:10,313 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:34:10,446 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:34:10,448 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:34:12,102 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:34:12,104 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:34:12,238 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:34:12,240 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:34:19,422 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:34:20,918 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:34:21,758 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:34:22,910 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:34:23,838 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:34:24,558 [WARNING] medical_store_app.ui.main_window: Unknown dashboard navigation destination: medicine
+2025-08-15 00:34:25,550 [WARNING] medical_store_app.ui.main_window: Unknown dashboard navigation destination: billing
+2025-08-15 00:34:38,830 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:34:39,493 [WARNING] medical_store_app.ui.main_window: Unknown dashboard navigation destination: medicine
+2025-08-15 00:34:39,782 [WARNING] medical_store_app.ui.main_window: Unknown dashboard navigation destination: medicine
+2025-08-15 00:34:39,973 [WARNING] medical_store_app.ui.main_window: Unknown dashboard navigation destination: medicine
+2025-08-15 00:34:40,322 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:34:40,325 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:34:40,469 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:34:40,471 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:34:40,557 [WARNING] medical_store_app.ui.main_window: Unknown dashboard navigation destination: billing
+2025-08-15 00:34:42,093 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:34:42,096 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:34:42,230 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:34:42,232 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:34:43,709 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-15 00:34:43,711 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-15 00:34:43,712 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-15 00:34:43,735 [INFO] medical_store_app.ui.main_window: Billing widget created successfully
+2025-08-15 00:34:43,761 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-15 00:34:44,669 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-15 00:34:44,671 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 00:34:44,672 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-15 00:34:44,785 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-15 00:34:44,874 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-15 00:34:44,875 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 00:34:44,875 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-15 00:34:44,876 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 00:34:44,877 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 00:34:44,877 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 00:34:44,938 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-15 00:34:44,939 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 00:34:44,940 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-15 00:34:47,310 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-15 00:34:47,615 [INFO] medical_store_app.ui.main_window: Sidebar collapsed
+2025-08-15 00:34:53,357 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-15 00:34:53,359 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-15 00:34:53,360 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-15 00:34:53,425 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: User Management
+2025-08-15 00:34:53,428 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-15 00:34:53,428 [INFO] medical_store_app.ui.dialogs.base_dialog: User management dialog initialized
+2025-08-15 00:34:59,419 [INFO] medical_store_app.ui.main_window: User management dialog displayed
+2025-08-15 00:35:01,437 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: reports
+2025-08-15 00:35:01,439 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-15 00:35:01,439 [INFO] medical_store_app.ui.main_window: Menu item selected: reports
+2025-08-15 00:35:01,444 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Reports
+2025-08-15 00:35:02,653 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: settings
+2025-08-15 00:35:02,655 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: settings
+2025-08-15 00:35:02,655 [INFO] medical_store_app.ui.main_window: Menu item selected: settings
+2025-08-15 00:35:02,659 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Settings
+2025-08-15 00:35:03,965 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 00:35:03,967 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 00:35:03,967 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 00:35:04,158 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:35:04,160 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:35:04,284 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:35:04,286 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:35:04,324 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 00:35:06,877 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:35:06,879 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:35:06,997 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:35:06,999 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:35:10,333 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:35:10,336 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:35:10,471 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:35:10,473 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:35:10,869 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 00:35:12,093 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:35:12,096 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:35:12,304 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:35:12,306 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:35:33,973 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:35:33,975 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:35:34,102 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:35:34,104 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:35:36,588 [INFO] medical_store_app.managers.auth_manager: User logged out: AbdulRehman
+2025-08-15 00:35:36,589 [INFO] medical_store_app.ui.dialogs.login_dialog: User logged out successfully
+2025-08-15 00:35:36,590 [INFO] medical_store_app.ui.main_window: User logged out successfully
+2025-08-15 00:35:36,603 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-15 00:35:36,698 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-15 00:35:40,339 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 00:35:40,341 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 00:35:40,502 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 00:35:40,504 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 00:35:40,522 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-15 00:35:40,525 [INFO] medical_store_app.ui.main_window: Login cancelled after logout, closing application

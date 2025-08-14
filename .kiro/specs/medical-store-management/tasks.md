@@ -180,9 +180,7 @@
 
 - [x] 9. Implement user authentication system (Phase 4)
 
-
   - [x] 9.1 Create login dialog and authentication flow
-
 
     - Build LoginDialog with username and password fields
     - Implement authentication logic connecting to AuthManager
@@ -192,7 +190,6 @@
 
   - [x] 9.2 Add role-based access control to UI
 
-
     - Implement role checking in main window and navigation
     - Add UI element hiding/disabling based on user role
     - Create admin-only sections and cashier-restricted areas
@@ -201,24 +198,28 @@
 
   - [x] 9.3 Build user management interface for admins
 
-
     - Create user management dialog for adding/editing users
     - Implement user role assignment and password management
     - Add user activation/deactivation functionality
     - Write tests for user management operations
     - _Requirements: 4.3, 4.4_
 
-- [ ] 10. Create dashboard and overview features (Phase 5 start)
+- [x] 10. Create dashboard and overview features (Phase 5 start)
 
-  - [ ] 10.1 Build dashboard overview cards
+
+  - [x] 10.1 Build dashboard overview cards
+
 
     - Create dashboard widget with key metrics cards (Total Sales, Total Medicines, Low Stock, Expired Stock)
     - Implement real-time data calculation and display
     - Add card styling and layout with responsive design
+
     - Write tests for dashboard data accuracy and updates
     - _Requirements: 5.1, 5.4_
 
   - [ ] 10.2 Add mini sales chart for dashboard
+
+
 
     - Implement sales chart widget showing last 7 days performance
     - Create chart data processing and visualization
@@ -226,7 +227,8 @@
     - Write tests for chart data accuracy and rendering
     - _Requirements: 5.2_
 
-  - [ ] 10.3 Create quick action buttons and navigation
+  - [x] 10.3 Create quick action buttons and navigation
+
     - Add quick action buttons for common tasks on dashboard
     - Implement navigation shortcuts to frequently used features
     - Create hover effects and visual feedback for actions

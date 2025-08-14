@@ -3,6 +3,9 @@
 # GUI Framework
 PySide6>=6.5.0
 
+# Charts and visualization
+matplotlib>=3.7.0
+
 # Additional utilities that may be needed later
 # (These will be added as we implement more features)
 # pytest>=7.0.0  # For testing

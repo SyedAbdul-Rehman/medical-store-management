@@ -505,6 +505,50 @@ class SalesManager:
             self.logger.error(f"Error getting sales by date range: {str(e)}")
             return []
     
+    def get_last_7_days_sales_data(self) -> Dict[str, float]:
+        """
+        Get sales data for the last 7 days for chart display
+        
+        Returns:
+            Dictionary with date as key and total sales as value
+        """
+        try:
+            from datetime import date, timedelta
+            
+            # Calculate date range for last 7 days
+            end_date = date.today()
+            start_date = end_date - timedelta(days=6)  # 6 days ago + today = 7 days
+            
+            # Get sales data
+            sales = self.get_sales_by_date_range(start_date.isoformat(), end_date.isoformat())
+            
+            # Initialize data for all 7 days with 0
+            sales_data = {}
+            current_date = start_date
+            while current_date <= end_date:
+                sales_data[current_date.isoformat()] = 0.0
+                current_date += timedelta(days=1)
+            
+            # Aggregate sales by date
+            for sale in sales:
+                if sale.date in sales_data:
+                    sales_data[sale.date] += sale.total
+            
+            return sales_data
+            
+        except Exception as e:
+            self.logger.error(f"Error getting last 7 days sales data: {str(e)}")
+            # Return empty data for 7 days
+            from datetime import date, timedelta
+            end_date = date.today()
+            start_date = end_date - timedelta(days=6)
+            sales_data = {}
+            current_date = start_date
+            while current_date <= end_date:
+                sales_data[current_date.isoformat()] = 0.0
+                current_date += timedelta(days=1)
+            return sales_data
+    
     def get_sales_analytics(self, start_date: str, end_date: str) -> Dict[str, Any]:
         """
         Get sales analytics for date range

@@ -13,6 +13,7 @@ from PySide6.QtCore import Qt, Signal
 from PySide6.QtGui import QFont, QPalette
 
 from .components.sidebar import Sidebar
+from .components.dashboard import DashboardWidget
 from .components.medicine_management import MedicineManagementWidget
 from .components.billing_widget import BillingWidget
 from .dialogs.login_dialog import LoginManager
@@ -336,10 +337,34 @@ class MainWindow(QMainWindow):
             self.current_content_widget = None
     
     def _show_dashboard_content(self):
-        """Show dashboard content"""
+        """Show dashboard content with overview cards and metrics"""
         self._clear_content_area()
         
-        # Create dashboard widget
+        try:
+            # Create dashboard widget with managers
+            dashboard_widget = DashboardWidget(
+                medicine_manager=self.medicine_manager,
+                sales_manager=self.sales_manager
+            )
+            
+            # Connect navigation signals
+            dashboard_widget.navigate_to.connect(self._handle_dashboard_navigation)
+            
+            # Add to content area
+            self.content_layout.addWidget(dashboard_widget)
+            self.current_content_widget = dashboard_widget
+            dashboard_widget.show()
+            
+            self.logger.info("Dashboard content displayed with overview cards")
+            
+        except Exception as e:
+            self.logger.error(f"Error creating dashboard: {str(e)}")
+            # Fallback to basic dashboard
+            self._show_basic_dashboard_content()
+    
+    def _show_basic_dashboard_content(self):
+        """Show basic dashboard content as fallback"""
+        # Create basic dashboard widget
         dashboard_widget = QWidget()
         dashboard_layout = QVBoxLayout(dashboard_widget)
         dashboard_layout.setContentsMargins(20, 20, 20, 20)
@@ -402,7 +427,23 @@ class MainWindow(QMainWindow):
         self.current_content_widget = dashboard_widget
         dashboard_widget.show()
         
-        self.logger.info("Dashboard content displayed")
+        self.logger.info("Basic dashboard content displayed")
+    
+    def _handle_dashboard_navigation(self, destination: str):
+        """Handle navigation from dashboard cards"""
+        try:
+            if destination == "inventory":
+                self.sidebar.select_item("medicine")
+                self._show_medicine_management()
+            elif destination == "reports":
+                # For now, show medicine management as reports aren't implemented yet
+                self.sidebar.select_item("medicine")
+                self._show_medicine_management()
+            else:
+                self.logger.warning(f"Unknown dashboard navigation destination: {destination}")
+                
+        except Exception as e:
+            self.logger.error(f"Error handling dashboard navigation: {str(e)}")
     
     def _show_medicine_management(self):
         """Show medicine management content"""
