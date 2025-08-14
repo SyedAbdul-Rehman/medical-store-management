@@ -32,6 +32,7 @@ class MedicineManagementWidget(QWidget):
         
         # Current state
         self.current_medicine = None
+        self.readonly_mode = False
         
         self._setup_ui()
         self._connect_signals()
@@ -341,3 +342,32 @@ class MedicineManagementWidget(QWidget):
     def get_table_widget(self) -> MedicineTableWidget:
         """Get the medicine table widget"""
         return self.medicine_table
+    
+    def set_readonly_mode(self, readonly: bool):
+        """Set readonly mode for role-based access control"""
+        self.readonly_mode = readonly
+        
+        if readonly:
+            # Hide the form for cashiers - they can only view medicines
+            self.form_frame.hide()
+            self.splitter.setSizes([0, 1000])  # Give all space to table
+            
+            # Disable editing actions in table
+            if hasattr(self.medicine_table, 'set_readonly_mode'):
+                self.medicine_table.set_readonly_mode(True)
+            
+            self.logger.info("Medicine management set to read-only mode")
+        else:
+            # Show the form for admins
+            self.form_frame.show()
+            self.splitter.setSizes([300, 700])  # Restore normal proportions
+            
+            # Enable editing actions in table
+            if hasattr(self.medicine_table, 'set_readonly_mode'):
+                self.medicine_table.set_readonly_mode(False)
+            
+            self.logger.info("Medicine management set to full access mode")
+    
+    def is_readonly_mode(self) -> bool:
+        """Check if widget is in readonly mode"""
+        return self.readonly_mode

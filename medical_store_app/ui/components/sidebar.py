@@ -105,6 +105,7 @@ class Sidebar(QWidget):
             {"name": "Dashboard", "icon": "📊", "key": "dashboard"},
             {"name": "Medicine Management", "icon": "💊", "key": "medicine"},
             {"name": "Billing System", "icon": "🧾", "key": "billing"},
+            {"name": "User Management", "icon": "👥", "key": "users"},
             {"name": "Reports", "icon": "📈", "key": "reports"},
             {"name": "Settings", "icon": "⚙️", "key": "settings"}
         ]

@@ -423,6 +423,21 @@ class AuthManager:
             self.logger.error(f"Error getting all users: {str(e)}")
             return []
     
+    def get_all_users_for_startup(self) -> List[User]:
+        """
+        Get all users for startup check (no authentication required)
+        This is used only for checking if default users exist during startup
+        
+        Returns:
+            List of all users
+        """
+        try:
+            return self.user_repository.find_all()
+            
+        except Exception as e:
+            self.logger.error(f"Error getting users for startup: {str(e)}")
+            return []
+    
     def get_users_by_role(self, role: str) -> List[User]:
         """
         Get users by role (admin only)

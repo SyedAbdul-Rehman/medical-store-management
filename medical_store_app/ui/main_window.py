@@ -4,6 +4,7 @@ Implements main window with header, sidebar area, and content area layout
 """
 
 import logging
+from typing import Optional
 from PySide6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, 
     QFrame, QSizePolicy, QPushButton
@@ -14,11 +15,15 @@ from PySide6.QtGui import QFont, QPalette
 from .components.sidebar import Sidebar
 from .components.medicine_management import MedicineManagementWidget
 from .components.billing_widget import BillingWidget
+from .dialogs.login_dialog import LoginManager
 from ..managers.medicine_manager import MedicineManager
 from ..managers.sales_manager import SalesManager
+from ..managers.auth_manager import AuthManager
 from ..repositories.medicine_repository import MedicineRepository
 from ..repositories.sales_repository import SalesRepository
+from ..repositories.user_repository import UserRepository
 from ..config.database import DatabaseManager
+from ..models.user import User
 
 
 class MainWindow(QMainWindow):
@@ -47,8 +52,14 @@ class MainWindow(QMainWindow):
         self.db_manager = DatabaseManager()
         self.medicine_repository = MedicineRepository(self.db_manager)
         self.sales_repository = SalesRepository(self.db_manager)
+        self.user_repository = UserRepository(self.db_manager)
         self.medicine_manager = MedicineManager(self.medicine_repository)
         self.sales_manager = SalesManager(self.sales_repository, self.medicine_repository)
+        self.auth_manager = AuthManager(self.user_repository)
+        self.login_manager = LoginManager(self.auth_manager, self)
+        
+        # Current user
+        self.current_user: Optional[User] = None
         
         # Content widgets
         self.medicine_management_widget = None
@@ -65,6 +76,41 @@ class MainWindow(QMainWindow):
         self._apply_basic_styling()
         
         self.logger.info("Main window initialized with header, sidebar area, and content area")
+    
+    def start_application(self):
+        """Start the application with login process"""
+        # Check if this is first run and show startup info
+        self._check_first_run_and_show_startup_info()
+        
+        # Show login dialog
+        success, user = self.login_manager.show_login_dialog()
+        
+        if success and user:
+            self.current_user = user
+            self._update_ui_for_user(user)
+            self.logger.info(f"User logged in successfully: {user.username}")
+            return True
+        else:
+            self.logger.info("Login cancelled or failed")
+            return False
+    
+    def _check_first_run_and_show_startup_info(self):
+        """Check if this is first run and show startup information"""
+        try:
+            # Check if there are any users in the database (indicating first run)
+            users = self.auth_manager.get_all_users_for_startup()
+            
+            # If we have exactly 2 users (the default admin and cashier), show startup info
+            if len(users) == 2:
+                # Check if both are the default users
+                usernames = [user.username for user in users]
+                if 'admin' in usernames and 'cashier' in usernames:
+                    from .dialogs.startup_info_dialog import StartupInfoDialog
+                    StartupInfoDialog.show_startup_info(self)
+                    
+        except Exception as e:
+            self.logger.error(f"Error checking first run: {e}")
+            # Continue anyway, don't block the application
     
     def _center_window(self):
         """Center the window on the screen"""
@@ -143,11 +189,15 @@ class MainWindow(QMainWindow):
         user_info_label.setObjectName("userInfoLabel")
         header_layout.addWidget(user_info_label)
         
-        # Logout button (placeholder for now)
-        logout_btn = QPushButton("Logout")
-        logout_btn.setObjectName("logoutBtn")
-        logout_btn.setFixedHeight(30)
-        header_layout.addWidget(logout_btn)
+        # Logout button
+        self.logout_btn = QPushButton("Logout")
+        self.logout_btn.setObjectName("logoutBtn")
+        self.logout_btn.setFixedHeight(30)
+        self.logout_btn.clicked.connect(self._on_logout_clicked)
+        header_layout.addWidget(self.logout_btn)
+        
+        # Store user info label reference for updates
+        self.user_info_label = user_info_label
     
     def _create_sidebar(self):
         """Create the sidebar navigation component"""
@@ -306,13 +356,45 @@ class MainWindow(QMainWindow):
         
         dashboard_layout.addWidget(welcome_label)
         
-        # Status message
-        status_label = QLabel("Select 'Medicine Management' from the sidebar to manage your medicine inventory.")
+        # User info
+        if self.current_user:
+            user_info_label = QLabel(f"Logged in as: {self.current_user.get_display_name()} ({self.current_user.get_role_display()})")
+            user_info_label.setAlignment(Qt.AlignCenter)
+            user_info_label.setStyleSheet("color: #2D9CDB; font-size: 16px; margin-top: 10px; font-weight: bold;")
+            dashboard_layout.addWidget(user_info_label)
+        
+        # Status message based on user role
+        if self.current_user and self.current_user.is_admin():
+            status_label = QLabel("As an administrator, you have access to all features including user management.")
+        elif self.current_user and self.current_user.is_cashier():
+            status_label = QLabel("As a cashier, you can access billing and view medicine inventory.")
+        else:
+            status_label = QLabel("Select options from the sidebar to navigate the application.")
+            
         status_label.setAlignment(Qt.AlignCenter)
         status_label.setObjectName("statusLabel")
         status_label.setStyleSheet("color: #27AE60; font-size: 14px; margin-top: 20px;")
+        status_label.setWordWrap(True)
         
         dashboard_layout.addWidget(status_label)
+        
+        # Quick actions based on role
+        if self.current_user:
+            actions_label = QLabel("Quick Actions:")
+            actions_label.setAlignment(Qt.AlignCenter)
+            actions_label.setStyleSheet("color: #333333; font-size: 14px; font-weight: bold; margin-top: 30px;")
+            dashboard_layout.addWidget(actions_label)
+            
+            if self.current_user.is_admin():
+                quick_actions = "• Manage Users (User Management)\n• Add/Edit Medicines (Medicine Management)\n• Process Sales (Billing System)\n• View Reports"
+            else:
+                quick_actions = "• Process Sales (Billing System)\n• View Medicine Inventory (Medicine Management)"
+            
+            actions_detail_label = QLabel(quick_actions)
+            actions_detail_label.setAlignment(Qt.AlignCenter)
+            actions_detail_label.setStyleSheet("color: #666666; font-size: 12px; margin-top: 10px;")
+            dashboard_layout.addWidget(actions_detail_label)
+        
         dashboard_layout.addStretch()
         
         # Add to content area
@@ -348,6 +430,15 @@ class MainWindow(QMainWindow):
                 self.logger.error(f"Failed to create medicine management widget: {e}")
                 self._show_error_content("Medicine Management", str(e))
                 return
+        
+        # Set access mode based on user role
+        if self.current_user:
+            if self.current_user.is_admin():
+                self.medicine_management_widget.set_readonly_mode(False)
+                self.logger.info("Medicine management set to full access mode for admin")
+            elif self.current_user.is_cashier():
+                self.medicine_management_widget.set_readonly_mode(True)
+                self.logger.info("Medicine management set to read-only mode for cashier")
         
         # Add to content area
         self.content_layout.addWidget(self.medicine_management_widget)
@@ -395,6 +486,46 @@ class MainWindow(QMainWindow):
             self.logger.error(f"Failed to refresh billing display: {e}")
         
         self.logger.info("Billing content displayed")
+    
+    def _show_user_management(self):
+        """Show user management dialog (admin only)"""
+        # Check if user has admin privileges
+        if not self.is_user_admin():
+            from PySide6.QtWidgets import QMessageBox
+            QMessageBox.warning(
+                self,
+                "Access Denied",
+                "User management is only available to administrators."
+            )
+            return
+        
+        try:
+            from .dialogs.user_management_dialog import UserManagementDialog
+            
+            # Create and show user management dialog
+            dialog = UserManagementDialog(self.auth_manager, self)
+            
+            # Connect signal to refresh UI if users are updated
+            dialog.users_updated.connect(self._on_users_updated)
+            
+            # Show dialog
+            dialog.exec()
+            
+            self.logger.info("User management dialog displayed")
+            
+        except Exception as e:
+            self.logger.error(f"Failed to show user management: {e}")
+            from PySide6.QtWidgets import QMessageBox
+            QMessageBox.critical(
+                self,
+                "Error",
+                f"Failed to open user management:\n{str(e)}"
+            )
+    
+    def _on_users_updated(self):
+        """Handle users updated signal"""
+        self.logger.info("Users updated, refreshing UI if needed")
+        # Add any UI refresh logic here if needed
     
     def _show_reports_content(self):
         """Show reports content (placeholder)"""
@@ -480,3 +611,180 @@ class MainWindow(QMainWindow):
         """Handle window close event"""
         self.logger.info("Application closing...")
         event.accept()
+    
+    # Authentication Methods
+    
+
+    
+    def _update_ui_for_user(self, user: User):
+        """Update UI based on logged-in user"""
+        # Update user info in header
+        self.user_info_label.setText(f"Welcome, {user.get_display_name()}")
+        
+        # Update sidebar based on user role
+        self._update_sidebar_for_role(user.role)
+        
+        # Show appropriate default content
+        if user.is_admin():
+            self._show_dashboard_content()
+        else:
+            # Cashiers start with billing
+            self._show_billing_content()
+    
+    def _update_sidebar_for_role(self, role: str):
+        """Update sidebar menu items based on user role"""
+        if role == "cashier":
+            # Cashiers can only access billing and basic medicine view
+            self._hide_menu_item("users")
+            self._hide_menu_item("reports")
+            self._hide_menu_item("settings")
+            # Medicine management is available but with restrictions
+            self._show_menu_item("medicine")
+            self._enable_menu_item("medicine")
+        elif role == "admin":
+            # Admins can access everything
+            self._show_menu_item("users")
+            self._show_menu_item("reports")
+            self._show_menu_item("settings")
+            self._show_menu_item("medicine")
+            self._enable_menu_item("users")
+            self._enable_menu_item("medicine")
+    
+    def _hide_menu_item(self, item_key: str):
+        """Hide a menu item from the sidebar"""
+        if item_key in self.sidebar.navigation_buttons:
+            button = self.sidebar.navigation_buttons[item_key]
+            button.hide()
+            self.logger.info(f"Menu item hidden: {item_key}")
+    
+    def _show_menu_item(self, item_key: str):
+        """Show a menu item in the sidebar"""
+        if item_key in self.sidebar.navigation_buttons:
+            button = self.sidebar.navigation_buttons[item_key]
+            button.show()
+            self.logger.info(f"Menu item shown: {item_key}")
+    
+    def _disable_menu_item(self, item_key: str):
+        """Disable a menu item (but keep it visible)"""
+        if item_key in self.sidebar.navigation_buttons:
+            button = self.sidebar.navigation_buttons[item_key]
+            button.setEnabled(False)
+            button.setToolTip("Access restricted for your role")
+            self.logger.info(f"Menu item disabled: {item_key}")
+    
+    def _enable_menu_item(self, item_key: str):
+        """Enable a menu item"""
+        if item_key in self.sidebar.navigation_buttons:
+            button = self.sidebar.navigation_buttons[item_key]
+            button.setEnabled(True)
+            button.setToolTip("")
+            self.logger.info(f"Menu item enabled: {item_key}")
+    
+    def _on_logout_clicked(self):
+        """Handle logout button click"""
+        try:
+            # Confirm logout
+            from PySide6.QtWidgets import QMessageBox
+            reply = QMessageBox.question(
+                self,
+                "Confirm Logout",
+                "Are you sure you want to logout?",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+            
+            if reply == QMessageBox.Yes:
+                # Perform logout
+                success = self.login_manager.logout()
+                if success:
+                    self.logger.info("User logged out successfully")
+                    
+                    # Clear current user and UI state
+                    self.current_user = None
+                    self._clear_content_area()
+                    
+                    # Reset UI to default state
+                    self.user_info_label.setText("Welcome, User")
+                    
+                    # Hide main window and show login dialog again
+                    self.hide()
+                    
+                    # Show login dialog again
+                    success, user = self.login_manager.show_login_dialog()
+                    
+                    if success and user:
+                        self.current_user = user
+                        self._update_ui_for_user(user)
+                        self.show()
+                        self.logger.info(f"User logged in successfully: {user.username}")
+                    else:
+                        self.logger.info("Login cancelled after logout, closing application")
+                        from PySide6.QtWidgets import QApplication
+                        QApplication.quit()
+                else:
+                    self.logger.error("Logout failed")
+                    QMessageBox.warning(
+                        self,
+                        "Logout Error",
+                        "Failed to logout properly. Please try again."
+                    )
+        
+        except Exception as e:
+            self.logger.error(f"Error during logout: {e}")
+            QMessageBox.critical(
+                self,
+                "Error",
+                f"An error occurred during logout: {str(e)}"
+            )
+    
+    def _on_menu_item_selected(self, item_key: str):
+        """Handle menu item selection from sidebar with role-based access control"""
+        self.logger.info(f"Menu item selected: {item_key}")
+        
+        # Check if user has permission for this feature
+        if not self._check_feature_permission(item_key):
+            from PySide6.QtWidgets import QMessageBox
+            QMessageBox.warning(
+                self,
+                "Access Denied",
+                f"You don't have permission to access {item_key.replace('_', ' ').title()}."
+            )
+            return
+        
+        # Switch content based on selected item
+        if item_key == "dashboard":
+            self._show_dashboard_content()
+        elif item_key == "medicine":
+            self._show_medicine_management()
+        elif item_key == "billing":
+            self._show_billing_content()
+        elif item_key == "users":
+            self._show_user_management()
+        elif item_key == "reports":
+            self._show_reports_content()
+        elif item_key == "settings":
+            self._show_settings_content()
+        else:
+            self.logger.warning(f"Unknown menu item: {item_key}")
+            self._show_dashboard_content()
+    
+    def _check_feature_permission(self, feature: str) -> bool:
+        """Check if current user has permission for a feature"""
+        if not self.current_user:
+            return False
+        
+        return self.auth_manager.has_permission(feature)
+    
+
+    
+    def get_current_user(self) -> Optional[User]:
+        """Get the current logged-in user"""
+        return self.current_user
+    
+    def is_user_admin(self) -> bool:
+        """Check if current user is admin"""
+        return bool(self.current_user and self.current_user.is_admin())
+    
+    def is_user_cashier(self) -> bool:
+        """Check if current user is cashier"""
+        return bool(self.current_user and self.current_user.is_cashier())

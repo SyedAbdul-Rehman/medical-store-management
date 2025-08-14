@@ -84,7 +84,6 @@
 
 - [x] 5. Build core UI components and main window
 
-
   - [x] 5.1 Create main application window with basic layout
 
     - Implement MainWindow class with PySide6 QMainWindow
@@ -111,13 +110,7 @@
 
 - [x] 6. Implement medicine management UI (Phase 1 completion)
 
-
-
-
-
   - [x] 6.1 Create Add Medicine form and functionality
-
-
 
     - Build MedicineForm widget with all required input fields
     - Implement form validation and error display
@@ -126,7 +119,6 @@
     - _Requirements: 2.1, 2.2_
 
   - [x] 6.2 Build Medicine table view and display
-
 
     - Create MedicineTable widget displaying all medicine records
     - Implement table sorting, filtering, and search functionality
@@ -144,14 +136,7 @@
 
 - [x] 7. Enhance inventory management features (Phase 2)
 
-
-
-
-
-
   - [x] 7.1 Implement low-stock and expiry alert system
-
-
 
     - Create alert widgets displaying low-stock medicines
     - Add expiry date monitoring and warning displays
@@ -161,9 +146,6 @@
 
   - [x] 7.2 Add inventory filtering and search capabilities
 
-
-
-
     - Enhance medicine table with advanced filtering options
     - Implement category-based filtering and multi-criteria search
     - Add sorting by various fields (name, expiry, quantity, etc.)
@@ -172,26 +154,7 @@
 
 - [x] 8. Build billing system UI (Phase 3)
 
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
   - [x] 8.1 Create product search and selection interface
-
-
-
-
-
 
     - Build product search widget with name and barcode lookup
     - Implement search results display with stock information
@@ -201,34 +164,13 @@
 
   - [x] 8.2 Implement billing cart and calculation system
 
-
-
-
-
-
-
-
     - Create cart widget displaying selected items with quantities and prices
     - Implement automatic total calculation with subtotal, tax, and discount
     - Add item removal and quantity modification in cart
     - Write tests for cart operations and calculation accuracy
     - _Requirements: 3.3, 3.4, 3.7_
 
-
-
-
   - [x] 8.3 Complete billing transaction processing
-
-
-
-
-
-
-
-
-
-
-
 
     - Build transaction completion interface with payment method selection
     - Implement sale saving to database and inventory quantity updates
@@ -236,9 +178,11 @@
     - Write integration tests for complete billing workflow
     - _Requirements: 3.5, 3.6_
 
-- [ ] 9. Implement user authentication system (Phase 4)
+- [x] 9. Implement user authentication system (Phase 4)
 
-  - [ ] 9.1 Create login dialog and authentication flow
+
+  - [x] 9.1 Create login dialog and authentication flow
+
 
     - Build LoginDialog with username and password fields
     - Implement authentication logic connecting to AuthManager
@@ -246,7 +190,8 @@
     - Write tests for login functionality and error scenarios
     - _Requirements: 4.1, 4.2_
 
-  - [ ] 9.2 Add role-based access control to UI
+  - [x] 9.2 Add role-based access control to UI
+
 
     - Implement role checking in main window and navigation
     - Add UI element hiding/disabling based on user role
@@ -254,7 +199,9 @@
     - Write tests for access control enforcement
     - _Requirements: 4.3, 4.4, 4.5, 4.6_
 
-  - [ ] 9.3 Build user management interface for admins
+  - [x] 9.3 Build user management interface for admins
+
+
     - Create user management dialog for adding/editing users
     - Implement user role assignment and password management
     - Add user activation/deactivation functionality

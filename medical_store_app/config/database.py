@@ -131,6 +131,9 @@ class DatabaseManager:
                         password_hash TEXT NOT NULL,
                         role TEXT NOT NULL CHECK (role IN ('admin', 'cashier')),
                         is_active BOOLEAN DEFAULT 1,
+                        full_name TEXT,
+                        email TEXT,
+                        phone TEXT,
                         created_at TEXT DEFAULT CURRENT_TIMESTAMP,
                         last_login TEXT
                     )
@@ -146,22 +149,35 @@ class DatabaseManager:
                     )
                 """)
                 
-                # Create default admin user if no users exist
+                # Create default users if no users exist
                 cursor.execute("SELECT COUNT(*) FROM users")
                 user_count = cursor.fetchone()[0]
                 
                 if user_count == 0:
                     # Import here to avoid circular imports
                     import hashlib
-                    default_password = "admin123"
-                    password_hash = hashlib.sha256(default_password.encode()).hexdigest()
+                    
+                    # Create default admin user
+                    admin_password = "admin123"
+                    admin_password_hash = hashlib.sha256(admin_password.encode()).hexdigest()
                     
                     cursor.execute("""
-                        INSERT INTO users (username, password_hash, role, is_active)
-                        VALUES (?, ?, ?, ?)
-                    """, ("admin", password_hash, "admin", 1))
+                        INSERT INTO users (username, password_hash, role, is_active, full_name)
+                        VALUES (?, ?, ?, ?, ?)
+                    """, ("admin", admin_password_hash, "admin", 1, "System Administrator"))
                     
-                    self.logger.info("Default admin user created (username: admin, password: admin123)")
+                    # Create default cashier user
+                    cashier_password = "cashier123"
+                    cashier_password_hash = hashlib.sha256(cashier_password.encode()).hexdigest()
+                    
+                    cursor.execute("""
+                        INSERT INTO users (username, password_hash, role, is_active, full_name)
+                        VALUES (?, ?, ?, ?, ?)
+                    """, ("cashier", cashier_password_hash, "cashier", 1, "Default Cashier"))
+                    
+                    self.logger.info("Default users created:")
+                    self.logger.info("  Admin - username: admin, password: admin123")
+                    self.logger.info("  Cashier - username: cashier, password: cashier123")
                 
                 # Insert default settings if they don't exist
                 default_settings = [

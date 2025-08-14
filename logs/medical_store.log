@@ -632,3 +632,482 @@
 2025-08-14 18:51:01,198 [INFO] medical_store_app.ui.main_window: Menu item selected: settings
 2025-08-14 18:51:01,201 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Settings
 2025-08-14 18:51:02,691 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-14 19:11:26,364 [INFO] __main__: Initializing database...
+2025-08-14 19:11:26,365 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-14 19:11:26,365 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 19:11:26,367 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-14 19:11:26,367 [INFO] __main__: Loading application settings...
+2025-08-14 19:11:26,367 [INFO] __main__: Starting main application window...
+2025-08-14 19:11:26,391 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 19:11:26,393 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-14 19:11:26,406 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 19:11:26,415 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-14 19:11:26,507 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-14 19:11:28,403 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 19:11:28,405 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 19:11:28,406 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 19:11:28,432 [INFO] medical_store_app.ui.main_window: Billing widget created successfully
+2025-08-14 19:11:28,457 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-14 19:11:30,123 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-14 19:11:30,125 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 19:11:30,126 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-14 19:11:30,128 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 19:11:30,619 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-14 19:11:30,621 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-14 19:11:30,622 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-14 19:11:30,744 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 19:11:30,746 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-14 19:11:30,835 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-14 19:11:30,836 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-14 19:11:30,837 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-14 19:11:30,900 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-14 19:11:30,901 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-14 19:11:30,901 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-14 19:11:53,365 [INFO] medical_store_app.ui.components.medicine_form: Started add medicine operation
+2025-08-14 19:11:53,417 [INFO] medical_store_app.repositories.medicine_repository: Medicine saved successfully: Panadole (ID: 10)
+2025-08-14 19:11:53,500 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Panadole' added successfully
+2025-08-14 19:11:54,740 [INFO] medical_store_app.ui.components.medicine_table: Added medicine to table: Panadole
+2025-08-14 19:11:54,741 [INFO] medical_store_app.ui.main_window: Medicine added: Panadole
+2025-08-14 19:11:54,742 [INFO] medical_store_app.ui.components.medicine_management: Medicine added: Panadole
+2025-08-14 19:11:54,777 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-14 19:11:54,777 [INFO] medical_store_app.ui.components.medicine_management: Form operation completed: Medicine 'Panadole' added successfully
+2025-08-14 19:11:54,795 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-14 19:11:54,796 [INFO] medical_store_app.ui.components.medicine_form: Medicine operation completed successfully: Medicine 'Panadole' added successfully
+2025-08-14 19:11:56,084 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 19:11:56,085 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 19:11:56,086 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 19:11:56,089 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-14 19:12:02,700 [INFO] medical_store_app.managers.sales_manager: Added 1 units of Panadole to cart
+2025-08-14 19:12:02,705 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Panadole to cart
+2025-08-14 19:12:02,706 [INFO] medical_store_app.ui.components.billing_widget: Product selected: Panadole x 1
+2025-08-14 19:12:02,706 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Panadole to cart
+2025-08-14 19:12:10,417 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-14 19:12:10,723 [INFO] medical_store_app.ui.main_window: Sidebar collapsed
+2025-08-14 19:12:23,362 [INFO] medical_store_app.repositories.sales_repository: Sale saved successfully: ID 1, Total: $12.0
+2025-08-14 19:12:23,450 [INFO] medical_store_app.repositories.sales_repository: Stock updated for sale ID 1
+2025-08-14 19:12:23,521 [INFO] medical_store_app.managers.sales_manager: Cart cleared
+2025-08-14 19:12:23,521 [INFO] medical_store_app.managers.sales_manager: Sale completed: ID 1, Total: $12.00
+2025-08-14 19:12:43,137 [INFO] medical_store_app.ui.components.billing_widget: Sale completed successfully: ID 1, Total: $12.00
+2025-08-14 19:12:54,170 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-14 19:12:54,172 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 19:12:54,173 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-14 19:12:54,176 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 19:12:55,483 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 19:12:55,484 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 19:12:55,485 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 19:12:55,491 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-14 19:13:01,643 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: reports
+2025-08-14 19:13:01,644 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-14 19:13:01,645 [INFO] medical_store_app.ui.main_window: Menu item selected: reports
+2025-08-14 19:13:01,649 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Reports
+2025-08-14 19:13:02,723 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-14 19:13:02,724 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 19:13:02,725 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-14 19:13:02,727 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 19:13:09,902 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-14 23:06:47,806 [INFO] __main__: Initializing database...
+2025-08-14 23:06:47,819 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-14 23:06:47,834 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:06:47,839 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-14 23:06:47,840 [INFO] __main__: Loading application settings...
+2025-08-14 23:06:47,840 [INFO] __main__: Starting main application window...
+2025-08-14 23:06:47,860 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:06:47,864 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-14 23:06:47,887 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 23:06:47,899 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-14 23:06:47,901 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-14 23:06:47,918 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-14 23:07:19,024 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:07:19,026 [WARNING] medical_store_app.repositories.user_repository: Authentication failed for username: Abdul-Rehman
+2025-08-14 23:07:19,026 [WARNING] medical_store_app.managers.auth_manager: Failed login attempt for Abdul-Rehman. Count: 1
+2025-08-14 23:07:19,027 [WARNING] medical_store_app.ui.dialogs.base_dialog: Login failed for user: Abdul-Rehman. Attempt 1
+2025-08-14 23:07:19,039 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-14 23:07:19,040 [INFO] medical_store_app.ui.main_window: Login cancelled or failed, closing application
+2025-08-14 23:07:19,042 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-14 23:07:19,098 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-14 23:07:24,258 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-14 23:07:24,260 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-14 23:07:24,260 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-14 23:07:29,122 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-14 23:07:29,124 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:07:29,124 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-14 23:07:32,154 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 23:07:32,159 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 23:07:32,160 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 23:07:34,290 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: settings
+2025-08-14 23:07:34,292 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: settings
+2025-08-14 23:07:34,293 [INFO] medical_store_app.ui.main_window: Menu item selected: settings
+2025-08-14 23:07:36,850 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-14 23:07:36,852 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:07:36,853 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-14 23:07:43,382 [ERROR] medical_store_app.ui.dialogs.login_dialog: Logout failed: No active session to logout
+2025-08-14 23:07:43,383 [ERROR] medical_store_app.ui.main_window: Logout failed
+2025-08-14 23:07:46,486 [ERROR] medical_store_app.ui.dialogs.login_dialog: Logout failed: No active session to logout
+2025-08-14 23:07:46,487 [ERROR] medical_store_app.ui.main_window: Logout failed
+2025-08-14 23:07:48,969 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-14 23:07:53,742 [INFO] __main__: Initializing database...
+2025-08-14 23:07:53,743 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-14 23:07:53,743 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:07:53,745 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-14 23:07:53,746 [INFO] __main__: Loading application settings...
+2025-08-14 23:07:53,746 [INFO] __main__: Starting main application window...
+2025-08-14 23:07:53,771 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:07:53,774 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-14 23:07:53,783 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 23:07:53,789 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-14 23:07:53,791 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-14 23:07:53,802 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-14 23:08:18,317 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-14 23:08:18,342 [INFO] medical_store_app.ui.main_window: Login cancelled or failed, closing application
+2025-08-14 23:08:18,358 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-14 23:08:18,395 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-14 23:08:22,033 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-14 23:08:22,035 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-14 23:08:22,036 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-14 23:08:24,442 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 23:08:24,444 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 23:08:24,444 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 23:08:26,498 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-14 23:08:26,500 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-14 23:08:26,500 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-14 23:08:27,969 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: reports
+2025-08-14 23:08:27,971 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-14 23:08:27,972 [INFO] medical_store_app.ui.main_window: Menu item selected: reports
+2025-08-14 23:08:30,569 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-14 23:17:03,057 [INFO] __main__: Initializing database...
+2025-08-14 23:17:03,058 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-14 23:17:03,060 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:17:03,061 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-14 23:17:03,061 [INFO] __main__: Loading application settings...
+2025-08-14 23:17:03,062 [INFO] __main__: Starting main application window...
+2025-08-14 23:17:03,092 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:17:03,096 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-14 23:17:03,112 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 23:17:03,123 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-14 23:17:03,125 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:17:03,132 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-14 23:17:03,142 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-14 23:17:13,367 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-14 23:17:13,472 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-14 23:17:30,889 [INFO] medical_store_app.repositories.user_repository: User authenticated successfully: admin
+2025-08-14 23:17:30,891 [INFO] medical_store_app.managers.auth_manager: User logged in: admin (ID: 1)
+2025-08-14 23:17:30,892 [INFO] medical_store_app.ui.dialogs.base_dialog: Login successful for user: admin
+2025-08-14 23:17:30,971 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog completed successfully for user: admin
+2025-08-14 23:17:30,979 [INFO] medical_store_app.ui.main_window: Menu item shown: users
+2025-08-14 23:17:30,982 [INFO] medical_store_app.ui.main_window: Menu item shown: reports
+2025-08-14 23:17:30,983 [INFO] medical_store_app.ui.main_window: Menu item shown: settings
+2025-08-14 23:17:30,984 [INFO] medical_store_app.ui.main_window: Menu item shown: medicine
+2025-08-14 23:17:30,985 [INFO] medical_store_app.ui.main_window: Menu item enabled: users
+2025-08-14 23:17:30,988 [INFO] medical_store_app.ui.main_window: Menu item enabled: medicine
+2025-08-14 23:17:31,025 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 23:17:31,026 [INFO] medical_store_app.ui.main_window: User logged in successfully: admin
+2025-08-14 23:17:31,057 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-14 23:17:36,118 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-14 23:17:36,120 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-14 23:17:36,120 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-14 23:17:36,406 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-14 23:17:36,492 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-14 23:17:36,492 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-14 23:17:36,493 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-14 23:17:36,494 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-14 23:17:36,494 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-14 23:17:36,495 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-14 23:17:36,576 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-14 23:17:36,577 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-14 23:17:36,577 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-14 23:17:38,622 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 23:17:38,624 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 23:17:38,625 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 23:17:38,649 [INFO] medical_store_app.ui.main_window: Billing widget created successfully
+2025-08-14 23:17:38,674 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-14 23:17:39,822 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 23:17:39,824 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 23:17:39,825 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 23:17:39,828 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-14 23:17:40,310 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-14 23:17:40,311 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-14 23:17:40,312 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-14 23:17:40,374 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: User Management
+2025-08-14 23:17:40,378 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:17:40,378 [INFO] medical_store_app.ui.dialogs.base_dialog: User management dialog initialized
+2025-08-14 23:18:08,555 [INFO] medical_store_app.ui.main_window: User management dialog displayed
+2025-08-14 23:18:09,501 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: reports
+2025-08-14 23:18:09,503 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-14 23:18:09,504 [INFO] medical_store_app.ui.main_window: Menu item selected: reports
+2025-08-14 23:18:09,508 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Reports
+2025-08-14 23:18:10,101 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: settings
+2025-08-14 23:18:10,103 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: settings
+2025-08-14 23:18:10,104 [INFO] medical_store_app.ui.main_window: Menu item selected: settings
+2025-08-14 23:18:10,107 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Settings
+2025-08-14 23:18:12,493 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-14 23:18:12,495 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-14 23:18:12,496 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-14 23:18:12,556 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: User Management
+2025-08-14 23:18:12,558 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:18:12,559 [INFO] medical_store_app.ui.dialogs.base_dialog: User management dialog initialized
+2025-08-14 23:18:44,222 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Validation Error
+2025-08-14 23:19:03,430 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Validation Error
+2025-08-14 23:19:08,528 [INFO] medical_store_app.repositories.user_repository: User updated successfully: admin (ID: 1)
+2025-08-14 23:19:08,529 [INFO] medical_store_app.managers.auth_manager: User updated by admin: admin
+2025-08-14 23:19:08,532 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Success
+2025-08-14 23:19:10,954 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:19:10,958 [INFO] medical_store_app.ui.main_window: Users updated, refreshing UI if needed
+2025-08-14 23:19:13,723 [INFO] medical_store_app.ui.main_window: User management dialog displayed
+2025-08-14 23:19:15,093 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 23:19:15,095 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 23:19:15,095 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 23:19:15,098 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-14 23:19:15,789 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-14 23:19:15,791 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-14 23:19:15,792 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-14 23:19:15,851 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: User Management
+2025-08-14 23:19:15,854 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:19:15,854 [INFO] medical_store_app.ui.dialogs.base_dialog: User management dialog initialized
+2025-08-14 23:19:18,579 [INFO] medical_store_app.ui.main_window: User management dialog displayed
+2025-08-14 23:19:23,653 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 23:19:23,655 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 23:19:23,656 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 23:19:23,660 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-14 23:19:24,869 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-14 23:19:24,871 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:19:24,872 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-14 23:19:24,878 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 23:19:25,669 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-14 23:19:25,671 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-14 23:19:25,672 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-14 23:19:25,673 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-14 23:19:25,673 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-14 23:19:25,674 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-14 23:19:25,679 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-14 23:19:25,680 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-14 23:19:25,680 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-14 23:19:29,085 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-14 23:19:29,087 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:19:29,088 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-14 23:19:29,094 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 23:19:30,837 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-14 23:19:31,142 [INFO] medical_store_app.ui.main_window: Sidebar collapsed
+2025-08-14 23:19:33,738 [INFO] medical_store_app.managers.auth_manager: User logged out: admin
+2025-08-14 23:19:33,739 [INFO] medical_store_app.ui.dialogs.login_dialog: User logged out successfully
+2025-08-14 23:19:33,739 [INFO] medical_store_app.ui.main_window: User logged out successfully
+2025-08-14 23:19:33,740 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-14 23:19:33,747 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-14 23:19:58,313 [INFO] medical_store_app.repositories.user_repository: User authenticated successfully: cashier
+2025-08-14 23:19:58,315 [INFO] medical_store_app.managers.auth_manager: User logged in: cashier (ID: 2)
+2025-08-14 23:19:58,316 [INFO] medical_store_app.ui.dialogs.base_dialog: Login successful for user: cashier
+2025-08-14 23:19:58,326 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog completed successfully for user: cashier
+2025-08-14 23:19:58,328 [INFO] medical_store_app.ui.main_window: Menu item hidden: users
+2025-08-14 23:19:58,329 [INFO] medical_store_app.ui.main_window: Menu item hidden: reports
+2025-08-14 23:19:58,331 [INFO] medical_store_app.ui.main_window: Menu item hidden: settings
+2025-08-14 23:19:58,333 [INFO] medical_store_app.ui.main_window: Menu item shown: medicine
+2025-08-14 23:19:58,334 [INFO] medical_store_app.ui.main_window: Menu item enabled: medicine
+2025-08-14 23:19:58,342 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-14 23:19:58,343 [INFO] medical_store_app.ui.main_window: User logged in successfully: cashier
+2025-08-14 23:20:00,461 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-14 23:20:00,462 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-14 23:20:00,463 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-14 23:20:02,909 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: expanded
+2025-08-14 23:20:03,214 [INFO] medical_store_app.ui.main_window: Sidebar expanded
+2025-08-14 23:20:04,389 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-14 23:20:04,391 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:20:04,392 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-14 23:20:06,189 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 23:20:06,197 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 23:20:06,197 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 23:20:06,201 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-14 23:20:07,261 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-14 23:20:07,262 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-14 23:20:07,263 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-14 23:20:10,069 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-14 23:20:10,374 [INFO] medical_store_app.ui.main_window: Sidebar collapsed
+2025-08-14 23:20:20,121 [INFO] medical_store_app.managers.auth_manager: User logged out: cashier
+2025-08-14 23:20:20,122 [INFO] medical_store_app.ui.dialogs.login_dialog: User logged out successfully
+2025-08-14 23:20:20,123 [INFO] medical_store_app.ui.main_window: User logged out successfully
+2025-08-14 23:20:20,124 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-14 23:20:20,131 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-14 23:20:25,553 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-14 23:20:25,554 [INFO] medical_store_app.ui.main_window: Login cancelled or failed, closing application
+2025-08-14 23:20:25,554 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-14 23:23:08,811 [INFO] __main__: Initializing database...
+2025-08-14 23:23:08,812 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-14 23:23:08,814 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:23:08,815 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-14 23:23:08,815 [INFO] __main__: Loading application settings...
+2025-08-14 23:23:08,816 [INFO] __main__: Starting main application window...
+2025-08-14 23:23:08,849 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:23:08,853 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-14 23:23:08,865 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 23:23:08,874 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-14 23:23:08,875 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:23:08,880 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-14 23:23:08,894 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-14 23:23:11,347 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-14 23:23:11,369 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-14 23:23:27,204 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-14 23:23:27,216 [INFO] medical_store_app.ui.main_window: Login cancelled or failed, closing application
+2025-08-14 23:23:27,248 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-14 23:23:28,715 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 23:23:28,717 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 23:23:28,718 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 23:23:32,355 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-14 23:24:28,756 [INFO] __main__: Initializing database...
+2025-08-14 23:24:28,757 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-14 23:24:28,758 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:24:28,760 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-14 23:24:28,760 [INFO] __main__: Loading application settings...
+2025-08-14 23:24:28,761 [INFO] __main__: Starting main application window...
+2025-08-14 23:24:28,799 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:24:28,803 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-14 23:24:28,816 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 23:24:28,824 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-14 23:24:28,825 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:24:28,829 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-14 23:24:28,845 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-14 23:24:30,266 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-14 23:24:30,321 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-14 23:24:34,126 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-14 23:24:34,163 [INFO] medical_store_app.ui.main_window: Login cancelled or failed, closing application
+2025-08-14 23:24:34,210 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-14 23:24:35,842 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-14 23:29:03,262 [INFO] __main__: Initializing database...
+2025-08-14 23:29:03,263 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-14 23:29:03,265 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:29:03,266 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-14 23:29:03,267 [INFO] __main__: Loading application settings...
+2025-08-14 23:29:03,267 [INFO] __main__: Creating main application window...
+2025-08-14 23:29:03,290 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:29:03,295 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-14 23:29:03,310 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 23:29:03,319 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-14 23:29:03,319 [INFO] __main__: Starting login process...
+2025-08-14 23:29:03,321 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:29:03,329 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-14 23:29:03,337 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-14 23:29:07,632 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-14 23:29:07,655 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-14 23:29:11,577 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-14 23:29:11,605 [INFO] medical_store_app.ui.main_window: Login cancelled or failed
+2025-08-14 23:29:11,609 [INFO] __main__: Application startup cancelled by user
+2025-08-14 23:29:14,652 [INFO] __main__: Initializing database...
+2025-08-14 23:29:14,653 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-14 23:29:14,654 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:29:14,656 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-14 23:29:14,657 [INFO] __main__: Loading application settings...
+2025-08-14 23:29:14,657 [INFO] __main__: Creating main application window...
+2025-08-14 23:29:14,683 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-14 23:29:14,686 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-14 23:29:14,697 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 23:29:14,706 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-14 23:29:14,707 [INFO] __main__: Starting login process...
+2025-08-14 23:29:14,709 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-14 23:29:14,714 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-14 23:29:14,727 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-14 23:29:16,749 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-14 23:29:16,792 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-14 23:29:23,680 [INFO] medical_store_app.repositories.user_repository: User authenticated successfully: admin
+2025-08-14 23:29:23,682 [INFO] medical_store_app.managers.auth_manager: User logged in: admin (ID: 1)
+2025-08-14 23:29:23,683 [INFO] medical_store_app.ui.dialogs.base_dialog: Login successful for user: admin
+2025-08-14 23:29:23,709 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog completed successfully for user: admin
+2025-08-14 23:29:23,717 [INFO] medical_store_app.ui.main_window: Menu item shown: users
+2025-08-14 23:29:23,722 [INFO] medical_store_app.ui.main_window: Menu item shown: reports
+2025-08-14 23:29:23,723 [INFO] medical_store_app.ui.main_window: Menu item shown: settings
+2025-08-14 23:29:23,724 [INFO] medical_store_app.ui.main_window: Menu item shown: medicine
+2025-08-14 23:29:23,725 [INFO] medical_store_app.ui.main_window: Menu item enabled: users
+2025-08-14 23:29:23,727 [INFO] medical_store_app.ui.main_window: Menu item enabled: medicine
+2025-08-14 23:29:23,748 [INFO] medical_store_app.ui.main_window: Dashboard content displayed
+2025-08-14 23:29:23,750 [INFO] medical_store_app.ui.main_window: User logged in successfully: admin
+2025-08-14 23:29:23,813 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-14 23:29:28,713 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-14 23:29:28,714 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-14 23:29:28,715 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-14 23:29:28,824 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-14 23:29:28,910 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-14 23:29:28,911 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-14 23:29:28,911 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-14 23:29:28,912 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-14 23:29:28,913 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-14 23:29:28,913 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-14 23:29:28,973 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-14 23:29:28,974 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-14 23:29:28,975 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-14 23:29:29,985 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 23:29:29,987 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 23:29:29,988 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 23:29:30,011 [INFO] medical_store_app.ui.main_window: Billing widget created successfully
+2025-08-14 23:29:30,036 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-14 23:29:31,625 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: reports
+2025-08-14 23:29:31,626 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-14 23:29:31,627 [INFO] medical_store_app.ui.main_window: Menu item selected: reports
+2025-08-14 23:29:31,631 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Reports
+2025-08-14 23:29:32,609 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-14 23:29:32,610 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-14 23:29:32,611 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-14 23:29:32,672 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: User Management
+2025-08-14 23:29:32,675 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:29:32,676 [INFO] medical_store_app.ui.dialogs.base_dialog: User management dialog initialized
+2025-08-14 23:29:48,040 [INFO] medical_store_app.repositories.user_repository: User updated successfully: admin (ID: 1)
+2025-08-14 23:29:48,042 [INFO] medical_store_app.managers.auth_manager: User updated by admin: admin
+2025-08-14 23:29:48,044 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Success
+2025-08-14 23:29:49,870 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:29:49,872 [INFO] medical_store_app.ui.main_window: Users updated, refreshing UI if needed
+2025-08-14 23:30:07,529 [INFO] medical_store_app.repositories.user_repository: User updated successfully: admin (ID: 1)
+2025-08-14 23:30:07,530 [INFO] medical_store_app.managers.auth_manager: User updated by admin: admin
+2025-08-14 23:30:07,533 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Success
+2025-08-14 23:30:08,653 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:30:08,655 [INFO] medical_store_app.ui.main_window: Users updated, refreshing UI if needed
+2025-08-14 23:30:25,185 [ERROR] medical_store_app.repositories.user_repository: User validation failed: ['Username can only contain letters, numbers, and underscores']
+2025-08-14 23:30:25,186 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Error
+2025-08-14 23:30:37,126 [INFO] medical_store_app.repositories.user_repository: User updated successfully: AbdulRehman (ID: 1)
+2025-08-14 23:30:37,127 [INFO] medical_store_app.managers.auth_manager: User updated by admin: AbdulRehman
+2025-08-14 23:30:37,130 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Success
+2025-08-14 23:30:39,349 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:30:39,352 [INFO] medical_store_app.ui.main_window: Users updated, refreshing UI if needed
+2025-08-14 23:30:45,805 [INFO] medical_store_app.ui.main_window: User management dialog displayed
+2025-08-14 23:30:48,760 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-14 23:30:48,762 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-14 23:30:48,763 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-14 23:30:48,765 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-14 23:30:49,960 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-14 23:30:49,962 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-14 23:30:49,963 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-14 23:30:49,964 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-14 23:30:49,964 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-14 23:30:49,965 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-14 23:30:49,972 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-14 23:30:49,973 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-14 23:30:49,974 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-14 23:30:51,080 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-14 23:30:51,082 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-14 23:30:51,083 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-14 23:30:51,141 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: User Management
+2025-08-14 23:30:51,144 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:30:51,145 [INFO] medical_store_app.ui.dialogs.base_dialog: User management dialog initialized
+2025-08-14 23:31:05,007 [INFO] medical_store_app.repositories.user_repository: User updated successfully: AbdulRehman (ID: 1)
+2025-08-14 23:31:05,009 [INFO] medical_store_app.managers.auth_manager: User updated by admin: AbdulRehman
+2025-08-14 23:31:05,011 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Success
+2025-08-14 23:31:08,045 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:31:08,048 [INFO] medical_store_app.ui.main_window: Users updated, refreshing UI if needed
+2025-08-14 23:31:21,032 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:31:23,762 [INFO] medical_store_app.ui.main_window: User management dialog displayed
+2025-08-14 23:31:25,760 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: reports
+2025-08-14 23:31:25,762 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-14 23:31:25,763 [INFO] medical_store_app.ui.main_window: Menu item selected: reports
+2025-08-14 23:31:25,766 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Reports
+2025-08-14 23:31:26,208 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: settings
+2025-08-14 23:31:26,212 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: settings
+2025-08-14 23:31:26,213 [INFO] medical_store_app.ui.main_window: Menu item selected: settings
+2025-08-14 23:31:26,216 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Settings
+2025-08-14 23:31:26,640 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-14 23:31:26,642 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-14 23:31:26,642 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-14 23:31:26,707 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: User Management
+2025-08-14 23:31:26,709 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-14 23:31:26,710 [INFO] medical_store_app.ui.dialogs.base_dialog: User management dialog initialized
+2025-08-14 23:31:28,141 [INFO] medical_store_app.ui.main_window: User management dialog displayed
+2025-08-14 23:31:29,924 [INFO] medical_store_app.managers.auth_manager: User logged out: admin
+2025-08-14 23:31:29,925 [INFO] medical_store_app.ui.dialogs.login_dialog: User logged out successfully
+2025-08-14 23:31:29,926 [INFO] medical_store_app.ui.main_window: User logged out successfully
+2025-08-14 23:31:29,973 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-14 23:31:29,988 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-14 23:31:34,883 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-14 23:31:34,885 [INFO] medical_store_app.ui.main_window: Login cancelled after logout, closing application

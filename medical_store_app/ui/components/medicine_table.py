@@ -70,6 +70,9 @@ class MedicineTableWidget(QWidget):
         self.refresh_timer = QTimer()
         self.refresh_timer.timeout.connect(self.refresh_data)
         
+        # Role-based access control
+        self.readonly_mode = False
+        
         self._setup_ui()
         self._connect_signals()
         self._setup_context_menu()
@@ -623,19 +626,21 @@ class MedicineTableWidget(QWidget):
         
         menu = QMenu(self)
         
-        # Edit action
-        edit_action = QAction("Edit Medicine", self)
-        edit_action.triggered.connect(lambda: self.edit_requested.emit(self.selected_medicine))
-        menu.addAction(edit_action)
+        # Only show edit/delete actions if not in readonly mode
+        if not self.readonly_mode:
+            # Edit action
+            edit_action = QAction("Edit Medicine", self)
+            edit_action.triggered.connect(lambda: self.edit_requested.emit(self.selected_medicine))
+            menu.addAction(edit_action)
+            
+            # Delete action
+            delete_action = QAction("Delete Medicine", self)
+            delete_action.triggered.connect(lambda: self.delete_requested.emit(self.selected_medicine))
+            menu.addAction(delete_action)
+            
+            menu.addSeparator()
         
-        # Delete action
-        delete_action = QAction("Delete Medicine", self)
-        delete_action.triggered.connect(lambda: self.delete_requested.emit(self.selected_medicine))
-        menu.addAction(delete_action)
-        
-        menu.addSeparator()
-        
-        # View details action
+        # View details action (always available)
         details_action = QAction("View Details", self)
         details_action.triggered.connect(self._show_medicine_details)
         menu.addAction(details_action)
@@ -1062,3 +1067,29 @@ Status: {medicine.get_stock_status()}
         self.table.clearSelection()
         
         self.logger.info(f"Removed medicine from table: ID {medicine_id}")
+    
+    def set_readonly_mode(self, readonly: bool):
+        """Set readonly mode for role-based access control"""
+        self.readonly_mode = readonly
+        
+        if readonly:
+            # Disable double-click editing
+            self.table.itemDoubleClicked.disconnect()
+            self.table.itemDoubleClicked.connect(self._on_item_double_clicked_readonly)
+            
+            self.logger.info("Medicine table set to read-only mode")
+        else:
+            # Re-enable double-click editing
+            self.table.itemDoubleClicked.disconnect()
+            self.table.itemDoubleClicked.connect(self._on_item_double_clicked)
+            
+            self.logger.info("Medicine table set to full access mode")
+    
+    def _on_item_double_clicked_readonly(self, item: QTableWidgetItem):
+        """Handle item double click in readonly mode - show details only"""
+        if self.selected_medicine:
+            self._show_medicine_details()
+    
+    def is_readonly_mode(self) -> bool:
+        """Check if table is in readonly mode"""
+        return self.readonly_mode

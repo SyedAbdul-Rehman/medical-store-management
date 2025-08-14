@@ -75,15 +75,23 @@ def main():
         logger.info("Loading application settings...")
         settings = AppSettings()
         
-        # Create and show main window
-        logger.info("Starting main application window...")
+        # Create main window (but don't show it yet)
+        logger.info("Creating main application window...")
         main_window = MainWindow()
-        main_window.show()
         
-        logger.info("Medical Store Management Application started successfully")
-        
-        # Start the application event loop
-        return app.exec()
+        # Start the application with login process
+        logger.info("Starting login process...")
+        if main_window.start_application():
+            # Login successful, show the main window
+            main_window.show()
+            logger.info("Medical Store Management Application started successfully")
+            
+            # Start the application event loop
+            return app.exec()
+        else:
+            # Login cancelled or failed, exit application
+            logger.info("Application startup cancelled by user")
+            return 0
         
     except Exception as e:
         logger.error(f"Failed to start application: {e}")
