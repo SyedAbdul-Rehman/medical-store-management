@@ -320,7 +320,7 @@ class SalesManager:
     
     # Transaction Processing Methods
     
-    def complete_sale(self, cashier_id: Optional[int] = None) -> Tuple[bool, str, Optional[Sale]]:
+    def complete_sale(self, cashier_id: Optional[int] = None, customer_name: Optional[str] = None) -> Tuple[bool, str, Optional[Sale]]:
         """
         Complete the current sale transaction
         
@@ -347,7 +347,8 @@ class SalesManager:
                 tax=totals['tax'],
                 total=totals['total'],
                 payment_method=self._current_payment_method,
-                cashier_id=cashier_id
+                cashier_id=cashier_id,
+                customer_name=customer_name.strip() if customer_name else None
             )
             
             # Validate sale

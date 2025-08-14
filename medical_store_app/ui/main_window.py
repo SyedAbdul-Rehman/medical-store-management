@@ -13,8 +13,11 @@ from PySide6.QtGui import QFont, QPalette
 
 from .components.sidebar import Sidebar
 from .components.medicine_management import MedicineManagementWidget
+from .components.billing_widget import BillingWidget
 from ..managers.medicine_manager import MedicineManager
+from ..managers.sales_manager import SalesManager
 from ..repositories.medicine_repository import MedicineRepository
+from ..repositories.sales_repository import SalesRepository
 from ..config.database import DatabaseManager
 
 
@@ -43,10 +46,13 @@ class MainWindow(QMainWindow):
         # Initialize managers and repositories
         self.db_manager = DatabaseManager()
         self.medicine_repository = MedicineRepository(self.db_manager)
+        self.sales_repository = SalesRepository(self.db_manager)
         self.medicine_manager = MedicineManager(self.medicine_repository)
+        self.sales_manager = SalesManager(self.sales_repository, self.medicine_repository)
         
         # Content widgets
         self.medicine_management_widget = None
+        self.billing_widget = None
         self.current_content_widget = None
         
         # Center the window on screen
@@ -357,8 +363,38 @@ class MainWindow(QMainWindow):
         self.logger.info("Medicine management content displayed")
     
     def _show_billing_content(self):
-        """Show billing content (placeholder)"""
-        self._show_placeholder_content("Billing System", "Billing functionality will be implemented in a future update.")
+        """Show billing content"""
+        self._clear_content_area()
+        
+        # Create billing widget if not exists
+        if not self.billing_widget:
+            try:
+                self.billing_widget = BillingWidget(self.medicine_manager, self.sales_manager)
+                
+                # Connect signals for logging
+                self.billing_widget.cart_widget.cart_updated.connect(
+                    lambda: self.logger.debug("Cart updated")
+                )
+                
+                self.logger.info("Billing widget created successfully")
+                
+            except Exception as e:
+                self.logger.error(f"Failed to create billing widget: {e}")
+                self._show_error_content("Billing System", str(e))
+                return
+        
+        # Add to content area
+        self.content_layout.addWidget(self.billing_widget)
+        self.current_content_widget = self.billing_widget
+        self.billing_widget.show()
+        
+        # Refresh display
+        try:
+            self.billing_widget.refresh_display()
+        except Exception as e:
+            self.logger.error(f"Failed to refresh billing display: {e}")
+        
+        self.logger.info("Billing content displayed")
     
     def _show_reports_content(self):
         """Show reports content (placeholder)"""
