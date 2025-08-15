@@ -12,18 +12,20 @@ A comprehensive desktop application for managing medical store operations, built
 - **Enhanced Inventory Features**: Low-stock alerts, expiry monitoring, advanced filtering
 - **Billing System UI**: Complete sales interface with product search, cart, and checkout
 - **Transaction Processing**: Payment handling, receipt generation, inventory updates
+- **User Authentication System**: Login/logout, role-based access control, user management
+- **Dashboard & Overview**: Key metrics cards, sales charts, quick action buttons
+- **Reports & Analytics**: Sales reports, data visualization, export functionality (CSV/Excel/PDF)
 - **Reusable Components**: Validated form components, styled buttons, tables, and dialogs
 - **Database Integration**: SQLite database with proper schema and migrations
-- **User Management**: Authentication and user role management (Backend)
 - **Settings Management**: Configurable application settings
 - **Backup & Restore System**: Comprehensive version control and recovery utilities
 - **Comprehensive Testing**: Full test coverage for all components
 
 ### 🔄 In Development
-- User authentication UI (login/logout interface)
-- Reports and analytics dashboard
 - Settings management interface
 - Advanced features and optimizations
+- Performance enhancements
+- Deployment preparation
 
 ## 🛠️ Technology Stack
 
@@ -151,6 +153,19 @@ tests/                     # Test files
 - **Checkout**: Payment processing with multiple payment methods
 - **Receipt Generation**: Professional receipts with transaction details
 
+### User Authentication
+- **Login Dialog**: Secure authentication with username/password
+- **Role-Based Access**: Admin and cashier role restrictions
+- **User Management**: Add/edit users, role assignment, password management
+- **Session Management**: Secure login/logout functionality
+
+### Dashboard & Reports
+- **Dashboard Cards**: Key metrics (Total Sales, Medicines, Low Stock, Expired)
+- **Sales Charts**: Visual data representation with trend analysis
+- **Quick Actions**: Direct navigation to frequently used features
+- **Reports Generation**: Sales reports with date range filtering
+- **Export Options**: CSV, Excel, and PDF export capabilities
+
 ### Reusable Components
 - **ValidatedLineEdit**: Text input with built-in validation
 - **ValidatedComboBox**: Dropdown with validation
@@ -238,11 +253,24 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [x] Transaction processing and receipts
 - [x] Inventory updates after sales
 
-### Phase 4: Next Development 🔄
-- [ ] User authentication UI
-- [ ] Reports and analytics dashboard
+### Phase 4: User Authentication ✅ Complete
+- [x] Login dialog and authentication flow
+- [x] Role-based access control throughout UI
+- [x] User management interface for admins
+- [x] Admin/cashier access restrictions
+
+### Phase 5: Dashboard & Reports ✅ Complete
+- [x] Dashboard with key metrics cards
+- [x] Sales charts and data visualization
+- [x] Quick action buttons and navigation
+- [x] Sales reports with date range filtering
+- [x] Export functionality (CSV, Excel, PDF)
+
+### Phase 6: Next Development 🔄
 - [ ] Settings management interface
 - [ ] Advanced features and optimizations
+- [ ] Performance enhancements
+- [ ] Deployment preparation
 
 ### Future Enhancements 🚀
 - [ ] Multi-language support
@@ -254,10 +282,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Status**: Active Development | **Version**: 1.0.0-rc1 | **Last Updated**: January 2025
+**Status**: Active Development | **Version**: 1.0.0-rc2 | **Last Updated**: January 2025
 
 ### 🎉 Major Milestones Achieved
 - ✅ **Complete Medicine Management System** - Full inventory control
 - ✅ **Complete Billing System** - End-to-end sales processing
+- ✅ **User Authentication System** - Secure login and role-based access
+- ✅ **Dashboard & Reports System** - Analytics and data visualization
 - ✅ **Professional UI Framework** - Modern, responsive interface
 - ✅ **Comprehensive Testing** - High-quality, reliable codebase
