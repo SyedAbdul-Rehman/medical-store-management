@@ -152,7 +152,7 @@ class DashboardWidget(QWidget):
     """Main dashboard widget with overview cards and metrics"""
     
     # Signals
-    navigate_to = Signal(str)  # Emitted when navigation is requested
+    navigate_to = Signal(str, str)  # Emitted when navigation is requested (destination, filter_type)
     
     def __init__(self, medicine_manager: MedicineManager, sales_manager: SalesManager, parent=None):
         super().__init__(parent)
@@ -243,7 +243,7 @@ class DashboardWidget(QWidget):
             card_type="success",
             clickable=True
         )
-        self.total_sales_card.card_clicked.connect(lambda: self.navigate_to.emit("reports"))
+        self.total_sales_card.card_clicked.connect(lambda: self.navigate_to.emit("reports", ""))
         
         self.total_medicines_card = MetricCard(
             title="Total Medicines",
@@ -252,7 +252,7 @@ class DashboardWidget(QWidget):
             card_type="default",
             clickable=True
         )
-        self.total_medicines_card.card_clicked.connect(lambda: self.navigate_to.emit("inventory"))
+        self.total_medicines_card.card_clicked.connect(lambda: self.navigate_to.emit("inventory", ""))
         
         self.low_stock_card = MetricCard(
             title="Low Stock Items",
@@ -261,7 +261,7 @@ class DashboardWidget(QWidget):
             card_type="warning",
             clickable=True
         )
-        self.low_stock_card.card_clicked.connect(lambda: self.navigate_to.emit("inventory"))
+        self.low_stock_card.card_clicked.connect(lambda: self.navigate_to.emit("inventory", "Low/Out of Stock"))
         
         self.expired_stock_card = MetricCard(
             title="Expired Items",
@@ -270,7 +270,7 @@ class DashboardWidget(QWidget):
             card_type="danger",
             clickable=True
         )
-        self.expired_stock_card.card_clicked.connect(lambda: self.navigate_to.emit("inventory"))
+        self.expired_stock_card.card_clicked.connect(lambda: self.navigate_to.emit("inventory", "Expired"))
         
         # Add cards to grid (2x2 layout)
         cards_grid.addWidget(self.total_sales_card, 0, 0)
@@ -305,7 +305,7 @@ class DashboardWidget(QWidget):
         
         # Create sales chart card
         self.sales_chart_card = SalesChartCard()
-        self.sales_chart_card.card_clicked.connect(lambda: self.navigate_to.emit("reports"))
+        self.sales_chart_card.card_clicked.connect(lambda: self.navigate_to.emit("reports", ""))
         
         parent_layout.addWidget(self.sales_chart_card)
     
@@ -336,7 +336,7 @@ class DashboardWidget(QWidget):
         # Add Medicine button
         add_medicine_btn = StyledButton("Add Medicine", button_type="primary")
         add_medicine_btn.setObjectName("quickActionButton")
-        add_medicine_btn.clicked.connect(lambda: self.navigate_to.emit("medicine"))
+        add_medicine_btn.clicked.connect(lambda: self.navigate_to.emit("medicine", ""))
         add_medicine_btn.setToolTip("Add new medicine to inventory")
         self.quick_action_buttons.append(add_medicine_btn)
         actions_layout.addWidget(add_medicine_btn, 0, 0)
@@ -344,7 +344,7 @@ class DashboardWidget(QWidget):
         # Process Sale button
         process_sale_btn = StyledButton("Process Sale", button_type="secondary")
         process_sale_btn.setObjectName("quickActionButton")
-        process_sale_btn.clicked.connect(lambda: self.navigate_to.emit("billing"))
+        process_sale_btn.clicked.connect(lambda: self.navigate_to.emit("billing", ""))
         process_sale_btn.setToolTip("Start a new sale transaction")
         self.quick_action_buttons.append(process_sale_btn)
         actions_layout.addWidget(process_sale_btn, 0, 1)
@@ -352,7 +352,7 @@ class DashboardWidget(QWidget):
         # View Inventory button
         view_inventory_btn = StyledButton("View Inventory", button_type="outline")
         view_inventory_btn.setObjectName("quickActionButton")
-        view_inventory_btn.clicked.connect(lambda: self.navigate_to.emit("inventory"))
+        view_inventory_btn.clicked.connect(lambda: self.navigate_to.emit("inventory", ""))
         view_inventory_btn.setToolTip("View and manage medicine inventory")
         self.quick_action_buttons.append(view_inventory_btn)
         actions_layout.addWidget(view_inventory_btn, 0, 2)
@@ -360,15 +360,15 @@ class DashboardWidget(QWidget):
         # Low Stock Alert button (conditional styling based on alerts)
         low_stock_btn = StyledButton("Low Stock Items", button_type="outline")
         low_stock_btn.setObjectName("quickActionButton")
-        low_stock_btn.clicked.connect(lambda: self.navigate_to.emit("inventory"))
-        low_stock_btn.setToolTip("View medicines with low stock")
+        low_stock_btn.clicked.connect(lambda: self.navigate_to.emit("inventory", "Low/Out of Stock"))
+        low_stock_btn.setToolTip("View medicines with low stock and out of stock (requires restocking)")
         self.quick_action_buttons.append(low_stock_btn)
         actions_layout.addWidget(low_stock_btn, 1, 0)
         
         # Expired Items button (conditional styling based on alerts)
         expired_items_btn = StyledButton("Expired Items", button_type="outline")
         expired_items_btn.setObjectName("quickActionButton")
-        expired_items_btn.clicked.connect(lambda: self.navigate_to.emit("inventory"))
+        expired_items_btn.clicked.connect(lambda: self.navigate_to.emit("inventory", "Expired"))
         expired_items_btn.setToolTip("View expired medicines")
         self.quick_action_buttons.append(expired_items_btn)
         actions_layout.addWidget(expired_items_btn, 1, 1)
@@ -376,7 +376,7 @@ class DashboardWidget(QWidget):
         # Reports button
         reports_btn = StyledButton("View Reports", button_type="outline")
         reports_btn.setObjectName("quickActionButton")
-        reports_btn.clicked.connect(lambda: self.navigate_to.emit("reports"))
+        reports_btn.clicked.connect(lambda: self.navigate_to.emit("reports", ""))
         reports_btn.setToolTip("View sales and inventory reports")
         self.quick_action_buttons.append(reports_btn)
         actions_layout.addWidget(reports_btn, 1, 2)

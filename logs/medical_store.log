@@ -1281,3 +1281,1068 @@
 2025-08-15 00:35:40,504 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
 2025-08-15 00:35:40,522 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
 2025-08-15 00:35:40,525 [INFO] medical_store_app.ui.main_window: Login cancelled after logout, closing application
+2025-08-15 09:40:56,785 [INFO] __main__: Initializing database...
+2025-08-15 09:40:56,801 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-15 09:40:56,872 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 09:40:56,877 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-15 09:40:56,877 [INFO] __main__: Loading application settings...
+2025-08-15 09:40:56,878 [INFO] __main__: Creating main application window...
+2025-08-15 09:40:57,570 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 09:40:57,573 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-15 09:40:58,575 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:40:58,576 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 09:40:58,579 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 09:40:58,736 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:40:58,738 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 09:40:58,790 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 09:40:58,877 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-15 09:40:58,878 [INFO] __main__: Starting login process...
+2025-08-15 09:40:58,935 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-15 09:40:58,986 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-15 09:41:15,996 [INFO] medical_store_app.repositories.user_repository: User authenticated successfully: AbdulRehman
+2025-08-15 09:41:15,998 [INFO] medical_store_app.managers.auth_manager: User logged in: AbdulRehman (ID: 1)
+2025-08-15 09:41:15,999 [INFO] medical_store_app.ui.dialogs.base_dialog: Login successful for user: AbdulRehman
+2025-08-15 09:41:16,045 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog completed successfully for user: AbdulRehman
+2025-08-15 09:41:16,056 [INFO] medical_store_app.ui.main_window: Menu item shown: users
+2025-08-15 09:41:16,058 [INFO] medical_store_app.ui.main_window: Menu item shown: reports
+2025-08-15 09:41:16,059 [INFO] medical_store_app.ui.main_window: Menu item shown: settings
+2025-08-15 09:41:16,064 [INFO] medical_store_app.ui.main_window: Menu item shown: medicine
+2025-08-15 09:41:16,114 [INFO] medical_store_app.ui.main_window: Menu item enabled: users
+2025-08-15 09:41:16,141 [INFO] medical_store_app.ui.main_window: Menu item enabled: medicine
+2025-08-15 09:41:16,450 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:41:16,453 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 09:41:16,576 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:41:16,579 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 09:41:16,640 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 09:41:16,641 [INFO] medical_store_app.ui.main_window: User logged in successfully: AbdulRehman
+2025-08-15 09:41:16,748 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-15 09:41:26,416 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-15 09:41:26,418 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 09:41:26,419 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-15 09:41:26,797 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-15 09:41:26,908 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-15 09:41:26,909 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 09:41:26,909 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-15 09:41:26,910 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 09:41:26,911 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 09:41:26,912 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 09:41:26,988 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-15 09:41:26,989 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 09:41:26,990 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-15 09:41:27,583 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:41:27,586 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 09:41:27,729 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:41:27,731 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 09:41:28,424 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-15 09:41:28,426 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-15 09:41:28,427 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-15 09:41:28,470 [INFO] medical_store_app.ui.main_window: Billing widget created successfully
+2025-08-15 09:41:28,493 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-15 09:41:30,064 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-15 09:41:30,066 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 09:41:30,067 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-15 09:41:30,068 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 09:41:30,068 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 09:41:30,069 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 09:41:30,073 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 0 medicines loaded
+2025-08-15 09:41:30,074 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 09:41:30,075 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-15 09:41:46,166 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:41:46,169 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-15 09:41:46,301 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:41:46,303 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-15 09:41:56,673 [INFO] medical_store_app.ui.components.medicine_form: Started add medicine operation
+2025-08-15 09:41:56,676 [INFO] medical_store_app.repositories.medicine_repository: Medicine saved successfully: Panadole (ID: 1)
+2025-08-15 09:41:56,781 [INFO] medical_store_app.managers.medicine_manager: Medicine 'Panadole' added successfully
+2025-08-15 09:41:57,579 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:41:57,582 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 1 medicines, $24.00 total value, 1 low stock alerts
+2025-08-15 09:41:57,738 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:41:57,740 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 1, Low Stock: 1, Expired: 0
+2025-08-15 09:41:58,459 [INFO] medical_store_app.ui.components.medicine_table: Added medicine to table: Panadole
+2025-08-15 09:41:58,460 [INFO] medical_store_app.ui.main_window: Medicine added: Panadole
+2025-08-15 09:41:58,461 [INFO] medical_store_app.ui.components.medicine_management: Medicine added: Panadole
+2025-08-15 09:41:58,501 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-15 09:41:58,502 [INFO] medical_store_app.ui.components.medicine_management: Form operation completed: Medicine 'Panadole' added successfully
+2025-08-15 09:41:58,522 [INFO] medical_store_app.ui.components.medicine_form: Medicine form cleared
+2025-08-15 09:41:58,523 [INFO] medical_store_app.ui.components.medicine_form: Medicine operation completed successfully: Medicine 'Panadole' added successfully
+2025-08-15 09:42:00,120 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 09:42:00,122 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 09:42:00,123 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 09:42:00,340 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:42:00,342 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 1 medicines, $24.00 total value, 1 low stock alerts
+2025-08-15 09:42:00,482 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:42:00,485 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 1, Low Stock: 1, Expired: 0
+2025-08-15 09:42:00,529 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 09:42:08,160 [WARNING] medical_store_app.ui.main_window: Unknown dashboard navigation destination: billing
+2025-08-15 09:42:08,728 [WARNING] medical_store_app.ui.main_window: Unknown dashboard navigation destination: medicine
+2025-08-15 09:42:09,296 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:09,688 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:10,033 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:10,568 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:10,784 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:11,168 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:11,568 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:11,768 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:12,120 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:12,672 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:13,128 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:13,736 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:14,000 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:14,192 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:14,368 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:14,552 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:14,744 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:15,688 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:15,864 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:16,048 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:42:16,160 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:42:16,163 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 1 medicines, $24.00 total value, 1 low stock alerts
+2025-08-15 09:42:16,290 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:42:16,292 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 1, Low Stock: 1, Expired: 0
+2025-08-15 09:42:27,591 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:42:27,594 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 1 medicines, $24.00 total value, 1 low stock alerts
+2025-08-15 09:42:27,741 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:42:27,743 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 1, Low Stock: 1, Expired: 0
+2025-08-15 09:42:30,120 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:42:30,123 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 1 medicines, $24.00 total value, 1 low stock alerts
+2025-08-15 09:42:30,326 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:42:30,328 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 1, Low Stock: 1, Expired: 0
+2025-08-15 09:42:31,239 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-15 09:49:56,295 [INFO] __main__: Initializing database...
+2025-08-15 09:49:56,296 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-15 09:49:56,297 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 09:49:56,299 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-15 09:49:56,300 [INFO] __main__: Loading application settings...
+2025-08-15 09:49:56,301 [INFO] __main__: Creating main application window...
+2025-08-15 09:49:56,341 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 09:49:56,349 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-15 09:49:56,634 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:49:56,637 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 09:49:56,720 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14483.00 total value, 4 low stock alerts
+2025-08-15 09:49:56,963 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:49:56,965 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $430.63, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:49:57,006 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 09:49:57,056 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-15 09:49:57,056 [INFO] __main__: Starting login process...
+2025-08-15 09:49:57,058 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-15 09:49:57,077 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-15 09:50:00,776 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-15 09:50:00,782 [INFO] medical_store_app.ui.main_window: Login cancelled or failed
+2025-08-15 09:50:00,784 [INFO] __main__: Application startup cancelled by user
+2025-08-15 09:50:10,282 [INFO] __main__: Initializing database...
+2025-08-15 09:50:10,283 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-15 09:50:10,284 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 09:50:10,285 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-15 09:50:10,286 [INFO] __main__: Loading application settings...
+2025-08-15 09:50:10,287 [INFO] __main__: Creating main application window...
+2025-08-15 09:50:10,305 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 09:50:10,308 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-15 09:50:10,562 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:50:10,563 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 09:50:10,568 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14483.00 total value, 4 low stock alerts
+2025-08-15 09:50:10,711 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:50:10,713 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $430.63, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:50:10,756 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 09:50:10,800 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-15 09:50:10,801 [INFO] __main__: Starting login process...
+2025-08-15 09:50:10,803 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-15 09:50:10,816 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-15 09:50:17,738 [INFO] medical_store_app.repositories.user_repository: User authenticated successfully: admin
+2025-08-15 09:50:17,739 [INFO] medical_store_app.managers.auth_manager: User logged in: admin (ID: 3)
+2025-08-15 09:50:17,740 [INFO] medical_store_app.ui.dialogs.base_dialog: Login successful for user: admin
+2025-08-15 09:50:17,757 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog completed successfully for user: admin
+2025-08-15 09:50:17,773 [INFO] medical_store_app.ui.main_window: Menu item shown: users
+2025-08-15 09:50:17,776 [INFO] medical_store_app.ui.main_window: Menu item shown: reports
+2025-08-15 09:50:17,778 [INFO] medical_store_app.ui.main_window: Menu item shown: settings
+2025-08-15 09:50:17,792 [INFO] medical_store_app.ui.main_window: Menu item shown: medicine
+2025-08-15 09:50:17,795 [INFO] medical_store_app.ui.main_window: Menu item enabled: users
+2025-08-15 09:50:17,798 [INFO] medical_store_app.ui.main_window: Menu item enabled: medicine
+2025-08-15 09:50:18,067 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:50:18,070 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14483.00 total value, 4 low stock alerts
+2025-08-15 09:50:18,303 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:50:18,305 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $430.63, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:50:18,346 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 09:50:18,347 [INFO] medical_store_app.ui.main_window: User logged in successfully: admin
+2025-08-15 09:50:18,372 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-15 09:50:31,117 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:50:31,805 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:50:32,245 [ERROR] medical_store_app.ui.main_window: Error handling dashboard navigation: 'Sidebar' object has no attribute 'select_item'
+2025-08-15 09:50:32,966 [WARNING] medical_store_app.ui.main_window: Unknown dashboard navigation destination: medicine
+2025-08-15 09:50:34,100 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-15 09:50:34,102 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 09:50:34,103 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-15 09:50:34,264 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 09:50:34,408 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 09:50:34,409 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 09:50:34,409 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-15 09:50:34,410 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 09:50:34,410 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 09:50:34,411 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 09:50:34,534 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 09:50:34,534 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 09:50:34,535 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-15 09:50:37,126 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-15 09:50:37,449 [INFO] medical_store_app.ui.main_window: Sidebar collapsed
+2025-08-15 09:50:40,308 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:50:40,312 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14483.00 total value, 4 low stock alerts
+2025-08-15 09:50:40,467 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:50:40,469 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $430.63, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:50:47,802 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:50:47,804 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14483.00 total value, 4 low stock alerts
+2025-08-15 09:50:47,915 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:50:47,917 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $430.63, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:51:04,676 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-15 09:51:04,678 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-15 09:51:04,679 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-15 09:51:04,710 [INFO] medical_store_app.ui.main_window: Billing widget created successfully
+2025-08-15 09:51:04,735 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-15 09:51:06,828 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-15 09:51:06,830 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-15 09:51:06,831 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-15 09:51:06,903 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: User Management
+2025-08-15 09:51:06,907 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 5 users
+2025-08-15 09:51:06,908 [INFO] medical_store_app.ui.dialogs.base_dialog: User management dialog initialized
+2025-08-15 09:51:10,316 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:51:10,319 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14483.00 total value, 4 low stock alerts
+2025-08-15 09:51:10,454 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:51:10,456 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $430.63, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:51:16,778 [INFO] medical_store_app.ui.main_window: User management dialog displayed
+2025-08-15 09:51:17,794 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:51:17,798 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14483.00 total value, 4 low stock alerts
+2025-08-15 09:51:17,925 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:51:17,927 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $430.63, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:51:19,412 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: reports
+2025-08-15 09:51:19,414 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-15 09:51:19,415 [INFO] medical_store_app.ui.main_window: Menu item selected: reports
+2025-08-15 09:51:19,419 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Reports
+2025-08-15 09:51:20,212 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: settings
+2025-08-15 09:51:20,214 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: settings
+2025-08-15 09:51:20,215 [INFO] medical_store_app.ui.main_window: Menu item selected: settings
+2025-08-15 09:51:20,218 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Settings
+2025-08-15 09:51:20,764 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-15 09:51:20,766 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-15 09:51:20,767 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-15 09:51:20,822 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: User Management
+2025-08-15 09:51:20,825 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 5 users
+2025-08-15 09:51:20,826 [INFO] medical_store_app.ui.dialogs.base_dialog: User management dialog initialized
+2025-08-15 09:51:22,346 [INFO] medical_store_app.ui.main_window: User management dialog displayed
+2025-08-15 09:51:23,292 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-15 09:51:23,294 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-15 09:51:23,294 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-15 09:51:23,298 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-15 09:51:31,020 [INFO] medical_store_app.managers.sales_manager: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:31,025 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:31,026 [INFO] medical_store_app.ui.components.billing_widget: Product selected: Adhesive Bandages Pack x 1
+2025-08-15 09:51:31,027 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:37,451 [INFO] medical_store_app.repositories.sales_repository: Sale saved successfully: ID 26, Total: $5.5
+2025-08-15 09:51:37,546 [INFO] medical_store_app.repositories.sales_repository: Stock updated for sale ID 26
+2025-08-15 09:51:37,611 [INFO] medical_store_app.managers.sales_manager: Cart cleared
+2025-08-15 09:51:37,612 [INFO] medical_store_app.managers.sales_manager: Sale completed: ID 26, Total: $5.50
+2025-08-15 09:51:38,857 [INFO] medical_store_app.ui.components.billing_widget: Sale completed successfully: ID 26, Total: $5.50
+2025-08-15 09:51:40,316 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:51:40,320 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14477.50 total value, 4 low stock alerts
+2025-08-15 09:51:40,456 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:51:40,458 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $436.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:51:43,068 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: medicine
+2025-08-15 09:51:43,070 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 09:51:43,070 [INFO] medical_store_app.ui.main_window: Menu item selected: medicine
+2025-08-15 09:51:43,072 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 09:51:43,073 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 09:51:43,073 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 09:51:43,145 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 09:51:43,146 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 09:51:43,147 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-15 09:51:43,892 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 09:51:43,893 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 09:51:43,894 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 09:51:44,081 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:51:44,084 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14477.50 total value, 4 low stock alerts
+2025-08-15 09:51:44,216 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:51:44,218 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $436.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:51:44,255 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 09:51:47,796 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:51:47,800 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14477.50 total value, 4 low stock alerts
+2025-08-15 09:51:47,922 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:51:47,924 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $436.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:51:50,292 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-15 09:51:50,294 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-15 09:51:50,294 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-15 09:51:50,299 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-15 09:51:57,116 [INFO] medical_store_app.managers.sales_manager: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:57,121 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:57,122 [INFO] medical_store_app.ui.components.billing_widget: Product selected: Adhesive Bandages Pack x 1
+2025-08-15 09:51:57,122 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:57,372 [INFO] medical_store_app.managers.sales_manager: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:57,375 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:57,376 [INFO] medical_store_app.ui.components.billing_widget: Product selected: Adhesive Bandages Pack x 1
+2025-08-15 09:51:57,377 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:57,612 [INFO] medical_store_app.managers.sales_manager: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:57,615 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:57,616 [INFO] medical_store_app.ui.components.billing_widget: Product selected: Adhesive Bandages Pack x 1
+2025-08-15 09:51:57,616 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:57,892 [INFO] medical_store_app.managers.sales_manager: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:57,895 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:51:57,896 [INFO] medical_store_app.ui.components.billing_widget: Product selected: Adhesive Bandages Pack x 1
+2025-08-15 09:51:57,896 [INFO] medical_store_app.ui.components.billing_widget: Added 1 units of Adhesive Bandages Pack to cart
+2025-08-15 09:52:01,379 [INFO] medical_store_app.repositories.sales_repository: Sale saved successfully: ID 27, Total: $22.0
+2025-08-15 09:52:01,472 [INFO] medical_store_app.repositories.sales_repository: Stock updated for sale ID 27
+2025-08-15 09:52:01,538 [INFO] medical_store_app.managers.sales_manager: Cart cleared
+2025-08-15 09:52:01,539 [INFO] medical_store_app.managers.sales_manager: Sale completed: ID 27, Total: $22.00
+2025-08-15 09:52:03,969 [INFO] medical_store_app.ui.components.billing_widget: Sale completed successfully: ID 27, Total: $22.00
+2025-08-15 09:52:05,236 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 09:52:05,237 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 09:52:05,238 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 09:52:05,504 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:52:05,506 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 09:52:05,629 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:52:05,631 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:52:05,671 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 09:52:10,311 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:52:10,315 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 09:52:10,455 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:52:10,457 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:52:13,888 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:52:13,891 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 09:52:14,020 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:52:14,022 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:52:17,060 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: settings
+2025-08-15 09:52:17,062 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: settings
+2025-08-15 09:52:17,062 [INFO] medical_store_app.ui.main_window: Menu item selected: settings
+2025-08-15 09:52:17,065 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Settings
+2025-08-15 09:52:17,795 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:52:17,797 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 09:52:17,923 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:52:17,925 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:52:18,308 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 09:52:18,309 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 09:52:18,310 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 09:52:18,494 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:52:18,497 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 09:52:18,624 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:52:18,626 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:52:18,666 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 09:52:18,972 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 09:52:18,973 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 09:52:18,974 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 09:52:19,159 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:52:19,163 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 09:52:19,292 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:52:19,294 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:52:19,334 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 09:52:20,372 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:52:20,374 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 09:52:20,481 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:52:20,483 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:52:35,237 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:52:35,239 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 09:52:35,365 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:52:35,367 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:52:40,308 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 09:52:40,312 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 09:52:40,452 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 09:52:40,454 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 09:52:40,833 [INFO] medical_store_app.managers.auth_manager: User logged out: admin
+2025-08-15 09:52:40,833 [INFO] medical_store_app.ui.dialogs.login_dialog: User logged out successfully
+2025-08-15 09:52:40,834 [INFO] medical_store_app.ui.main_window: User logged out successfully
+2025-08-15 09:52:40,860 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-15 09:52:40,879 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-15 09:52:42,684 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-15 09:52:42,696 [INFO] medical_store_app.ui.main_window: Login cancelled after logout, closing application
+2025-08-15 10:15:08,625 [INFO] __main__: Initializing database...
+2025-08-15 10:15:08,644 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-15 10:15:08,692 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 10:15:08,701 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-15 10:15:08,702 [INFO] __main__: Loading application settings...
+2025-08-15 10:15:08,703 [INFO] __main__: Creating main application window...
+2025-08-15 10:15:09,279 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:15:09,284 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-15 10:15:10,391 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:15:10,392 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 10:15:10,395 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:15:10,614 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:15:10,616 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:15:10,651 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:15:10,723 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-15 10:15:10,724 [INFO] __main__: Starting login process...
+2025-08-15 10:15:10,748 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-15 10:15:10,793 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-15 10:15:23,923 [INFO] medical_store_app.repositories.user_repository: User authenticated successfully: AbdulRehman
+2025-08-15 10:15:23,925 [INFO] medical_store_app.managers.auth_manager: User logged in: AbdulRehman (ID: 1)
+2025-08-15 10:15:23,926 [INFO] medical_store_app.ui.dialogs.base_dialog: Login successful for user: AbdulRehman
+2025-08-15 10:15:23,967 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog completed successfully for user: AbdulRehman
+2025-08-15 10:15:23,989 [INFO] medical_store_app.ui.main_window: Menu item shown: users
+2025-08-15 10:15:23,990 [INFO] medical_store_app.ui.main_window: Menu item shown: reports
+2025-08-15 10:15:23,991 [INFO] medical_store_app.ui.main_window: Menu item shown: settings
+2025-08-15 10:15:24,014 [INFO] medical_store_app.ui.main_window: Menu item shown: medicine
+2025-08-15 10:15:24,019 [INFO] medical_store_app.ui.main_window: Menu item enabled: users
+2025-08-15 10:15:24,029 [INFO] medical_store_app.ui.main_window: Menu item enabled: medicine
+2025-08-15 10:15:24,455 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:15:24,460 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:15:24,612 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:15:24,614 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:15:24,652 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:15:24,653 [INFO] medical_store_app.ui.main_window: User logged in successfully: AbdulRehman
+2025-08-15 10:15:24,860 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-15 10:15:29,434 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: medicine
+2025-08-15 10:15:29,436 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:15:30,041 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:15:30,205 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:15:30,206 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:15:30,207 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-15 10:15:30,207 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:15:30,208 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:15:30,208 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:15:30,353 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:15:30,354 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:15:30,354 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-15 10:15:35,066 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:15:35,067 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:15:35,068 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:15:35,253 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:15:35,255 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:15:35,384 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:15:35,386 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:15:35,424 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:15:35,650 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:15:35,651 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:15:35,652 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:15:35,842 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:15:35,845 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:15:35,978 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:15:35,980 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:15:36,019 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:15:37,502 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-15 10:15:37,808 [INFO] medical_store_app.ui.main_window: Sidebar collapsed
+2025-08-15 10:15:39,290 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:15:39,294 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:15:39,428 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:15:39,430 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:15:41,034 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: inventory
+2025-08-15 10:15:41,036 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:15:41,037 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:15:41,038 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:15:41,038 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:15:41,122 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:15:41,122 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:15:41,123 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-15 10:15:54,033 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:15:54,037 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:15:54,220 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:15:54,223 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:15:58,289 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:15:58,291 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:15:58,292 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:15:58,487 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:15:58,490 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:15:58,615 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:15:58,617 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:15:58,656 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:16:02,330 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: inventory
+2025-08-15 10:16:02,331 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:16:02,333 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:16:02,334 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:16:02,334 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:16:02,407 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:16:02,408 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:16:02,408 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-15 10:16:04,505 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:16:04,507 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:16:04,508 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:16:04,707 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:04,711 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:04,833 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:04,835 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:04,873 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:16:05,060 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:05,065 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:05,193 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:05,195 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:05,663 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:05,668 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:05,789 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:05,791 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:07,378 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: inventory
+2025-08-15 10:16:07,380 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:16:07,381 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:16:07,382 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:16:07,382 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:16:07,450 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:16:07,451 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:16:07,452 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-15 10:16:08,913 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:16:08,915 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:16:08,916 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:16:09,099 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:09,102 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:09,226 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:09,228 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:09,268 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:16:09,368 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:09,370 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:09,525 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:09,527 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:12,186 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: reports
+2025-08-15 10:16:12,187 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-15 10:16:12,192 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Reports
+2025-08-15 10:16:13,657 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:16:13,659 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:16:13,660 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:16:13,846 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:13,849 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:13,971 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:13,973 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:14,008 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:16:20,178 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: billing
+2025-08-15 10:16:20,179 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-15 10:16:20,234 [INFO] medical_store_app.ui.main_window: Billing widget created successfully
+2025-08-15 10:16:20,254 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-15 10:16:22,529 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:16:22,531 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:16:22,532 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:16:22,713 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:22,715 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:22,841 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:22,843 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:22,878 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:16:24,052 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:24,055 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:24,172 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:24,174 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:27,090 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: medicine
+2025-08-15 10:16:27,092 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:16:27,093 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:16:27,093 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:16:27,094 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:16:27,164 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:16:27,165 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:16:27,166 [INFO] medical_store_app.ui.main_window: Medicine management content displayed
+2025-08-15 10:16:28,306 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:28,309 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:28,441 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:28,444 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:28,521 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:16:28,523 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:16:28,524 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:16:28,717 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:28,719 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:28,844 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:28,846 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:28,883 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:16:34,499 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:34,503 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:34,621 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:34,623 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:35,067 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:35,071 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:35,192 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:35,194 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:35,652 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:35,656 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:35,793 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:35,794 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:38,921 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:38,925 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:39,054 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:39,056 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:39,286 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:39,289 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:39,426 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:39,428 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:43,662 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:16:43,664 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:16:43,822 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:16:43,823 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:16:45,753 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-15 10:26:35,627 [INFO] __main__: Initializing database...
+2025-08-15 10:26:35,628 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-15 10:26:35,628 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 10:26:35,629 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-15 10:26:35,630 [INFO] __main__: Loading application settings...
+2025-08-15 10:26:35,630 [INFO] __main__: Creating main application window...
+2025-08-15 10:26:35,662 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:26:35,667 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-15 10:26:35,931 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:26:35,932 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 10:26:35,936 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:26:36,080 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:26:36,082 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:26:36,122 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:26:36,170 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-15 10:26:36,170 [INFO] __main__: Starting login process...
+2025-08-15 10:26:36,172 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-15 10:26:36,184 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-15 10:26:52,415 [INFO] medical_store_app.repositories.user_repository: User authenticated successfully: AbdulRehman
+2025-08-15 10:26:52,417 [INFO] medical_store_app.managers.auth_manager: User logged in: AbdulRehman (ID: 1)
+2025-08-15 10:26:52,418 [INFO] medical_store_app.ui.dialogs.base_dialog: Login successful for user: AbdulRehman
+2025-08-15 10:26:52,455 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog completed successfully for user: AbdulRehman
+2025-08-15 10:26:52,456 [INFO] medical_store_app.ui.main_window: Menu item shown: users
+2025-08-15 10:26:52,457 [INFO] medical_store_app.ui.main_window: Menu item shown: reports
+2025-08-15 10:26:52,458 [INFO] medical_store_app.ui.main_window: Menu item shown: settings
+2025-08-15 10:26:52,459 [INFO] medical_store_app.ui.main_window: Menu item shown: medicine
+2025-08-15 10:26:52,462 [INFO] medical_store_app.ui.main_window: Menu item enabled: users
+2025-08-15 10:26:52,465 [INFO] medical_store_app.ui.main_window: Menu item enabled: medicine
+2025-08-15 10:26:52,838 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:26:52,854 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:26:53,145 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:26:53,147 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:26:53,196 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:26:53,198 [INFO] medical_store_app.ui.main_window: User logged in successfully: AbdulRehman
+2025-08-15 10:26:53,220 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-15 10:26:59,357 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: inventory with filter: Expired
+2025-08-15 10:26:59,359 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:26:59,510 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:26:59,652 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:26:59,653 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:26:59,653 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-15 10:26:59,654 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:26:59,654 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:26:59,655 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:26:59,779 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:26:59,780 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:26:59,780 [INFO] medical_store_app.ui.main_window: Applying filter: Expired
+2025-08-15 10:26:59,783 [INFO] medical_store_app.ui.main_window: Medicine management content displayed with filter: Expired
+2025-08-15 10:27:04,292 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:27:04,294 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:27:04,295 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:27:04,473 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:27:04,475 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:27:04,596 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:27:04,598 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:27:04,634 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:27:05,668 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:27:05,672 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:27:05,822 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:27:05,824 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:27:08,757 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: inventory with filter: Low Stock
+2025-08-15 10:27:08,759 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:27:08,760 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:27:08,761 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:27:08,761 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:27:08,767 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:27:08,768 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:27:08,768 [INFO] medical_store_app.ui.main_window: Applying filter: Low Stock
+2025-08-15 10:27:08,775 [INFO] medical_store_app.ui.main_window: Medicine management content displayed with filter: Low Stock
+2025-08-15 10:27:22,481 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:27:22,484 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:27:22,616 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:27:22,618 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:27:28,164 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:27:28,166 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:27:28,167 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:27:28,348 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:27:28,350 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:27:28,479 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:27:28,480 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:27:28,523 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:27:34,310 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:27:34,314 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:27:34,441 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:27:34,443 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:27:35,681 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:27:35,684 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:27:35,829 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:27:35,831 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:27:36,509 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: inventory with filter: Low Stock
+2025-08-15 10:27:36,510 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:27:36,512 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:27:36,512 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:27:36,513 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:27:36,526 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:27:36,527 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:27:36,528 [INFO] medical_store_app.ui.main_window: Applying filter: Low Stock
+2025-08-15 10:27:36,533 [INFO] medical_store_app.ui.main_window: Medicine management content displayed with filter: Low Stock
+2025-08-15 10:27:49,332 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:27:49,334 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:27:49,335 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:27:49,517 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:27:49,521 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:27:49,646 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:27:49,648 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:27:49,686 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:27:52,498 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:27:52,502 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:27:52,622 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:27:52,624 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:27:58,192 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:27:58,196 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:27:58,317 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:27:58,319 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:04,316 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:04,319 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:04,447 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:04,449 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:05,668 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:05,672 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:05,810 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:05,812 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:08,164 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: inventory with filter: 
+2025-08-15 10:28:08,166 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:28:08,167 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:28:08,168 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:28:08,169 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:28:08,180 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:28:08,181 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:28:08,181 [INFO] medical_store_app.ui.main_window: Clearing all filters
+2025-08-15 10:28:08,250 [INFO] medical_store_app.ui.components.medicine_table: All filters cleared
+2025-08-15 10:28:08,251 [INFO] medical_store_app.ui.main_window: Medicine management content displayed with filter: 
+2025-08-15 10:28:19,352 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:19,356 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:19,473 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:19,475 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:22,498 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:22,502 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:22,614 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:22,616 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:24,188 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:28:24,190 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:28:24,190 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:28:24,374 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:24,376 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:24,499 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:24,501 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:24,536 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:28:28,185 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:28,189 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:28,309 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:28,311 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:33,300 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: inventory with filter: Expired
+2025-08-15 10:28:33,302 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:28:33,303 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:28:33,304 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:28:33,304 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:28:33,372 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:28:33,373 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:28:33,373 [INFO] medical_store_app.ui.main_window: Applying filter: Expired
+2025-08-15 10:28:33,376 [INFO] medical_store_app.ui.main_window: Medicine management content displayed with filter: Expired
+2025-08-15 10:28:34,316 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:34,319 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:34,439 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:34,441 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:35,669 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:35,673 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:35,823 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:35,825 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:36,308 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:28:36,310 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:28:36,310 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:28:36,497 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:36,499 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:36,619 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:36,621 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:36,656 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:28:49,348 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:49,351 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:49,485 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:49,487 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:52,511 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:52,515 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:52,651 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:52,653 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:54,202 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:54,206 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:54,338 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:54,340 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:28:58,214 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:28:58,218 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:28:58,357 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:28:58,359 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:04,310 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:04,312 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:04,471 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:04,473 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:05,682 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:05,684 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:05,861 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:05,863 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:06,322 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:06,325 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:06,532 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:06,536 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:19,344 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:19,346 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:19,529 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:19,532 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:22,514 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:22,516 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:22,742 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:22,745 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:24,208 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:24,210 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:24,385 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:24,388 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:28,224 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:28,229 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:28,351 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:28,353 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:34,325 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:34,328 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:34,546 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:34,547 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:35,686 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:35,689 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:35,831 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:35,833 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:36,323 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:36,327 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:36,446 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:36,448 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:49,369 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:49,373 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:49,510 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:49,512 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:52,533 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:52,537 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:52,669 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:52,671 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:54,214 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:54,218 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:54,356 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:54,358 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:29:58,233 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:29:58,237 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:29:58,353 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:29:58,355 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:04,343 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:04,348 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:04,475 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:04,477 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:05,709 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:05,713 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:05,892 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:05,894 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:06,327 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:06,331 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:06,450 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:06,452 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:19,356 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:19,358 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:19,508 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:19,512 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:22,541 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:22,545 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:22,672 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:22,674 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:24,221 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:24,224 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:24,366 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:24,368 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:28,253 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:28,258 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:28,381 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:28,383 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:34,354 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:34,358 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:34,483 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:34,485 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:35,715 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:35,720 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:35,868 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:35,870 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:36,326 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:36,330 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:36,453 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:36,455 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:49,378 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:49,382 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:49,501 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:49,503 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:52,533 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:52,537 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:52,669 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:52,671 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:54,237 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:54,241 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:54,365 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:54,367 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:30:58,255 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:30:58,259 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:30:58,384 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:30:58,386 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:31:04,370 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:31:04,374 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:31:04,497 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:31:04,499 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:31:05,735 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:31:05,740 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:31:05,878 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:31:05,880 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:31:06,346 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:31:06,351 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:31:06,480 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:31:06,482 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:31:19,381 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:31:19,385 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:31:19,522 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:31:19,524 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:31:22,554 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:31:22,558 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:31:22,685 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:31:22,687 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:31:24,233 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:31:24,237 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:31:24,408 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:31:24,411 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:31:28,258 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:31:28,262 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:31:28,390 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:31:28,392 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:31:34,384 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:31:34,388 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:31:34,526 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:31:34,528 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:31:35,743 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:31:35,748 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:31:35,878 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:31:35,880 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:31:36,356 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:31:36,359 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:31:36,495 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:31:36,497 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:31:44,770 [INFO] medical_store_app.ui.main_window: Application closing...
+2025-08-15 10:36:40,663 [INFO] __main__: Initializing database...
+2025-08-15 10:36:40,663 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-15 10:36:40,664 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 10:36:40,665 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-15 10:36:40,666 [INFO] __main__: Loading application settings...
+2025-08-15 10:36:40,666 [INFO] __main__: Creating main application window...
+2025-08-15 10:36:40,686 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:36:40,692 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-15 10:36:40,944 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:36:40,945 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-15 10:36:40,948 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:36:41,088 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:36:41,090 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:36:41,128 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:36:41,176 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-15 10:36:41,177 [INFO] __main__: Starting login process...
+2025-08-15 10:36:41,178 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-15 10:36:41,190 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-15 10:36:49,113 [INFO] medical_store_app.repositories.user_repository: User authenticated successfully: AbdulRehman
+2025-08-15 10:36:49,115 [INFO] medical_store_app.managers.auth_manager: User logged in: AbdulRehman (ID: 1)
+2025-08-15 10:36:49,116 [INFO] medical_store_app.ui.dialogs.base_dialog: Login successful for user: AbdulRehman
+2025-08-15 10:36:49,152 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog completed successfully for user: AbdulRehman
+2025-08-15 10:36:49,154 [INFO] medical_store_app.ui.main_window: Menu item shown: users
+2025-08-15 10:36:49,155 [INFO] medical_store_app.ui.main_window: Menu item shown: reports
+2025-08-15 10:36:49,158 [INFO] medical_store_app.ui.main_window: Menu item shown: settings
+2025-08-15 10:36:49,159 [INFO] medical_store_app.ui.main_window: Menu item shown: medicine
+2025-08-15 10:36:49,160 [INFO] medical_store_app.ui.main_window: Menu item enabled: users
+2025-08-15 10:36:49,164 [INFO] medical_store_app.ui.main_window: Menu item enabled: medicine
+2025-08-15 10:36:49,586 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:36:49,588 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:36:49,723 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:36:49,726 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:36:49,849 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:36:49,850 [INFO] medical_store_app.ui.main_window: User logged in successfully: AbdulRehman
+2025-08-15 10:36:49,879 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-15 10:36:55,609 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: inventory with filter: Low/Out of Stock
+2025-08-15 10:36:55,610 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:36:55,770 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:36:55,917 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:36:55,917 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:36:55,918 [INFO] medical_store_app.ui.main_window: Medicine management widget created successfully
+2025-08-15 10:36:55,919 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:36:55,920 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:36:55,920 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:36:56,044 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:36:56,045 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:36:56,045 [INFO] medical_store_app.ui.main_window: Applying filter: Low/Out of Stock
+2025-08-15 10:36:56,054 [INFO] medical_store_app.ui.main_window: Medicine management content displayed with filter: Low/Out of Stock
+2025-08-15 10:36:58,489 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-15 10:36:58,795 [INFO] medical_store_app.ui.main_window: Sidebar collapsed
+2025-08-15 10:37:10,710 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:37:10,714 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:37:10,846 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:37:10,848 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:37:19,156 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:37:19,159 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:37:19,289 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:37:19,291 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:37:20,688 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:37:20,690 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:37:20,691 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:37:20,870 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:37:20,873 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:37:21,004 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:37:21,006 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:37:21,047 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:37:23,616 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: billing with filter: 
+2025-08-15 10:37:23,618 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-15 10:37:23,646 [INFO] medical_store_app.ui.main_window: Billing widget created successfully
+2025-08-15 10:37:23,670 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-15 10:37:25,440 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:37:25,442 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:37:25,442 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:37:25,628 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:37:25,630 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:37:25,756 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:37:25,757 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:37:25,795 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:37:31,936 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: inventory with filter: Expired
+2025-08-15 10:37:31,938 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: medicine
+2025-08-15 10:37:31,939 [INFO] medical_store_app.ui.components.medicine_table: Medicine table set to full access mode
+2025-08-15 10:37:31,940 [INFO] medical_store_app.ui.components.medicine_management: Medicine management set to full access mode
+2025-08-15 10:37:31,940 [INFO] medical_store_app.ui.main_window: Medicine management set to full access mode for admin
+2025-08-15 10:37:31,962 [INFO] medical_store_app.ui.components.medicine_table: Refreshed medicine data: 22 medicines loaded
+2025-08-15 10:37:31,963 [INFO] medical_store_app.ui.components.medicine_management: Medicine data refreshed
+2025-08-15 10:37:31,963 [INFO] medical_store_app.ui.main_window: Applying filter: Expired
+2025-08-15 10:37:31,967 [INFO] medical_store_app.ui.main_window: Medicine management content displayed with filter: Expired
+2025-08-15 10:37:40,704 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:37:40,707 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:37:40,845 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:37:40,847 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:37:44,952 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:37:44,954 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:37:44,954 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:37:45,143 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:37:45,146 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:37:45,277 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:37:45,279 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:37:45,316 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:37:49,170 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:37:49,174 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:37:49,292 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:37:49,294 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:37:50,709 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:37:50,713 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:37:50,827 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:37:50,830 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:37:55,336 [INFO] medical_store_app.ui.main_window: Handling dashboard navigation to: reports with filter: 
+2025-08-15 10:37:55,338 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-15 10:37:55,343 [INFO] medical_store_app.ui.main_window: Placeholder content displayed: Reports
+2025-08-15 10:37:55,456 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:37:55,459 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:37:55,589 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:37:55,592 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:37:56,984 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: dashboard
+2025-08-15 10:37:56,986 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-15 10:37:56,986 [INFO] medical_store_app.ui.main_window: Menu item selected: dashboard
+2025-08-15 10:37:57,169 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:37:57,172 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:37:57,379 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:37:57,381 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:37:57,417 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-15 10:38:05,528 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:38:05,530 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:38:05,643 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:38:05,646 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:38:07,280 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:38:07,282 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:38:07,392 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:38:07,394 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:38:07,824 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:38:07,826 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:38:07,932 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:38:07,934 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:38:08,016 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:38:08,018 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:38:08,127 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:38:08,129 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:38:10,719 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:38:10,723 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:38:10,856 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:38:10,858 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:38:14,955 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-15 10:38:14,959 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 22 medicines, $14455.50 total value, 4 low stock alerts
+2025-08-15 10:38:15,090 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-15 10:38:15,092 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $458.13, Medicines: 22, Low Stock: 4, Expired: 0
+2025-08-15 10:38:15,823 [INFO] medical_store_app.ui.main_window: Application closing...

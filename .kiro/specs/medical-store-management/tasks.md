@@ -206,9 +206,7 @@
 
 - [x] 10. Create dashboard and overview features (Phase 5 start)
 
-
   - [x] 10.1 Build dashboard overview cards
-
 
     - Create dashboard widget with key metrics cards (Total Sales, Total Medicines, Low Stock, Expired Stock)
     - Implement real-time data calculation and display
@@ -217,9 +215,7 @@
     - Write tests for dashboard data accuracy and updates
     - _Requirements: 5.1, 5.4_
 
-  - [ ] 10.2 Add mini sales chart for dashboard
-
-
+  - [x] 10.2 Add mini sales chart for dashboard
 
     - Implement sales chart widget showing last 7 days performance
     - Create chart data processing and visualization

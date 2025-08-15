@@ -429,24 +429,39 @@ class MainWindow(QMainWindow):
         
         self.logger.info("Basic dashboard content displayed")
     
-    def _handle_dashboard_navigation(self, destination: str):
-        """Handle navigation from dashboard cards"""
+    def _handle_dashboard_navigation(self, destination: str, filter_type: str = None):
+        """Handle navigation from dashboard cards and quick action buttons"""
         try:
-            if destination == "inventory":
-                self.sidebar.select_item("medicine")
+            self.logger.info(f"Handling dashboard navigation to: {destination} with filter: {filter_type}")
+            
+            if destination == "medicine":
+                # Add Medicine button - go to medicine management
+                self.sidebar.set_active_item("medicine")
                 self._show_medicine_management()
+                
+            elif destination == "billing":
+                # Process Sale button - go to billing system
+                self.sidebar.set_active_item("billing")
+                self._show_billing_content()
+                
+            elif destination == "inventory":
+                # View Inventory, Low Stock, Expired Items buttons - go to medicine management
+                self.sidebar.set_active_item("medicine")
+                self._show_medicine_management(filter_type=filter_type)
+                
             elif destination == "reports":
-                # For now, show medicine management as reports aren't implemented yet
-                self.sidebar.select_item("medicine")
-                self._show_medicine_management()
+                # View Reports button, Sales chart, Total Sales card - go to reports
+                self.sidebar.set_active_item("reports")
+                self._show_reports_content()
+                
             else:
                 self.logger.warning(f"Unknown dashboard navigation destination: {destination}")
                 
         except Exception as e:
             self.logger.error(f"Error handling dashboard navigation: {str(e)}")
     
-    def _show_medicine_management(self):
-        """Show medicine management content"""
+    def _show_medicine_management(self, filter_type: str = None):
+        """Show medicine management content with optional filtering"""
         self._clear_content_area()
         
         # Create medicine management widget if not exists
@@ -492,7 +507,18 @@ class MainWindow(QMainWindow):
         except Exception as e:
             self.logger.error(f"Failed to refresh medicine data: {e}")
         
-        self.logger.info("Medicine management content displayed")
+        # Apply filter if specified, or clear filters if no filter
+        try:
+            if filter_type:
+                self.logger.info(f"Applying filter: {filter_type}")
+                self.medicine_management_widget.filter_by_stock_status(filter_type)
+            else:
+                self.logger.info("Clearing all filters")
+                self.medicine_management_widget.clear_all_filters()
+        except Exception as e:
+            self.logger.error(f"Failed to apply/clear filter: {e}")
+        
+        self.logger.info(f"Medicine management content displayed with filter: {filter_type}")
     
     def _show_billing_content(self):
         """Show billing content"""

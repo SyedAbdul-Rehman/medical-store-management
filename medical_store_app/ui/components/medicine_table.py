@@ -172,7 +172,7 @@ class MedicineTableWidget(QWidget):
         # Stock status filter
         stock_label = QLabel("Stock Status:")
         self.stock_filter_combo = QComboBox()
-        self.stock_filter_combo.addItems(["All", "In Stock", "Low Stock", "Out of Stock", "Expired", "Expiring Soon"])
+        self.stock_filter_combo.addItems(["All", "In Stock", "Low Stock", "Out of Stock", "Low/Out of Stock", "Expired", "Expiring Soon"])
         self.stock_filter_combo.setMaximumWidth(120)
         
         second_row.addWidget(stock_label)
@@ -797,6 +797,8 @@ Status: {medicine.get_stock_status()}
                 self.filtered_medicines = [m for m in self.filtered_medicines if 0 < m.quantity <= 10]
             elif self.stock_filter == "Out of Stock":
                 self.filtered_medicines = [m for m in self.filtered_medicines if m.quantity == 0]
+            elif self.stock_filter == "Low/Out of Stock":
+                self.filtered_medicines = [m for m in self.filtered_medicines if m.quantity <= 10]
             elif self.stock_filter == "Expired":
                 self.filtered_medicines = [m for m in self.filtered_medicines if m.is_expired()]
             elif self.stock_filter == "Expiring Soon":
