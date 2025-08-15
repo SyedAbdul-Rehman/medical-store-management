@@ -16,10 +16,13 @@ from .components.sidebar import Sidebar
 from .components.dashboard import DashboardWidget
 from .components.medicine_management import MedicineManagementWidget
 from .components.billing_widget import BillingWidget
+from .components.reports_widget import ReportsWidget
 from .dialogs.login_dialog import LoginManager
+from .dialogs.export_dialog import ExportDialog
 from ..managers.medicine_manager import MedicineManager
 from ..managers.sales_manager import SalesManager
 from ..managers.auth_manager import AuthManager
+from ..managers.report_manager import ReportManager
 from ..repositories.medicine_repository import MedicineRepository
 from ..repositories.sales_repository import SalesRepository
 from ..repositories.user_repository import UserRepository
@@ -57,6 +60,7 @@ class MainWindow(QMainWindow):
         self.medicine_manager = MedicineManager(self.medicine_repository)
         self.sales_manager = SalesManager(self.sales_repository, self.medicine_repository)
         self.auth_manager = AuthManager(self.user_repository)
+        self.report_manager = ReportManager(self.sales_repository, self.medicine_repository)
         self.login_manager = LoginManager(self.auth_manager, self)
         
         # Current user
@@ -65,6 +69,7 @@ class MainWindow(QMainWindow):
         # Content widgets
         self.medicine_management_widget = None
         self.billing_widget = None
+        self.reports_widget = None
         self.current_content_widget = None
         
         # Center the window on screen
@@ -594,9 +599,49 @@ class MainWindow(QMainWindow):
         self.logger.info("Users updated, refreshing UI if needed")
         # Add any UI refresh logic here if needed
     
+    def _handle_report_export(self, format_type: str, report_data):
+        """Handle report export request from reports widget"""
+        try:
+            self.logger.info(f"Handling report export request: {format_type}")
+            
+            # Create and show export dialog
+            export_dialog = ExportDialog(report_data, format_type, self)
+            export_dialog.exec()
+            
+        except Exception as e:
+            self.logger.error(f"Error handling report export: {e}")
+            from PySide6.QtWidgets import QMessageBox
+            QMessageBox.critical(
+                self,
+                "Export Error",
+                f"Failed to export report:\n{str(e)}"
+            )
+    
     def _show_reports_content(self):
-        """Show reports content (placeholder)"""
-        self._show_placeholder_content("Reports", "Reports functionality will be implemented in a future update.")
+        """Show reports and analytics content"""
+        self._clear_content_area()
+        
+        # Create reports widget if not exists
+        if not self.reports_widget:
+            try:
+                self.reports_widget = ReportsWidget(self.report_manager)
+                
+                # Connect export signal
+                self.reports_widget.export_requested.connect(self._handle_report_export)
+                
+                self.logger.info("Reports widget created successfully")
+                
+            except Exception as e:
+                self.logger.error(f"Failed to create reports widget: {e}")
+                self._show_error_content("Reports & Analytics", str(e))
+                return
+        
+        # Add to content area
+        self.content_layout.addWidget(self.reports_widget)
+        self.current_content_widget = self.reports_widget
+        self.reports_widget.show()
+        
+        self.logger.info("Reports content displayed")
     
     def _show_settings_content(self):
         """Show settings content (placeholder)"""
@@ -701,13 +746,14 @@ class MainWindow(QMainWindow):
     def _update_sidebar_for_role(self, role: str):
         """Update sidebar menu items based on user role"""
         if role == "cashier":
-            # Cashiers can only access billing and basic medicine view
+            # Cashiers can access billing, medicine view, and reports
             self._hide_menu_item("users")
-            self._hide_menu_item("reports")
             self._hide_menu_item("settings")
             # Medicine management is available but with restrictions
             self._show_menu_item("medicine")
+            self._show_menu_item("reports")
             self._enable_menu_item("medicine")
+            self._enable_menu_item("reports")
         elif role == "admin":
             # Admins can access everything
             self._show_menu_item("users")
@@ -716,6 +762,7 @@ class MainWindow(QMainWindow):
             self._show_menu_item("medicine")
             self._enable_menu_item("users")
             self._enable_menu_item("medicine")
+            self._enable_menu_item("reports")
     
     def _hide_menu_item(self, item_key: str):
         """Hide a menu item from the sidebar"""
