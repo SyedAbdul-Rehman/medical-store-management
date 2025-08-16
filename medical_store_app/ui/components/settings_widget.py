@@ -16,6 +16,7 @@ from PySide6.QtGui import QFont, QDoubleValidator
 
 from .base_components import ValidatedLineEdit, ValidationMixin
 from ..dialogs.base_dialog import BaseDialog
+from ..dialogs.backup_dialog import BackupDialog
 from ...repositories.settings_repository import SettingsRepository
 from ...config.database import DatabaseManager
 
@@ -270,6 +271,11 @@ class SettingsWidget(QWidget):
         backup_widget = QWidget()
         backup_widget.setLayout(backup_layout)
         form_layout.addRow("Backup Frequency:", backup_widget)
+
+        # Backup and Restore button
+        self.backup_restore_button = QPushButton("Open Backup & Restore")
+        self.backup_restore_button.clicked.connect(self._open_backup_dialog)
+        form_layout.addRow("Database:", self.backup_restore_button)
         
         parent_layout.addWidget(self.system_group)
     
@@ -533,6 +539,11 @@ class SettingsWidget(QWidget):
             return currency_text.split(' - ')[0]
         return currency_text
     
+    def _open_backup_dialog(self):
+        """Open the backup and restore dialog"""
+        dialog = BackupDialog(self)
+        dialog.exec()
+
     def _get_setting_description(self, key: str) -> str:
         """Get description for a setting key"""
         descriptions = {

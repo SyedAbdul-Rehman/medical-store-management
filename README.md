@@ -33,7 +33,8 @@ A comprehensive medical store management application built with Python and PySid
 - **Interactive Charts**: Visual representation of sales and inventory data
 
 ### 🔧 System Features
-- **Database Management**: SQLite database with automatic backups
+- **Database Management**: SQLite database with manual and automatic backups
+- **Backup & Restore**: Easily backup and restore your database to prevent data loss.
 - **Settings Management**: Comprehensive configuration system
 - **Multi-language Ready**: Prepared for Urdu/English localization
 - **Print Support**: Receipt and report printing capabilities
@@ -197,6 +198,7 @@ If you encounter any issues or have questions:
 - **v1.0.0** - Initial release with core functionality
 - **v1.1.0** - Added PKR currency support and Pakistani localization
 - **v1.2.0** - Enhanced reporting and analytics features
+- **v1.3.0** - Implemented backup and restore functionality
 
 ---
 

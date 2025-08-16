@@ -180,7 +180,7 @@ class ReceiptDialog(QDialog):
         lines.append(f"TOTAL AMOUNT: {format_currency(self.sale.total)}")
         lines.append("=" * 50)
         lines.append("")
-        lines.append("Thank you for your business!")
+        lines.append("Thank you for shopping")
         lines.append("Please keep this receipt for your records.")
         lines.append("")
         lines.append("=" * 50)
