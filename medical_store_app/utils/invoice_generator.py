@@ -8,7 +8,7 @@ from reportlab.lib import colors
 from reportlab.lib.units import inch
 
 class InvoiceGenerator:
-    def __init__(self, sale, store_info, currency_symbol="₨"):
+    def __init__(self, sale, store_info, currency_symbol="Rs."):
         self.sale = sale
         self.store_info = store_info
         self.currency_symbol = currency_symbol
