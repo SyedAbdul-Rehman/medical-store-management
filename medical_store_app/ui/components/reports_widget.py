@@ -376,8 +376,17 @@ class ReportTableWidget(QTableWidget):
                 qty_item.setTextAlignment(Qt.AlignCenter)
                 self.setItem(row, 2, qty_item)
                 
-                # Revenue
-                revenue_item = QTableWidgetItem(f"${item['total_revenue']:.2f}")
+                # Revenue - use currency formatting from parent widget
+                parent_widget = self.parent()
+                while parent_widget and not hasattr(parent_widget, '_format_currency'):
+                    parent_widget = parent_widget.parent()
+                
+                if parent_widget and hasattr(parent_widget, '_format_currency'):
+                    revenue_text = parent_widget._format_currency(item['total_revenue'])
+                else:
+                    revenue_text = f"${item['total_revenue']:.2f}"
+                
+                revenue_item = QTableWidgetItem(revenue_text)
                 revenue_item.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
                 self.setItem(row, 3, revenue_item)
                 
@@ -504,9 +513,10 @@ class ReportsWidget(QWidget):
     # Signals
     export_requested = Signal(str, object)  # format, report_data
     
-    def __init__(self, report_manager: ReportManager, parent=None):
+    def __init__(self, report_manager: ReportManager, sales_manager=None, parent=None):
         super().__init__(parent)
         self.report_manager = report_manager
+        self.sales_manager = sales_manager
         self.logger = logging.getLogger(__name__)
         self.current_report = None
         self.generation_thread = None
@@ -516,6 +526,27 @@ class ReportsWidget(QWidget):
         
         # Auto-generate initial report
         QTimer.singleShot(500, self._generate_initial_report)
+    
+    def _format_currency(self, amount: float) -> str:
+        """Format currency amount using settings if available"""
+        if self.sales_manager and hasattr(self.sales_manager, 'format_currency'):
+            return self.sales_manager.format_currency(amount)
+        else:
+            return f"${amount:.2f}"
+    
+    def refresh_display(self):
+        """Refresh display with updated settings"""
+        try:
+            # Refresh settings in sales manager if available
+            if self.sales_manager and hasattr(self.sales_manager, 'refresh_settings'):
+                self.sales_manager.refresh_settings()
+            
+            # Regenerate current report to update currency formatting
+            if self.current_report:
+                self._update_report_display(self.current_report)
+                self.logger.info("Reports widget display refreshed with updated settings")
+        except Exception as e:
+            self.logger.error(f"Error refreshing reports display: {str(e)}")
     
     def _setup_ui(self):
         """Set up reports widget UI"""
@@ -640,9 +671,9 @@ class ReportsWidget(QWidget):
         # Create summary labels (will be populated when report is generated)
         self.summary_labels = {}
         summary_items = [
-            ("total_revenue", "Total Revenue", "$0.00"),
+            ("total_revenue", "Total Revenue", self._format_currency(0.0)),
             ("total_transactions", "Total Transactions", "0"),
-            ("avg_transaction", "Average Transaction", "$0.00"),
+            ("avg_transaction", "Average Transaction", self._format_currency(0.0)),
             ("best_day", "Best Day", "N/A")
         ]
         
@@ -875,11 +906,11 @@ class ReportsWidget(QWidget):
         try:
             # Update overview tab
             summary = report.summary
-            self.summary_labels["total_revenue"].setText(f"${summary.get('total_revenue', 0):.2f}")
+            self.summary_labels["total_revenue"].setText(self._format_currency(summary.get('total_revenue', 0)))
             self.summary_labels["total_transactions"].setText(str(summary.get('total_transactions', 0)))
             
             avg_trans = summary.get('average_transaction', 0)
-            self.summary_labels["avg_transaction"].setText(f"${avg_trans:.2f}")
+            self.summary_labels["avg_transaction"].setText(self._format_currency(avg_trans))
             
             # Find best day
             best_day = "N/A"
@@ -917,7 +948,7 @@ class ReportsWidget(QWidget):
         try:
             # Update overview tab with inventory data
             summary = report.get('summary', {})
-            self.summary_labels["total_revenue"].setText(f"${summary.get('total_stock_value', 0):.2f}")
+            self.summary_labels["total_revenue"].setText(self._format_currency(summary.get('total_stock_value', 0)))
             self.summary_labels["total_transactions"].setText(str(summary.get('total_medicines', 0)))
             self.summary_labels["avg_transaction"].setText(f"{summary.get('low_stock_count', 0)} Low Stock")
             self.summary_labels["best_day"].setText(f"{summary.get('expired_count', 0)} Expired")

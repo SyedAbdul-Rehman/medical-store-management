@@ -17,6 +17,7 @@ from .components.dashboard import DashboardWidget
 from .components.medicine_management import MedicineManagementWidget
 from .components.billing_widget import BillingWidget
 from .components.reports_widget import ReportsWidget
+from .components.settings_widget import SettingsWidget
 from .dialogs.login_dialog import LoginManager
 from .dialogs.export_dialog import ExportDialog
 from ..managers.medicine_manager import MedicineManager
@@ -26,6 +27,7 @@ from ..managers.report_manager import ReportManager
 from ..repositories.medicine_repository import MedicineRepository
 from ..repositories.sales_repository import SalesRepository
 from ..repositories.user_repository import UserRepository
+from ..repositories.settings_repository import SettingsRepository
 from ..config.database import DatabaseManager
 from ..models.user import User
 
@@ -57,8 +59,9 @@ class MainWindow(QMainWindow):
         self.medicine_repository = MedicineRepository(self.db_manager)
         self.sales_repository = SalesRepository(self.db_manager)
         self.user_repository = UserRepository(self.db_manager)
-        self.medicine_manager = MedicineManager(self.medicine_repository)
-        self.sales_manager = SalesManager(self.sales_repository, self.medicine_repository)
+        self.settings_repository = SettingsRepository(self.db_manager)
+        self.medicine_manager = MedicineManager(self.medicine_repository, self.settings_repository)
+        self.sales_manager = SalesManager(self.sales_repository, self.medicine_repository, self.settings_repository)
         self.auth_manager = AuthManager(self.user_repository)
         self.report_manager = ReportManager(self.sales_repository, self.medicine_repository)
         self.login_manager = LoginManager(self.auth_manager, self)
@@ -70,6 +73,7 @@ class MainWindow(QMainWindow):
         self.medicine_management_widget = None
         self.billing_widget = None
         self.reports_widget = None
+        self.settings_widget = None
         self.current_content_widget = None
         
         # Center the window on screen
@@ -597,7 +601,59 @@ class MainWindow(QMainWindow):
     def _on_users_updated(self):
         """Handle users updated signal"""
         self.logger.info("Users updated, refreshing UI if needed")
-        # Add any UI refresh logic here if needed
+    
+    def _on_settings_updated(self, settings: dict):
+        """Handle settings updated signal"""
+        self.logger.info(f"Settings updated: {list(settings.keys())}")
+        
+        # Refresh settings in managers
+        if hasattr(self.sales_manager, 'refresh_settings'):
+            self.sales_manager.refresh_settings()
+            self.logger.info("Sales manager settings refreshed")
+        
+        if hasattr(self.medicine_manager, 'refresh_settings'):
+            self.medicine_manager.refresh_settings()
+            self.logger.info("Medicine manager settings refreshed")
+        
+        # Update store information in header if store name changed
+        if 'store_name' in settings:
+            store_name = settings['store_name']
+            if store_name and store_name.strip():
+                self.setWindowTitle(f"{store_name.strip()} - Medical Store Management")
+                # Update header title
+                if hasattr(self, 'header_widget'):
+                    title_label = self.header_widget.findChild(QLabel, "titleLabel")
+                    if title_label:
+                        title_label.setText(store_name.strip())
+                self.logger.info(f"Window title updated to: {store_name}")
+        
+        # Update any UI components that depend on settings
+        # Refresh dashboard if it's currently displayed to reflect new settings
+        if hasattr(self, 'dashboard_widget') and self.dashboard_widget and self.current_content_widget == self.dashboard_widget:
+            if hasattr(self.dashboard_widget, 'refresh_data'):
+                self.dashboard_widget.refresh_data()
+        
+        # Refresh billing widget if it's currently displayed
+        if hasattr(self, 'billing_widget') and self.billing_widget:
+            # Always refresh billing widget to show updated currency/tax
+            self.billing_widget.refresh_display()
+            self.logger.info("Billing widget refreshed with new settings")
+        
+        # Refresh reports widget if it's currently displayed
+        if hasattr(self, 'reports_widget') and self.reports_widget:
+            # Reports might need to refresh currency formatting
+            if hasattr(self.reports_widget, 'refresh_display'):
+                self.reports_widget.refresh_display()
+                self.logger.info("Reports widget refreshed with new settings")
+        
+        # Refresh medicine management widget for low stock threshold changes
+        if hasattr(self, 'medicine_management_widget') and self.medicine_management_widget:
+            if 'low_stock_threshold' in settings:
+                if hasattr(self.medicine_management_widget, 'refresh_data'):
+                    self.medicine_management_widget.refresh_data()
+                    self.logger.info("Medicine management widget refreshed for low stock threshold change")
+        
+        self.logger.info("All UI components updated with new settings")
     
     def _handle_report_export(self, format_type: str, report_data):
         """Handle report export request from reports widget"""
@@ -624,7 +680,7 @@ class MainWindow(QMainWindow):
         # Create reports widget if not exists
         if not self.reports_widget:
             try:
-                self.reports_widget = ReportsWidget(self.report_manager)
+                self.reports_widget = ReportsWidget(self.report_manager, self.sales_manager)
                 
                 # Connect export signal
                 self.reports_widget.export_requested.connect(self._handle_report_export)
@@ -644,8 +700,29 @@ class MainWindow(QMainWindow):
         self.logger.info("Reports content displayed")
     
     def _show_settings_content(self):
-        """Show settings content (placeholder)"""
-        self._show_placeholder_content("Settings", "Settings functionality will be implemented in a future update.")
+        """Show settings management content"""
+        # Create settings widget if not exists
+        if not self.settings_widget:
+            try:
+                self.settings_widget = SettingsWidget()
+                
+                # Connect signals for logging
+                self.settings_widget.settings_updated.connect(self._on_settings_updated)
+                
+                self.logger.info("Settings widget created successfully")
+                
+            except Exception as e:
+                self.logger.error(f"Failed to create settings widget: {e}")
+                self._show_placeholder_content("Settings", f"Failed to load settings: {e}")
+                return
+        
+        # Clear current content and show settings
+        self._clear_content_area()
+        self.content_layout.addWidget(self.settings_widget)
+        self.current_content_widget = self.settings_widget
+        self.settings_widget.show()
+        
+        self.logger.info("Settings content displayed")
     
     def _show_placeholder_content(self, title: str, message: str):
         """Show placeholder content for unimplemented features"""

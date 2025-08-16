@@ -1,63 +1,67 @@
-# Medical Store Management System
+# 🏥 Medical Store Management System
 
-A comprehensive desktop application for managing medical store operations, built with Python and PySide6.
+A comprehensive medical store management application built with Python and PySide6, designed specifically for Pakistani medical stores with PKR currency support.
 
-## 🚀 Features
+## ✨ Features
 
-### ✅ Completed Features
-- **Modern UI Framework**: Professional desktop interface with PySide6
-- **Responsive Layout**: Main window with header, collapsible sidebar, and content areas
-- **Navigation System**: Smooth sidebar navigation with icons and animations
-- **Medicine Management UI**: Complete inventory management with Add/Edit/Delete operations
-- **Enhanced Inventory Features**: Low-stock alerts, expiry monitoring, advanced filtering
-- **Billing System UI**: Complete sales interface with product search, cart, and checkout
-- **Transaction Processing**: Payment handling, receipt generation, inventory updates
-- **User Authentication System**: Login/logout, role-based access control, user management
-- **Dashboard & Overview**: Key metrics cards, sales charts, quick action buttons
-- **Reports & Analytics**: Sales reports, data visualization, export functionality (CSV/Excel/PDF)
-- **Reusable Components**: Validated form components, styled buttons, tables, and dialogs
-- **Database Integration**: SQLite database with proper schema and migrations
-- **Settings Management**: Configurable application settings
-- **Backup & Restore System**: Comprehensive version control and recovery utilities
-- **Comprehensive Testing**: Full test coverage for all components
+### 🏪 Store Management
+- **Multi-currency Support**: Pakistani Rupee (PKR), USD, EUR, GBP, INR, and more
+- **Store Configuration**: Complete store details, contact information, and branding
+- **Tax Management**: Configurable tax rates (17% GST for Pakistan by default)
+- **User Management**: Admin and cashier roles with different access levels
 
-### 🔄 In Development
-- Settings management interface
-- Advanced features and optimizations
-- Performance enhancements
-- Deployment preparation
+### 💊 Medicine Management
+- **Comprehensive Inventory**: Track medicines with batch numbers, expiry dates, and stock levels
+- **Category Management**: Organize medicines by categories (Pain Relief, Antibiotics, etc.)
+- **Stock Alerts**: Configurable low stock and expiry date warnings
+- **Barcode Support**: Barcode scanning and generation for medicines
+- **Batch Tracking**: Track medicine batches for safety and compliance
 
-## 🛠️ Technology Stack
+### 💰 Billing & Sales
+- **Point of Sale**: Intuitive billing interface with product search
+- **Receipt Generation**: Professional receipts with store branding
+- **Payment Methods**: Cash, Card, UPI, Cheque, and Bank Transfer support
+- **Tax Calculations**: Automatic tax calculation with configurable rates
+- **Discount Management**: Apply discounts to individual sales
+- **Customer Management**: Optional customer information tracking
 
-- **Frontend**: PySide6 (Qt for Python)
-- **Backend**: Python 3.13+
-- **Database**: SQLite
-- **Testing**: pytest
-- **Architecture**: MVC pattern with repository pattern
+### 📊 Reports & Analytics
+- **Sales Reports**: Daily, weekly, monthly, and custom date range reports
+- **Inventory Reports**: Stock levels, low stock alerts, and expiry tracking
+- **Financial Analytics**: Revenue tracking, profit analysis, and tax summaries
+- **Top Selling Items**: Identify best-performing medicines
+- **Interactive Charts**: Visual representation of sales and inventory data
 
-## 📋 Requirements
+### 🔧 System Features
+- **Database Management**: SQLite database with automatic backups
+- **Settings Management**: Comprehensive configuration system
+- **Multi-language Ready**: Prepared for Urdu/English localization
+- **Print Support**: Receipt and report printing capabilities
+- **Data Export**: Export reports to various formats
 
-- Python 3.13 or higher
-- PySide6
-- SQLite (included with Python)
+## 🚀 Quick Start
 
-## 🚀 Installation
+### Prerequisites
+- Python 3.8 or higher
+- pip (Python package installer)
+
+### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/SyedAbdul-Rehman/medical-store-management.git
+   git clone https://github.com/yourusername/medical-store-management.git
    cd medical-store-management
    ```
 
-2. **Create virtual environment**
+2. **Create a virtual environment**
    ```bash
-   python -m venv .venv
+   python -m venv venv
    
    # On Windows
-   .venv\Scripts\activate
+   venv\Scripts\activate
    
    # On macOS/Linux
-   source .venv/bin/activate
+   source venv/bin/activate
    ```
 
 3. **Install dependencies**
@@ -65,137 +69,102 @@ A comprehensive desktop application for managing medical store operations, built
    pip install -r requirements.txt
    ```
 
-4. **Run the application**
+4. **Create demo data (optional)**
    ```bash
-   python medical_store_app/main.py
+   python scripts/reset_and_create_demo_data.py
    ```
 
-## 🧪 Testing
+5. **Run the application**
+   ```bash
+   python -m medical_store_app.main
+   ```
 
-Run the test suite to ensure everything is working correctly:
+### Default Login Credentials
+- **Admin**: Username: `admin`, Password: `admin123`
+- **Cashier**: Username: `cashier`, Password: `cashier123`
 
-```bash
-# Run all tests
-python -m pytest
-
-# Run with verbose output
-python -m pytest -v
-
-# Run specific test file
-python -m pytest tests/test_main_window.py -v
-
-# Run with coverage
-python -m pytest --cov=medical_store_app
-```
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
-medical_store_app/
-├── config/                 # Configuration management
-│   ├── database.py        # Database connection and setup
-│   └── settings.py        # Application settings
-├── models/                # Data models
-│   ├── base.py           # Base model class
-│   ├── medicine.py       # Medicine model
-│   ├── sale.py           # Sales model
-│   └── user.py           # User model
-├── repositories/          # Data access layer
-│   ├── medicine_repository.py
-│   ├── sales_repository.py
-│   ├── settings_repository.py
-│   └── user_repository.py
-├── managers/              # Business logic layer
-│   ├── auth_manager.py
-│   ├── medicine_manager.py
-│   └── sales_manager.py
-├── ui/                    # User interface
-│   ├── components/        # Reusable UI components
-│   │   ├── base_components.py
-│   │   └── sidebar.py
-│   ├── dialogs/          # Dialog windows
-│   │   └── base_dialog.py
-│   └── main_window.py    # Main application window
-├── utils/                 # Utility functions
-├── data/                  # Database files
-├── logs/                  # Application logs
-└── main.py               # Application entry point
-
-tests/                     # Test files
-├── test_main_window.py
-├── test_sidebar.py
-├── test_base_components.py
-├── test_base_dialog.py
-└── ...
-
-.kiro/specs/              # Development specifications
-├── requirements.md
-├── design.md
-└── tasks.md
+medical-store-management/
+├── medical_store_app/           # Main application package
+│   ├── config/                  # Configuration and database setup
+│   ├── models/                  # Data models (Medicine, Sale, User, etc.)
+│   ├── repositories/            # Data access layer
+│   ├── managers/                # Business logic layer
+│   ├── ui/                      # User interface components
+│   │   ├── components/          # Reusable UI components
+│   │   └── dialogs/             # Dialog windows
+│   └── utils/                   # Utility functions
+├── scripts/                     # Utility scripts
+├── tests/                       # Test files
+├── requirements.txt             # Python dependencies
+└── README.md                    # This file
 ```
 
-## 🎨 UI Components
+## 🇵🇰 Pakistani Store Configuration
 
-### Main Window
-- **Header**: Application title, user info, and controls
-- **Sidebar**: Collapsible navigation menu with smooth animations
-- **Content Area**: Dynamic content based on selected navigation item
+The application comes pre-configured for Pakistani medical stores:
 
-### Medicine Management
-- **Medicine Table**: Sortable, filterable table with search functionality
-- **Add/Edit Forms**: Validated forms with error handling
-- **Alert System**: Low-stock and expiry date monitoring
-- **Advanced Filtering**: Category-based and multi-criteria search
+- **Currency**: Pakistani Rupee (₨)
+- **Tax Rate**: 17% (GST)
+- **Store Name**: Shifa Medical Store
+- **Location**: Lahore, Punjab, Pakistan
+- **Medicine Categories**: Common Pakistani pharmacy categories
+- **Sample Data**: 31+ medicines commonly found in Pakistani stores
 
-### Billing System
-- **Product Search**: Name and barcode lookup with stock information
-- **Shopping Cart**: Item management with quantity and price calculations
-- **Checkout**: Payment processing with multiple payment methods
-- **Receipt Generation**: Professional receipts with transaction details
+## 🛠️ Development
 
-### User Authentication
-- **Login Dialog**: Secure authentication with username/password
-- **Role-Based Access**: Admin and cashier role restrictions
-- **User Management**: Add/edit users, role assignment, password management
-- **Session Management**: Secure login/logout functionality
+### Setting up Development Environment
 
-### Dashboard & Reports
-- **Dashboard Cards**: Key metrics (Total Sales, Medicines, Low Stock, Expired)
-- **Sales Charts**: Visual data representation with trend analysis
-- **Quick Actions**: Direct navigation to frequently used features
-- **Reports Generation**: Sales reports with date range filtering
-- **Export Options**: CSV, Excel, and PDF export capabilities
+1. **Install development dependencies**
+   ```bash
+   pip install -r requirements-dev.txt
+   ```
 
-### Reusable Components
-- **ValidatedLineEdit**: Text input with built-in validation
-- **ValidatedComboBox**: Dropdown with validation
-- **ValidatedSpinBox**: Number input with validation
-- **StyledButton**: Consistent button styling (primary, secondary, danger, outline)
-- **StyledTable**: Professional data tables
-- **FormContainer**: Organized form layouts with validation
+2. **Run tests**
+   ```bash
+   python -m pytest tests/ -v
+   ```
 
-### Dialog System
-- **BaseDialog**: Consistent dialog foundation
-- **FormDialog**: Form-based dialogs with validation
-- **ConfirmationDialog**: User confirmation prompts
-- **MessageDialog**: Info, warning, error, and success messages
-- **ProgressDialog**: Long-running operation feedback
+3. **Code formatting**
+   ```bash
+   black medical_store_app/
+   ```
 
-## 🗄️ Database Schema
+### Database Schema
 
 The application uses SQLite with the following main tables:
-- **users**: User authentication and roles
-- **medicines**: Medicine inventory and details
-- **sales**: Transaction records
-- **sale_items**: Individual sale line items
-- **settings**: Application configuration
+- `medicines` - Medicine inventory
+- `sales` - Sales transactions
+- `users` - User accounts
+- `settings` - Application configuration
 
-## 🔧 Configuration
+## 📱 Screenshots
 
-Application settings are managed through:
-- **Database**: `medical_store_app/data/medical_store.db`
-- **Logs**: `medical_store_app/logs/medical_store.log`
-- **Settings**: Stored in database settings table
+### Dashboard
+- Real-time sales overview
+- Inventory summary
+- Quick action buttons
+- Sales charts and analytics
+
+### Medicine Management
+- Add/edit/delete medicines
+- Stock level monitoring
+- Expiry date tracking
+- Category-based filtering
+
+### Billing System
+- Product search and selection
+- Shopping cart management
+- Tax and discount calculations
+- Receipt generation
+
+### Reports
+- Sales analytics
+- Inventory reports
+- Financial summaries
+- Export capabilities
 
 ## 🤝 Contributing
 
@@ -205,89 +174,30 @@ Application settings are managed through:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 Development Guidelines
-
-- Follow PEP 8 style guidelines
-- Write comprehensive tests for new features
-- Update documentation for API changes
-- Use type hints where appropriate
-- Maintain the MVC architecture pattern
-
-## 🐛 Known Issues
-
-- High DPI scaling warnings on some systems (cosmetic only)
-- Animation performance may vary on older hardware
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+## 🆘 Support
 
-**Syed Abdul Rehman**
-- GitHub: [@SyedAbdul-Rehman](https://github.com/SyedAbdul-Rehman)
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/yourusername/medical-store-management/issues) page
+2. Create a new issue with detailed information
+3. Include screenshots and error messages if applicable
 
 ## 🙏 Acknowledgments
 
-- PySide6 team for the excellent Qt Python bindings
-- SQLite team for the reliable database engine
-- pytest team for the testing framework
+- Built with [PySide6](https://doc.qt.io/qtforpython/) for the GUI framework
+- Uses [SQLite](https://www.sqlite.org/) for data storage
+- Inspired by real-world medical store requirements in Pakistan
+
+## 🔄 Version History
+
+- **v1.0.0** - Initial release with core functionality
+- **v1.1.0** - Added PKR currency support and Pakistani localization
+- **v1.2.0** - Enhanced reporting and analytics features
 
 ---
 
-## 📊 Development Status
-
-### Phase 1: Foundation ✅ Complete
-- [x] Project setup and core architecture
-- [x] Database schema and business logic
-- [x] Main application window and navigation
-
-### Phase 2: Medicine Management ✅ Complete
-- [x] Medicine CRUD operations (UI + Backend)
-- [x] Inventory alerts and monitoring
-- [x] Advanced search and filtering
-
-### Phase 3: Billing System ✅ Complete
-- [x] Product search and selection
-- [x] Shopping cart with calculations
-- [x] Transaction processing and receipts
-- [x] Inventory updates after sales
-
-### Phase 4: User Authentication ✅ Complete
-- [x] Login dialog and authentication flow
-- [x] Role-based access control throughout UI
-- [x] User management interface for admins
-- [x] Admin/cashier access restrictions
-
-### Phase 5: Dashboard & Reports ✅ Complete
-- [x] Dashboard with key metrics cards
-- [x] Sales charts and data visualization
-- [x] Quick action buttons and navigation
-- [x] Sales reports with date range filtering
-- [x] Export functionality (CSV, Excel, PDF)
-
-### Phase 6: Next Development 🔄
-- [ ] Settings management interface
-- [ ] Advanced features and optimizations
-- [ ] Performance enhancements
-- [ ] Deployment preparation
-
-### Future Enhancements 🚀
-- [ ] Multi-language support
-- [ ] Advanced reporting and analytics
-- [ ] Backup and restore functionality
-- [ ] Network/multi-user support
-- [ ] Barcode scanning integration
-- [ ] Print receipt customization
-
----
-
-**Status**: Active Development | **Version**: 1.0.0-rc2 | **Last Updated**: January 2025
-
-### 🎉 Major Milestones Achieved
-- ✅ **Complete Medicine Management System** - Full inventory control
-- ✅ **Complete Billing System** - End-to-end sales processing
-- ✅ **User Authentication System** - Secure login and role-based access
-- ✅ **Dashboard & Reports System** - Analytics and data visualization
-- ✅ **Professional UI Framework** - Modern, responsive interface
-- ✅ **Comprehensive Testing** - High-quality, reliable codebase
+**Made with ❤️ for Pakistani medical stores**

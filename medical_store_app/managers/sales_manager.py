@@ -11,26 +11,37 @@ from ..models.sale import Sale, SaleItem
 from ..models.medicine import Medicine
 from ..repositories.sales_repository import SalesRepository
 from ..repositories.medicine_repository import MedicineRepository
+from ..repositories.settings_repository import SettingsRepository
+from ..utils.currency_formatter import SettingsManager
 
 
 class SalesManager:
     """Manager class for billing and sales operations"""
     
-    def __init__(self, sales_repository: SalesRepository, medicine_repository: MedicineRepository):
+    def __init__(self, sales_repository: SalesRepository, medicine_repository: MedicineRepository, settings_repository: Optional[SettingsRepository] = None):
         """
         Initialize sales manager
         
         Args:
             sales_repository: Sales repository instance
             medicine_repository: Medicine repository instance
+            settings_repository: Settings repository instance (optional)
         """
         self.sales_repository = sales_repository
         self.medicine_repository = medicine_repository
+        self.settings_repository = settings_repository
         self.logger = logging.getLogger(__name__)
         self._current_cart: List[SaleItem] = []
         self._current_discount = 0.0
         self._current_tax_rate = 0.0
         self._current_payment_method = "cash"
+        
+        # Initialize settings manager if settings repository is provided
+        self.settings_manager = None
+        if settings_repository:
+            self.settings_manager = SettingsManager(settings_repository)
+            # Load default tax rate from settings
+            self._current_tax_rate = self.settings_manager.get_default_tax_rate()
     
     # Cart Management Methods
     
@@ -655,3 +666,70 @@ class SalesManager:
     def get_current_payment_method(self) -> str:
         """Get current payment method"""
         return self._current_payment_method
+    
+    # Settings Integration Methods
+    
+    def refresh_settings(self):
+        """Refresh settings from database"""
+        if self.settings_manager:
+            self.settings_manager.refresh_settings()
+            # Update tax rate to default from settings if current cart is empty
+            if self.is_cart_empty():
+                self._current_tax_rate = self.settings_manager.get_default_tax_rate()
+                self.logger.info(f"Tax rate updated from settings: {self._current_tax_rate}%")
+    
+    def format_currency(self, amount: float, show_symbol: bool = True) -> str:
+        """
+        Format currency amount using current settings
+        
+        Args:
+            amount: Amount to format
+            show_symbol: Whether to show currency symbol
+            
+        Returns:
+            Formatted currency string
+        """
+        if self.settings_manager:
+            return self.settings_manager.format_currency(amount, show_symbol)
+        else:
+            # Fallback to USD formatting
+            return f"${amount:.2f}" if show_symbol else f"{amount:.2f}"
+    
+    def get_currency_symbol(self) -> str:
+        """
+        Get current currency symbol
+        
+        Returns:
+            Current currency symbol
+        """
+        if self.settings_manager:
+            return self.settings_manager.get_currency_symbol()
+        else:
+            return "$"
+    
+    def get_store_info(self) -> Dict[str, str]:
+        """
+        Get store information from settings
+        
+        Returns:
+            Dictionary of store information
+        """
+        if self.settings_manager:
+            return self.settings_manager.get_store_info()
+        else:
+            return {
+                'name': 'Medical Store',
+                'address': '',
+                'phone': '',
+                'email': '',
+                'website': ''
+            }
+    
+    def apply_settings_to_cart(self):
+        """Apply current settings to cart (tax rate, etc.)"""
+        if self.settings_manager and self.is_cart_empty():
+            # Only apply default tax rate if cart is empty (new transaction)
+            default_tax_rate = self.settings_manager.get_default_tax_rate()
+            if default_tax_rate != self._current_tax_rate:
+                self._current_tax_rate = default_tax_rate
+                self.logger.info(f"Applied default tax rate from settings: {default_tax_rate}%")

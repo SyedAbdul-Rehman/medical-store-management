@@ -9,22 +9,47 @@ from datetime import date, timedelta
 
 from ..models.medicine import Medicine
 from ..repositories.medicine_repository import MedicineRepository
+from ..repositories.settings_repository import SettingsRepository
 
 
 class MedicineManager:
     """Manager class for medicine inventory operations"""
     
-    def __init__(self, medicine_repository: MedicineRepository):
+    def __init__(self, medicine_repository: MedicineRepository, settings_repository: Optional[SettingsRepository] = None):
         """
         Initialize medicine manager
         
         Args:
             medicine_repository: Medicine repository instance
+            settings_repository: Settings repository instance (optional)
         """
         self.medicine_repository = medicine_repository
+        self.settings_repository = settings_repository
         self.logger = logging.getLogger(__name__)
         self._low_stock_threshold = 10
         self._expiry_warning_days = 30
+        
+        # Load settings if available
+        if self.settings_repository:
+            self._load_settings()
+    
+    def _load_settings(self):
+        """Load settings from repository"""
+        try:
+            if self.settings_repository:
+                self._low_stock_threshold = self.settings_repository.get_int('low_stock_threshold', 10)
+                self.logger.info(f"Loaded low stock threshold from settings: {self._low_stock_threshold}")
+        except Exception as e:
+            self.logger.error(f"Error loading settings: {e}")
+            self._low_stock_threshold = 10
+    
+    def refresh_settings(self):
+        """Refresh settings from database"""
+        self._load_settings()
+    
+    def get_low_stock_threshold(self) -> int:
+        """Get current low stock threshold"""
+        return self._low_stock_threshold
     
     def add_medicine(self, medicine_data: Dict[str, Any]) -> Tuple[bool, str, Optional[Medicine]]:
         """

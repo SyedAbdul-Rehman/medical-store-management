@@ -257,17 +257,19 @@
     - Write tests for all export formats and error scenarios
     - _Requirements: 6.3_
 
-- [ ] 12. Build settings and configuration system
+- [x] 12. Build settings and configuration system
 
-  - [ ] 12.1 Create settings management interface
+  - [x] 12.1 Create settings management interface
 
     - Build settings widget with store details configuration
+
     - Implement currency and tax rate configuration
     - Add settings validation and persistence to database
     - Write tests for settings management and validation
     - _Requirements: 7.1, 7.2, 7.3, 7.4_
 
-  - [ ] 12.2 Apply settings throughout application
+  - [x] 12.2 Apply settings throughout application
+
     - Integrate currency and tax settings into billing calculations
     - Update all displays to reflect configured store information
     - Implement settings change propagation across UI components

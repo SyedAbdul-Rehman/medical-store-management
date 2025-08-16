@@ -508,8 +508,10 @@ class DashboardWidget(QWidget):
             inventory_summary = self.medicine_manager.get_inventory_summary()
             
             # Update cards with real-time data
+            # Format currency using settings
+            formatted_sales = self.sales_manager.format_currency(total_sales_today) if hasattr(self.sales_manager, 'format_currency') else f"${total_sales_today:.2f}"
             self.total_sales_card.update_value(
-                f"${total_sales_today:.2f}",
+                formatted_sales,
                 f"{transaction_count} transactions"
             )
             

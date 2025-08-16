@@ -195,8 +195,18 @@ class ProductSearchWidget(QWidget):
                 stock_item.setForeground(QPalette().color(QPalette.ColorRole.Text))
             self.results_table.setItem(row, 3, stock_item)
             
-            # Price
-            price_item = QTableWidgetItem(f"${medicine.selling_price:.2f}")
+            # Price - use currency formatting from parent billing widget
+            price_text = f"${medicine.selling_price:.2f}"  # Default formatting
+            try:
+                # Try to get currency formatting from parent
+                parent_widget = self.parent()
+                while parent_widget and not hasattr(parent_widget, 'sales_manager'):
+                    parent_widget = parent_widget.parent()
+                if parent_widget and hasattr(parent_widget, 'sales_manager'):
+                    price_text = parent_widget.sales_manager.format_currency(medicine.selling_price)
+            except:
+                pass  # Use default formatting
+            price_item = QTableWidgetItem(price_text)
             self.results_table.setItem(row, 4, price_item)
             
             # Expiry
@@ -284,6 +294,17 @@ class ProductSearchWidget(QWidget):
         """Set focus to search input"""
         self.search_input.setFocus()
         self.search_input.selectAll()
+    
+    def refresh_results(self):
+        """Refresh search results with updated settings (e.g., currency formatting)"""
+        try:
+            # If there are current results, refresh them to update currency formatting
+            if self.results_table.rowCount() > 0:
+                current_query = self.search_input.text().strip()
+                if current_query:
+                    self._perform_search()
+        except Exception as e:
+            self.logger.error(f"Error refreshing search results: {str(e)}")
 
 
 class CartWidget(QWidget):
@@ -584,12 +605,12 @@ class CartWidget(QWidget):
             self.cart_table.setCellWidget(row, 1, quantity_spinbox)
             
             # Unit price
-            unit_price_item = QTableWidgetItem(f"${item.unit_price:.2f}")
+            unit_price_item = QTableWidgetItem(self.sales_manager.format_currency(item.unit_price))
             unit_price_item.setTextAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
             self.cart_table.setItem(row, 2, unit_price_item)
             
             # Total price
-            total_price_item = QTableWidgetItem(f"${item.total_price:.2f}")
+            total_price_item = QTableWidgetItem(self.sales_manager.format_currency(item.total_price))
             total_price_item.setTextAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
             total_price_item.setFont(QFont("Arial", 9, QFont.Weight.Bold))
             self.cart_table.setItem(row, 3, total_price_item)
@@ -690,15 +711,48 @@ class CartWidget(QWidget):
             self.logger.error(f"Error setting tax rate: {str(e)}")
             self.tax_rate_input.setValue(self.sales_manager.get_current_tax_rate())
     
+    def _on_payment_method_changed(self, payment_method: str):
+        """Handle payment method change"""
+        try:
+            success, message = self.sales_manager.set_payment_method(payment_method.lower())
+            
+            if not success:
+                # Revert payment method selection
+                self.payment_method_combo.setCurrentText(self.sales_manager.get_current_payment_method().title())
+                QMessageBox.warning(self, "Invalid Payment Method", message)
+                
+        except Exception as e:
+            self.logger.error(f"Error setting payment method: {str(e)}")
+            self.payment_method_combo.setCurrentText(self.sales_manager.get_current_payment_method().title())
+    
+
+    
+    def _cancel_sale(self):
+        """Cancel the current sale"""
+        if self.sales_manager.get_cart_count() > 0:
+            reply = QMessageBox.question(
+                self,
+                "Cancel Sale",
+                "Are you sure you want to cancel this sale? All items will be removed from the cart.",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+            
+            if reply == QMessageBox.Yes:
+                self.clear_cart()
+                self.customer_name_input.clear()
+                self.logger.info("Sale cancelled by user")
+    
     def _update_totals(self):
-        """Update totals display"""
+        """Update all total displays"""
         try:
             totals = self.sales_manager.calculate_cart_totals()
             
-            self.subtotal_label.setText(f"${totals['subtotal']:.2f}")
-            self.discount_amount_label.setText(f"-${totals['discount']:.2f}")
-            self.tax_amount_label.setText(f"${totals['tax']:.2f}")
-            self.total_label.setText(f"${totals['total']:.2f}")
+            # Update total labels with currency formatting
+            self.subtotal_label.setText(self.sales_manager.format_currency(totals['subtotal']))
+            self.discount_amount_label.setText(f"-{self.sales_manager.format_currency(totals['discount'])}")
+            self.tax_amount_label.setText(self.sales_manager.format_currency(totals['tax']))
+            self.total_label.setText(self.sales_manager.format_currency(totals['total']))
             
         except Exception as e:
             self.logger.error(f"Error updating totals: {str(e)}")
@@ -707,6 +761,344 @@ class CartWidget(QWidget):
             self.discount_amount_label.setText("$0.00")
             self.tax_amount_label.setText("$0.00")
             self.total_label.setText("$0.00")
+    
+    def clear_cart(self):
+        """Clear the shopping cart"""
+        try:
+            if self.sales_manager.clear_cart():
+                self.refresh_cart()
+                self.logger.info("Cart cleared")
+            else:
+                QMessageBox.warning(self, "Error", "Failed to clear cart")
+                
+        except Exception as e:
+            self.logger.error(f"Error clearing cart: {str(e)}")
+            QMessageBox.critical(self, "Error", f"Error clearing cart: {str(e)}")
+    
+    def refresh_settings(self):
+        """Refresh settings-dependent components"""
+        try:
+            # Refresh sales manager settings
+            if hasattr(self.sales_manager, 'refresh_settings'):
+                self.sales_manager.refresh_settings()
+            
+            # Update tax rate from settings if cart is empty
+            if self.sales_manager.is_cart_empty():
+                default_tax_rate = self.sales_manager.get_current_tax_rate()
+                self.tax_rate_input.setValue(default_tax_rate)
+            
+            # Refresh totals to update currency formatting
+            self._update_totals()
+            
+            # Refresh cart display to update currency formatting
+            self.refresh_cart()
+            
+            self.logger.info("Billing widget settings refreshed")
+            
+        except Exception as e:
+            self.logger.error(f"Error refreshing billing settings: {str(e)}")
+    
+    def _complete_sale(self):
+        """Complete the current sale transaction"""
+        try:
+            # Validate cart is not empty
+            if self.sales_manager.is_cart_empty():
+                QMessageBox.warning(self, "Empty Cart", "Cannot complete sale with empty cart.")
+                return
+            
+            # Get cart summary for confirmation
+            cart_summary = self.sales_manager.get_current_cart_summary()
+            
+            # Show confirmation dialog
+            confirmation_msg = (
+                f"Complete sale with {cart_summary['item_count']} items?\n\n"
+                f"Subtotal: {self.sales_manager.format_currency(cart_summary['subtotal'])}\n"
+                f"Discount: {self.sales_manager.format_currency(cart_summary['discount'])}\n"
+                f"Tax: {self.sales_manager.format_currency(cart_summary['tax'])}\n"
+                f"Total: {self.sales_manager.format_currency(cart_summary['total'])}\n"
+                f"Payment: {self.payment_method_combo.currentText()}"
+            )
+            
+            reply = QMessageBox.question(
+                self,
+                "Complete Sale",
+                confirmation_msg,
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                QMessageBox.StandardButton.Yes
+            )
+            
+            if reply != QMessageBox.StandardButton.Yes:
+                return
+            
+            # Process the sale
+            customer_name = self.customer_name_input.text().strip() if self.customer_name_input.text().strip() else None
+            # Get cashier_id from current user
+            cashier_id = getattr(self.parent(), 'current_user', None) and getattr(self.parent(), 'current_user').id
+            success, message, sale = self.sales_manager.complete_sale(cashier_id=cashier_id, customer_name=customer_name)
+            
+            if success and sale:
+                # Show success message with receipt option
+                self._show_transaction_success(sale)
+                
+                # Clear customer name input
+                self.customer_name_input.clear()
+                
+                # Reset payment method to cash
+                self.payment_method_combo.setCurrentText("Cash")
+                
+                self.logger.info(f"Sale completed successfully: ID {sale.id}, Total: {self.sales_manager.format_currency(sale.total)}")
+                
+            else:
+                # Show error message
+                QMessageBox.critical(
+                    self,
+                    "Transaction Failed",
+                    f"Failed to complete sale:\n{message}"
+                )
+                self.logger.error(f"Sale completion failed: {message}")
+                
+        except Exception as e:
+            error_msg = f"Error completing sale: {str(e)}"
+            self.logger.error(error_msg)
+            QMessageBox.critical(self, "Transaction Error", error_msg)
+    
+    def _cancel_sale(self):
+        """Cancel the current sale"""
+        if self.sales_manager.get_cart_count() > 0:
+            reply = QMessageBox.question(
+                self,
+                "Cancel Sale",
+                "Are you sure you want to cancel this sale? All items will be removed from the cart.",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+            
+            if reply == QMessageBox.Yes:
+                self.clear_cart()
+                self.customer_name_input.clear()
+                self.logger.info("Sale cancelled by user")
+    
+    def _show_transaction_success(self, sale):
+        """Show transaction success dialog with receipt option"""
+        try:
+            # Create success dialog
+            success_dialog = QMessageBox(self)
+            success_dialog.setWindowTitle("Transaction Completed")
+            success_dialog.setIcon(QMessageBox.Icon.Information)
+            
+            # Format success message
+            success_msg = (
+                f"Sale completed successfully!\n\n"
+                f"Transaction ID: {sale.id}\n"
+                f"Date: {sale.date}\n"
+                f"Items: {len(sale.items)}\n"
+                f"Total: {self.sales_manager.format_currency(sale.total)}\n"
+                f"Payment: {sale.payment_method.title()}"
+            )
+            
+            if self.customer_name_input.text().strip():
+                success_msg += f"\nCustomer: {self.customer_name_input.text().strip()}"
+            
+            success_dialog.setText(success_msg)
+            
+            # Add custom buttons
+            print_receipt_button = success_dialog.addButton("Print Receipt", QMessageBox.ButtonRole.ActionRole)
+            view_receipt_button = success_dialog.addButton("View Receipt", QMessageBox.ButtonRole.ActionRole)
+            ok_button = success_dialog.addButton("OK", QMessageBox.ButtonRole.AcceptRole)
+            
+            success_dialog.setDefaultButton(ok_button)
+            
+            # Show dialog and handle response
+            success_dialog.exec()
+            clicked_button = success_dialog.clickedButton()
+            
+            if clicked_button == print_receipt_button:
+                self._print_receipt(sale)
+            elif clicked_button == view_receipt_button:
+                self._show_receipt_dialog(sale)
+                
+        except Exception as e:
+            self.logger.error(f"Error showing transaction success: {str(e)}")
+            # Fallback to simple message box
+            QMessageBox.information(
+                self,
+                "Transaction Completed",
+                f"Sale completed successfully!\nTransaction ID: {sale.id}\nTotal: {self.sales_manager.format_currency(sale.total)}"
+            )
+    
+    def _show_receipt_dialog(self, sale):
+        """Show receipt in a dialog"""
+        try:
+            from ...ui.dialogs.receipt_dialog import ReceiptDialog
+            receipt_dialog = ReceiptDialog(sale, self.sales_manager, self)
+            receipt_dialog.exec()
+        except ImportError:
+            # Fallback to simple text display
+            receipt_text = self._generate_receipt_text(sale)
+            
+            receipt_dialog = QMessageBox(self)
+            receipt_dialog.setWindowTitle(f"Receipt - Transaction {sale.id}")
+            receipt_dialog.setText(receipt_text)
+            receipt_dialog.setDetailedText(receipt_text)
+            receipt_dialog.exec()
+    
+    def _print_receipt(self, sale):
+        """Print receipt (placeholder implementation)"""
+        try:
+            # For now, just show a message that printing would happen here
+            QMessageBox.information(
+                self,
+                "Print Receipt",
+                f"Receipt for Transaction {sale.id} would be printed here.\n"
+                f"This feature will be fully implemented in a future update."
+            )
+            self.logger.info(f"Print receipt requested for sale {sale.id}")
+        except Exception as e:
+            self.logger.error(f"Error printing receipt: {str(e)}")
+            QMessageBox.warning(self, "Print Error", "Failed to print receipt.")
+    
+    def _generate_receipt_text(self, sale) -> str:
+        """Generate receipt text"""
+        try:
+            receipt_lines = []
+            receipt_lines.append("=" * 40)
+            receipt_lines.append("MEDICAL STORE RECEIPT")
+            receipt_lines.append("=" * 40)
+            receipt_lines.append(f"Transaction ID: {sale.id}")
+            receipt_lines.append(f"Date: {sale.date}")
+            receipt_lines.append(f"Payment Method: {sale.payment_method.title()}")
+            
+            if self.customer_name_input.text().strip():
+                receipt_lines.append(f"Customer: {self.customer_name_input.text().strip()}")
+            
+            receipt_lines.append("-" * 40)
+            receipt_lines.append("ITEMS:")
+            receipt_lines.append("-" * 40)
+            
+            for item in sale.items:
+                receipt_lines.append(f"{item.name}")
+                receipt_lines.append(f"  Qty: {item.quantity} x {self.sales_manager.format_currency(item.unit_price)} = {self.sales_manager.format_currency(item.total_price)}")
+                if item.batch_no:
+                    receipt_lines.append(f"  Batch: {item.batch_no}")
+                receipt_lines.append("")
+            
+            receipt_lines.append("-" * 40)
+            receipt_lines.append(f"Subtotal: {self.sales_manager.format_currency(sale.subtotal)}")
+            if sale.discount > 0:
+                receipt_lines.append(f"Discount: -{self.sales_manager.format_currency(sale.discount)}")
+            if sale.tax > 0:
+                receipt_lines.append(f"Tax: {self.sales_manager.format_currency(sale.tax)}")
+            receipt_lines.append(f"TOTAL: {self.sales_manager.format_currency(sale.total)}")
+            receipt_lines.append("=" * 40)
+            receipt_lines.append("Thank you for your business!")
+            receipt_lines.append("Please keep this receipt for your records.")
+            
+            return "\n".join(receipt_lines)
+            
+        except Exception as e:
+            self.logger.error(f"Error generating receipt text: {str(e)}")
+            return f"Error generating receipt: {str(e)}"
+
+
+class BillingWidget(QWidget):
+    """Main billing widget combining product search and cart management"""
+    
+    def __init__(self, medicine_manager: MedicineManager, sales_manager: SalesManager, parent=None):
+        super().__init__(parent)
+        self.medicine_manager = medicine_manager
+        self.sales_manager = sales_manager
+        self.logger = logging.getLogger(__name__)
+        
+        self.setup_ui()
+        self.setup_connections()
+        
+        # Initialize with settings
+        self.refresh_display()
+    
+    def setup_ui(self):
+        """Setup the user interface"""
+        layout = QHBoxLayout(self)
+        layout.setContentsMargins(10, 10, 10, 10)
+        layout.setSpacing(10)
+        
+        # Create splitter for resizable panels
+        splitter = QSplitter(Qt.Orientation.Horizontal)
+        
+        # Left panel - Product search
+        self.search_widget = ProductSearchWidget(self.medicine_manager)
+        self.search_widget.setMinimumWidth(400)
+        splitter.addWidget(self.search_widget)
+        
+        # Right panel - Cart
+        self.cart_widget = CartWidget(self.sales_manager)
+        self.cart_widget.setMinimumWidth(450)
+        splitter.addWidget(self.cart_widget)
+        
+        # Set initial splitter sizes (60% search, 40% cart)
+        splitter.setSizes([600, 400])
+        
+        layout.addWidget(splitter)
+    
+    def setup_connections(self):
+        """Setup signal connections"""
+        # Connect product selection to cart
+        self.search_widget.product_selected.connect(self.cart_widget.add_product)
+        
+        # Connect cart updates to search refresh (for stock updates)
+        self.cart_widget.cart_updated.connect(self._on_cart_updated)
+    
+    def _on_cart_updated(self):
+        """Handle cart updates"""
+        # Refresh search results to show updated stock levels
+        self.search_widget.refresh_results()
+    
+    def refresh_display(self):
+        """Refresh the entire billing display with current settings"""
+        try:
+            # Refresh settings in sales manager
+            if hasattr(self.sales_manager, 'refresh_settings'):
+                self.sales_manager.refresh_settings()
+            
+            # Refresh cart widget settings
+            if hasattr(self.cart_widget, 'refresh_settings'):
+                self.cart_widget.refresh_settings()
+            
+            # Refresh search widget to update currency formatting
+            if hasattr(self.search_widget, 'refresh_results'):
+                self.search_widget.refresh_results()
+            
+            self.logger.info("Billing display refreshed with current settings")
+            
+        except Exception as e:
+            self.logger.error(f"Error refreshing billing display: {str(e)}")
+    
+    def focus_search(self):
+        """Set focus to product search"""
+        self.search_widget.focus_search()
+    
+    def get_cart_summary(self):
+        """Get current cart summary"""
+        return self.sales_manager.get_current_cart_summary()
+    
+    def _update_totals(self):
+        """Update totals display"""
+        try:
+            totals = self.sales_manager.calculate_cart_totals()
+            
+            # Use settings-aware currency formatting
+            self.subtotal_label.setText(self.sales_manager.format_currency(totals['subtotal']))
+            self.discount_amount_label.setText(f"-{self.sales_manager.format_currency(totals['discount'])}")
+            self.tax_amount_label.setText(self.sales_manager.format_currency(totals['tax']))
+            self.total_label.setText(self.sales_manager.format_currency(totals['total']))
+            
+        except Exception as e:
+            self.logger.error(f"Error updating totals: {str(e)}")
+            # Set default values using currency formatting
+            currency_symbol = self.sales_manager.get_currency_symbol()
+            self.subtotal_label.setText(f"{currency_symbol}0.00")
+            self.discount_amount_label.setText(f"{currency_symbol}0.00")
+            self.tax_amount_label.setText(f"{currency_symbol}0.00")
+            self.total_label.setText(f"{currency_symbol}0.00")
     
     def clear_cart(self):
         """Clear all items from cart"""
@@ -791,8 +1183,8 @@ class CartWidget(QWidget):
             
             # Process the sale
             customer_name = self.customer_name_input.text().strip() if self.customer_name_input.text().strip() else None
-            # TODO: Get actual cashier_id from authentication system
-            cashier_id = None  # Will be implemented when authentication is added
+            # Get cashier_id from current user
+            cashier_id = getattr(self.parent(), 'current_user', None) and getattr(self.parent(), 'current_user').id
             success, message, sale = self.sales_manager.complete_sale(cashier_id=cashier_id, customer_name=customer_name)
             
             if success and sale:
@@ -859,7 +1251,7 @@ class CartWidget(QWidget):
                 f"Transaction ID: {sale.id}\n"
                 f"Date: {sale.date}\n"
                 f"Items: {len(sale.items)}\n"
-                f"Total: ${sale.total:.2f}\n"
+                f"Total: {self.sales_manager.format_currency(sale.total)}\n"
                 f"Payment: {sale.payment_method.title()}"
             )
             
@@ -890,14 +1282,14 @@ class CartWidget(QWidget):
             QMessageBox.information(
                 self,
                 "Transaction Completed",
-                f"Sale completed successfully!\nTransaction ID: {sale.id}\nTotal: ${sale.total:.2f}"
+                f"Sale completed successfully!\nTransaction ID: {sale.id}\nTotal: {self.sales_manager.format_currency(sale.total)}"
             )
     
     def _show_receipt_dialog(self, sale):
         """Show receipt in a dialog"""
         try:
             from ...ui.dialogs.receipt_dialog import ReceiptDialog
-            receipt_dialog = ReceiptDialog(sale, self)
+            receipt_dialog = ReceiptDialog(sale, self.sales_manager, self)
             receipt_dialog.exec()
         except ImportError:
             # Fallback to simple text display
@@ -969,81 +1361,33 @@ class CartWidget(QWidget):
     def get_cart_summary(self) -> Dict[str, Any]:
         """Get current cart summary"""
         return self.sales_manager.get_current_cart_summary()
-
-
-class BillingWidget(QWidget):
-    """Main billing widget containing product search and cart management"""
     
-    def __init__(self, medicine_manager: MedicineManager, sales_manager: SalesManager, parent=None):
-        super().__init__(parent)
-        self.medicine_manager = medicine_manager
-        self.sales_manager = sales_manager
-        self.logger = logging.getLogger(__name__)
-        
-        self.setup_ui()
-        self.setup_connections()
-        self.refresh_display()
-    
-    def setup_ui(self):
-        """Setup the user interface"""
-        layout = QHBoxLayout(self)
-        layout.setContentsMargins(10, 10, 10, 10)
-        layout.setSpacing(10)
-        
-        # Create splitter for resizable sections
-        splitter = QSplitter(Qt.Orientation.Horizontal)
-        
-        # Left side - Product search
-        self.product_search = ProductSearchWidget(self.medicine_manager)
-        self.product_search.setMinimumWidth(600)
-        
-        # Right side - Cart widget
-        self.cart_widget = CartWidget(self.sales_manager)
-        self.cart_widget.setMinimumWidth(450)
-        
-        # Add widgets to splitter
-        splitter.addWidget(self.product_search)
-        splitter.addWidget(self.cart_widget)
-        
-        # Set initial splitter sizes (55% search, 45% cart)
-        splitter.setSizes([550, 450])
-        
-        layout.addWidget(splitter)
-    
-    def setup_connections(self):
-        """Setup signal connections"""
-        self.product_search.product_selected.connect(self._on_product_selected)
-        self.cart_widget.cart_updated.connect(self._on_cart_updated)
-    
-    def _on_product_selected(self, medicine: Medicine, quantity: int):
-        """Handle product selection from search widget"""
+    def on_settings_updated(self, settings: dict):
+        """Handle settings updates"""
         try:
-            self.cart_widget.add_product(medicine, quantity)
-            self.logger.info(f"Product selected: {medicine.name} x {quantity}")
+            # Refresh cart display to update currency formatting
+            self.refresh_cart()
             
-        except Exception as e:
-            self.logger.error(f"Error handling product selection: {str(e)}")
-            QMessageBox.critical(self, "Error", f"Error processing selection: {str(e)}")
-    
-    def _on_cart_updated(self):
-        """Handle cart updates"""
-        try:
-            # Update any UI elements that depend on cart state
-            # For now, just log the update
-            cart_summary = self.cart_widget.get_cart_summary()
-            self.logger.debug(f"Cart updated: {cart_summary['item_count']} items, total: ${cart_summary['total']:.2f}")
+            # Update tax rate from settings if cart is empty (new transaction)
+            if self.sales_manager.is_cart_empty():
+                tax_rate = settings.get('tax_rate', '0.0')
+                try:
+                    tax_rate_float = float(tax_rate)
+                    self.tax_rate_input.setValue(tax_rate_float)
+                    self.sales_manager.set_tax_rate(tax_rate_float)
+                except (ValueError, TypeError):
+                    pass  # Keep current tax rate if conversion fails
             
+            self.logger.info("Cart widget updated with new settings")
         except Exception as e:
-            self.logger.error(f"Error handling cart update: {str(e)}")
+            self.logger.error(f"Error updating cart widget with settings: {str(e)}")
+            self.refresh_display()
+            self.logger.info("Billing widget updated with new settings")
+        except Exception as e:
+            self.logger.error(f"Error updating billing widget with settings: {str(e)}")
     
-    def refresh_display(self):
-        """Refresh the display"""
-        # Focus on search input
-        self.product_search.focus_search()
-        # Refresh cart
-        self.cart_widget.refresh_cart()
-    
-    def clear_all(self):
-        """Clear all data"""
-        self.product_search.clear_search()
-        self.cart_widget.clear_cart()
+    def get_cart_summary(self):
+        """Get cart summary from cart widget"""
+        if hasattr(self.cart_widget, 'get_cart_summary'):
+            return self.cart_widget.get_cart_summary()
+        return {'item_count': 0, 'total': 0.0}

@@ -18,9 +18,10 @@ from ...models.sale import Sale
 class ReceiptDialog(QDialog):
     """Dialog for displaying transaction receipt"""
     
-    def __init__(self, sale: Sale, parent=None):
+    def __init__(self, sale: Sale, sales_manager=None, parent=None):
         super().__init__(parent)
         self.sale = sale
+        self.sales_manager = sales_manager
         self.logger = logging.getLogger(__name__)
         
         self.setup_ui()
@@ -115,9 +116,23 @@ class ReceiptDialog(QDialog):
         """Generate formatted receipt text"""
         lines = []
         
+        # Get store information and currency formatting
+        if self.sales_manager:
+            store_info = self.sales_manager.get_store_info()
+            format_currency = self.sales_manager.format_currency
+        else:
+            store_info = {'name': 'Medical Store', 'address': '', 'phone': '', 'email': ''}
+            format_currency = lambda x: f"${x:.2f}"
+        
         # Header
         lines.append("=" * 50)
-        lines.append("MEDICAL STORE MANAGEMENT SYSTEM")
+        lines.append(store_info['name'].upper())
+        if store_info['address']:
+            lines.append(store_info['address'])
+        if store_info['phone']:
+            lines.append(f"Phone: {store_info['phone']}")
+        if store_info['email']:
+            lines.append(f"Email: {store_info['email']}")
         lines.append("=" * 50)
         lines.append("")
         
@@ -141,8 +156,8 @@ class ReceiptDialog(QDialog):
         for i, item in enumerate(self.sale.items, 1):
             lines.append(f"{i}. {item.name}")
             lines.append(f"   Quantity: {item.quantity}")
-            lines.append(f"   Unit Price: ${item.unit_price:.2f}")
-            lines.append(f"   Total: ${item.total_price:.2f}")
+            lines.append(f"   Unit Price: {format_currency(item.unit_price)}")
+            lines.append(f"   Total: {format_currency(item.total_price)}")
             
             if item.batch_no:
                 lines.append(f"   Batch No: {item.batch_no}")
@@ -153,16 +168,16 @@ class ReceiptDialog(QDialog):
         lines.append("-" * 50)
         lines.append("PAYMENT SUMMARY")
         lines.append("-" * 50)
-        lines.append(f"Subtotal: ${self.sale.subtotal:.2f}")
+        lines.append(f"Subtotal: {format_currency(self.sale.subtotal)}")
         
         if self.sale.discount > 0:
-            lines.append(f"Discount: -${self.sale.discount:.2f}")
+            lines.append(f"Discount: -{format_currency(self.sale.discount)}")
         
         if self.sale.tax > 0:
-            lines.append(f"Tax: ${self.sale.tax:.2f}")
+            lines.append(f"Tax: {format_currency(self.sale.tax)}")
         
         lines.append("-" * 50)
-        lines.append(f"TOTAL AMOUNT: ${self.sale.total:.2f}")
+        lines.append(f"TOTAL AMOUNT: {format_currency(self.sale.total)}")
         lines.append("=" * 50)
         lines.append("")
         lines.append("Thank you for your business!")
