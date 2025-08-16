@@ -33,14 +33,13 @@ class SalesManager:
         self.logger = logging.getLogger(__name__)
         self._current_cart: List[SaleItem] = []
         self._current_discount = 0.0
-        self._current_tax_rate = 0.0
         self._current_payment_method = "cash"
         
-        # Initialize settings manager if settings repository is provided
+        # Initialize tax rate from settings
         self.settings_manager = None
-        if settings_repository:
-            self.settings_manager = SettingsManager(settings_repository)
-            # Load default tax rate from settings
+        self._current_tax_rate = 0.0
+        if self.settings_repository:
+            self.settings_manager = SettingsManager(self.settings_repository)
             self._current_tax_rate = self.settings_manager.get_default_tax_rate()
     
     # Cart Management Methods
@@ -389,11 +388,25 @@ class SalesManager:
                 self.logger.error(f"Failed to update stock after sale ID {saved_sale.id}")
                 return False, "Sale saved but failed to update stock", saved_sale
             
+            # Generate invoice
+            try:
+                from ..utils.invoice_generator import InvoiceGenerator
+                store_info = self.get_store_info()
+                invoice = InvoiceGenerator(
+                    sale=saved_sale,
+                    store_info=store_info,
+                    currency_symbol=self.get_currency_symbol()
+                )
+                invoice_path = invoice.generate()
+                self.logger.info(f"Invoice generated at: {invoice_path}")
+            except Exception as e:
+                self.logger.error(f"Error generating invoice: {str(e)}")
+
             # Clear cart after successful sale
             self.clear_cart()
             
-            success_msg = f"Sale completed successfully. Total: ${saved_sale.total:.2f}"
-            self.logger.info(f"Sale completed: ID {saved_sale.id}, Total: ${saved_sale.total:.2f}")
+            success_msg = f"Sale completed successfully. Total: {self.format_currency(saved_sale.total)}"
+            self.logger.info(f"Sale completed: ID {saved_sale.id}, Total: {self.format_currency(saved_sale.total)}")
             return True, success_msg, saved_sale
             
         except Exception as e:

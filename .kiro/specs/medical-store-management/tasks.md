@@ -276,9 +276,9 @@
     - Write tests for settings integration and real-time updates
     - _Requirements: 7.3, 7.4_
 
-- [ ] 13. Implement backup and restore functionality
+- [x] 13. Implement backup and restore functionality
 
-  - [ ] 13.1 Create backup system with file operations
+  - [x] 13.1 Create backup system with file operations
 
     - Build backup utility class for database copying and compression
     - Implement backup scheduling and manual backup triggers
@@ -286,7 +286,7 @@
     - Write tests for backup creation and file integrity
     - _Requirements: 8.1, 8.3, 8.4_
 
-  - [ ] 13.2 Build restore functionality with validation
+  - [x] 13.2 Build restore functionality with validation
 
     - Implement database restore from backup files
     - Add backup file validation and compatibility checking
@@ -294,7 +294,7 @@
     - Write tests for restore operations and error handling
     - _Requirements: 8.2, 8.3, 8.4_
 
-  - [ ] 13.3 Create backup/restore UI dialogs
+  - [x] 13.3 Create backup/restore UI dialogs
     - Build backup dialog with file selection and progress display
     - Create restore dialog with backup file browsing and validation
     - Add backup history display and management features
