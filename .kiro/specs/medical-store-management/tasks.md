@@ -301,9 +301,9 @@
     - Write integration tests for complete backup/restore workflow
     - _Requirements: 8.1, 8.2, 8.3, 8.4_
 
-- [ ] 14. Apply modern UI styling and animations (Phase 6)
+- [x] 14. Apply modern UI styling and animations (Phase 6)
 
-  - [ ] 14.1 Create comprehensive QSS stylesheet
+  - [x] 14.1 Create comprehensive QSS stylesheet
 
     - Implement complete stylesheet with defined color palette
     - Add styling for all UI components (buttons, tables, forms, dialogs)
@@ -311,7 +311,7 @@
     - Write tests for stylesheet application and visual consistency
     - _Requirements: 9.4, 9.5_
 
-  - [ ] 14.2 Implement sidebar animations and transitions
+  - [x] 14.2 Implement sidebar animations and transitions
 
     - Add smooth expand/collapse animations for sidebar
     - Implement page transition effects between different sections
@@ -319,16 +319,16 @@
     - Write tests for animation performance and smoothness
     - _Requirements: 9.1, 9.2, 9.3_
 
-  - [ ] 14.3 Add icons and visual enhancements
+  - [x] 14.3 Add icons and visual enhancements
     - Integrate icons for all navigation items and actions
     - Add visual indicators for status, alerts, and notifications
     - Implement responsive design elements for different screen sizes
     - Write tests for icon display and responsive behavior
     - _Requirements: 9.6, 9.1_
 
-- [ ] 15. Add advanced billing features (Phase 7 start)
+- [x] 15. Add advanced billing features (Phase 7 start)
 
-  - [ ] 15.1 Implement tax and discount calculations
+  - [x] 15.1 Implement tax and discount calculations
 
     - Enhance billing system with configurable tax rates
     - Add discount application (percentage and fixed amount)
@@ -336,7 +336,7 @@
     - Write tests for all calculation scenarios and edge cases
     - _Requirements: 3.7, 7.3_
 
-  - [ ] 15.2 Create invoice generation system
+  - [x] 15.2 Create invoice generation system
     - Build invoice template with store details and itemized billing
     - Implement PDF generation for printable invoices
     - Add thermal printer support for receipt printing
