@@ -15,7 +15,7 @@ from PySide6.QtWidgets import QApplication, QDialog
 from PySide6.QtCore import Qt
 from PySide6.QtTest import QTest
 
-from ui.dialogs.base_dialog import (
+from medical_store_app.ui.dialogs.base_dialog import (
     BaseDialog, FormDialog, ConfirmationDialog, 
     MessageDialog, ProgressDialog
 )

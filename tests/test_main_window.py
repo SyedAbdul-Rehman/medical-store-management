@@ -16,7 +16,7 @@ from PySide6.QtWidgets import QApplication, QLabel, QPushButton, QFrame
 from PySide6.QtCore import Qt
 from PySide6.QtTest import QTest
 
-from ui.main_window import MainWindow
+from medical_store_app.ui.main_window import MainWindow
 
 
 class TestMainWindow:
