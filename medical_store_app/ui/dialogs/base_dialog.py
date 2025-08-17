@@ -104,18 +104,19 @@ class BaseDialog(QDialog):
         return ok_btn, cancel_btn
     
     def set_content_widget(self, widget: QWidget):
-        """Set the main content widget"""
-        # Clear existing content
-        if self.content_area.layout():
-            while self.content_area.layout().count():
-                child = self.content_area.layout().takeAt(0)
-                if child.widget():
-                    child.widget().deleteLater()
-        else:
-            layout = QVBoxLayout(self.content_area)
-            layout.setContentsMargins(0, 0, 0, 0)
+        """Set the main content widget by replacing the placeholder"""
+        # Ensure the widget has the correct object name for styling
+        widget.setObjectName("contentArea")
         
-        self.content_area.layout().addWidget(widget)
+        # Replace the placeholder content_area with the new widget
+        if self.content_area:
+            self.main_layout.replaceWidget(self.content_area, widget)
+            self.content_area.deleteLater()
+            self.content_area = widget
+        else:
+            # Fallback if content_area was not created, insert at the top
+            self.main_layout.insertWidget(0, widget)
+            self.content_area = widget
     
     def center_on_parent(self):
         """Center the dialog on its parent window"""

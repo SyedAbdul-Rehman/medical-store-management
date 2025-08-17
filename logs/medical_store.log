@@ -5811,3 +5811,427 @@ Supported signatures:
 2025-08-16 16:51:08,114 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
 2025-08-16 16:51:08,176 [INFO] medical_store_app.ui.main_window: Login cancelled or failed
 2025-08-16 16:51:08,179 [INFO] __main__: Application startup cancelled by user
+2025-08-17 23:32:20,354 [INFO] __main__: Initializing database...
+2025-08-17 23:32:20,355 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-17 23:32:20,357 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:32:20,358 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-17 23:32:20,358 [INFO] __main__: Loading application settings...
+2025-08-17 23:32:20,359 [INFO] __main__: Creating main application window...
+2025-08-17 23:32:20,360 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:32:20,360 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 20
+2025-08-17 23:32:20,384 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-17 23:32:20,386 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-17 23:32:20,759 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:32:20,769 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 31 medicines, $72806.00 total value, 0 low stock alerts
+2025-08-17 23:32:20,937 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:32:20,938 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 31, Low Stock: 0, Expired: 0
+2025-08-17 23:32:21,001 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-17 23:32:21,073 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-17 23:32:21,074 [INFO] __main__: Starting login process...
+2025-08-17 23:32:21,075 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-17 23:32:21,116 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-17 23:32:26,405 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-17 23:32:26,489 [INFO] medical_store_app.ui.main_window: Login cancelled or failed
+2025-08-17 23:32:26,506 [INFO] __main__: Application startup cancelled by user
+2025-08-17 23:33:09,275 [INFO] __main__: Initializing database...
+2025-08-17 23:33:09,276 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-17 23:33:09,277 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:33:09,655 [INFO] medical_store_app.config.database: Default users created:
+2025-08-17 23:33:09,656 [INFO] medical_store_app.config.database:   Admin - username: admin, password: admin123
+2025-08-17 23:33:09,657 [INFO] medical_store_app.config.database:   Cashier - username: cashier, password: cashier123
+2025-08-17 23:33:09,764 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-17 23:33:09,765 [INFO] __main__: Loading application settings...
+2025-08-17 23:33:09,767 [INFO] __main__: Creating main application window...
+2025-08-17 23:33:09,770 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:33:09,771 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 10
+2025-08-17 23:33:09,800 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-17 23:33:09,804 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-17 23:33:10,343 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:33:10,345 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:33:10,560 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:33:10,562 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:33:10,603 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-17 23:33:10,659 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-17 23:33:10,660 [INFO] __main__: Starting login process...
+2025-08-17 23:33:10,672 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-17 23:33:10,686 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-17 23:33:26,893 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-17 23:33:26,965 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-17 23:33:28,079 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-17 23:33:28,115 [INFO] medical_store_app.ui.main_window: Login cancelled or failed
+2025-08-17 23:33:28,116 [INFO] __main__: Application startup cancelled by user
+2025-08-17 23:37:23,357 [INFO] __main__: Initializing database...
+2025-08-17 23:37:23,358 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-17 23:37:23,359 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:37:23,673 [INFO] medical_store_app.config.database: Default users created:
+2025-08-17 23:37:23,674 [INFO] medical_store_app.config.database:   Admin - username: admin, password: admin123
+2025-08-17 23:37:23,674 [INFO] medical_store_app.config.database:   Cashier - username: cashier, password: cashier123
+2025-08-17 23:37:23,761 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-17 23:37:23,762 [INFO] __main__: Loading application settings...
+2025-08-17 23:37:23,762 [INFO] __main__: Creating main application window...
+2025-08-17 23:37:23,767 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:37:23,769 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 10
+2025-08-17 23:37:23,803 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-17 23:37:23,806 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-17 23:37:24,092 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:37:24,095 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:37:24,268 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:37:24,270 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:37:24,310 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-17 23:37:24,361 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-17 23:37:24,362 [INFO] __main__: Starting login process...
+2025-08-17 23:37:24,374 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-17 23:37:24,390 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-17 23:37:53,812 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:37:53,815 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:37:53,982 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:37:53,983 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:38:16,027 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-17 23:38:16,089 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-17 23:38:17,325 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-17 23:38:17,375 [INFO] medical_store_app.ui.main_window: Login cancelled or failed
+2025-08-17 23:38:17,378 [INFO] __main__: Application startup cancelled by user
+2025-08-17 23:39:54,978 [INFO] __main__: Initializing database...
+2025-08-17 23:39:54,979 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-17 23:39:54,980 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:39:55,325 [INFO] medical_store_app.config.database: Default users created:
+2025-08-17 23:39:55,352 [INFO] medical_store_app.config.database:   Admin - username: admin, password: admin123
+2025-08-17 23:39:55,353 [INFO] medical_store_app.config.database:   Cashier - username: cashier, password: cashier123
+2025-08-17 23:39:55,463 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-17 23:39:55,464 [INFO] __main__: Loading application settings...
+2025-08-17 23:39:55,464 [INFO] __main__: Creating main application window...
+2025-08-17 23:39:55,467 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:39:55,469 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 10
+2025-08-17 23:39:55,503 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-17 23:39:55,508 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-17 23:39:55,887 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:39:55,889 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:39:56,224 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:39:56,297 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:39:56,392 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-17 23:39:56,445 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-17 23:39:56,445 [INFO] __main__: Starting login process...
+2025-08-17 23:39:56,457 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-17 23:39:56,474 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-17 23:40:25,510 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:40:25,513 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:40:25,663 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:40:25,664 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:40:41,739 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-17 23:40:41,794 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-17 23:40:42,818 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-17 23:40:42,844 [INFO] medical_store_app.ui.main_window: Login cancelled or failed
+2025-08-17 23:40:42,866 [INFO] __main__: Application startup cancelled by user
+2025-08-17 23:41:30,642 [INFO] __main__: Initializing database...
+2025-08-17 23:41:30,643 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-17 23:41:30,644 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:41:30,972 [INFO] medical_store_app.config.database: Default users created:
+2025-08-17 23:41:30,973 [INFO] medical_store_app.config.database:   Admin - username: admin, password: admin123
+2025-08-17 23:41:30,973 [INFO] medical_store_app.config.database:   Cashier - username: cashier, password: cashier123
+2025-08-17 23:41:31,066 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-17 23:41:31,067 [INFO] __main__: Loading application settings...
+2025-08-17 23:41:31,067 [INFO] __main__: Creating main application window...
+2025-08-17 23:41:31,074 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:41:31,076 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 10
+2025-08-17 23:41:31,101 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-17 23:41:31,110 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-17 23:41:31,412 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:41:31,415 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:41:31,681 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:41:31,683 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:41:31,767 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-17 23:41:31,896 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-17 23:41:31,896 [INFO] __main__: Starting login process...
+2025-08-17 23:41:31,912 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-17 23:41:31,993 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-17 23:41:43,169 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-17 23:41:43,243 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-17 23:41:44,029 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-17 23:41:44,052 [INFO] medical_store_app.ui.main_window: Login cancelled or failed
+2025-08-17 23:41:44,055 [INFO] __main__: Application startup cancelled by user
+2025-08-17 23:43:24,340 [INFO] __main__: Initializing database...
+2025-08-17 23:43:24,341 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-17 23:43:24,342 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:43:24,697 [INFO] medical_store_app.config.database: Default users created:
+2025-08-17 23:43:24,791 [INFO] medical_store_app.config.database:   Admin - username: admin, password: admin123
+2025-08-17 23:43:24,794 [INFO] medical_store_app.config.database:   Cashier - username: cashier, password: cashier123
+2025-08-17 23:43:24,895 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-17 23:43:24,895 [INFO] __main__: Loading application settings...
+2025-08-17 23:43:24,896 [INFO] __main__: Creating main application window...
+2025-08-17 23:43:24,898 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:43:24,901 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 10
+2025-08-17 23:43:24,942 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-17 23:43:24,945 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-17 23:43:25,253 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:43:25,255 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:43:25,511 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:43:25,512 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:43:25,562 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-17 23:43:25,614 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-17 23:43:25,615 [INFO] __main__: Starting login process...
+2025-08-17 23:43:25,626 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-17 23:43:25,643 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-17 23:45:08,075 [INFO] __main__: Initializing database...
+2025-08-17 23:45:08,076 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-17 23:45:08,077 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:45:08,448 [INFO] medical_store_app.config.database: Default users created:
+2025-08-17 23:45:08,459 [INFO] medical_store_app.config.database:   Admin - username: admin, password: admin123
+2025-08-17 23:45:08,460 [INFO] medical_store_app.config.database:   Cashier - username: cashier, password: cashier123
+2025-08-17 23:45:08,570 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-17 23:45:08,570 [INFO] __main__: Loading application settings...
+2025-08-17 23:45:08,571 [INFO] __main__: Creating main application window...
+2025-08-17 23:45:08,573 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:45:08,574 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 10
+2025-08-17 23:45:08,608 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-17 23:45:08,611 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-17 23:45:09,012 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:45:09,018 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:45:09,464 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:45:09,465 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:45:09,514 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-17 23:45:09,577 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-17 23:45:09,578 [INFO] __main__: Starting login process...
+2025-08-17 23:45:09,593 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-17 23:45:09,618 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-17 23:45:26,895 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-17 23:45:26,958 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-17 23:45:38,608 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:45:38,610 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:45:38,771 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:45:38,773 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:45:43,632 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-17 23:45:43,674 [INFO] medical_store_app.ui.main_window: Login cancelled or failed
+2025-08-17 23:45:43,697 [INFO] __main__: Application startup cancelled by user
+2025-08-17 23:46:21,846 [INFO] __main__: Initializing database...
+2025-08-17 23:46:21,847 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-17 23:46:21,848 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:46:22,203 [INFO] medical_store_app.config.database: Default users created:
+2025-08-17 23:46:22,204 [INFO] medical_store_app.config.database:   Admin - username: admin, password: admin123
+2025-08-17 23:46:22,204 [INFO] medical_store_app.config.database:   Cashier - username: cashier, password: cashier123
+2025-08-17 23:46:22,304 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-17 23:46:22,305 [INFO] __main__: Loading application settings...
+2025-08-17 23:46:22,305 [INFO] __main__: Creating main application window...
+2025-08-17 23:46:22,308 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:46:22,310 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 10
+2025-08-17 23:46:22,337 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-17 23:46:22,340 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-17 23:46:22,923 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:46:22,925 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:46:23,098 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:46:23,100 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:46:23,148 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-17 23:46:23,223 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-17 23:46:23,224 [INFO] __main__: Starting login process...
+2025-08-17 23:46:23,239 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-17 23:46:23,273 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-17 23:46:29,487 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-17 23:46:29,568 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-17 23:46:52,354 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:46:52,356 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:46:52,522 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:46:52,524 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:47:22,344 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:47:22,377 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:47:22,816 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:47:22,818 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:47:52,341 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:47:52,343 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:47:52,498 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:47:52,501 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:48:22,347 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:48:22,351 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:48:22,496 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:48:22,497 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:49:14,223 [INFO] __main__: Initializing database...
+2025-08-17 23:49:14,224 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-17 23:49:14,226 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:49:14,646 [INFO] medical_store_app.config.database: Default users created:
+2025-08-17 23:49:14,647 [INFO] medical_store_app.config.database:   Admin - username: admin, password: admin123
+2025-08-17 23:49:14,647 [INFO] medical_store_app.config.database:   Cashier - username: cashier, password: cashier123
+2025-08-17 23:49:14,756 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-17 23:49:14,757 [INFO] __main__: Loading application settings...
+2025-08-17 23:49:14,757 [INFO] __main__: Creating main application window...
+2025-08-17 23:49:14,760 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:49:14,761 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 10
+2025-08-17 23:49:14,796 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-17 23:49:14,799 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-17 23:49:15,184 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:49:15,186 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:49:15,442 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:49:15,445 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:49:15,487 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-17 23:49:15,561 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-17 23:49:15,562 [INFO] __main__: Starting login process...
+2025-08-17 23:49:15,569 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-17 23:49:15,587 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-17 23:49:44,804 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:49:44,806 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:49:44,973 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:49:44,975 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:50:09,328 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-17 23:50:09,450 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-17 23:50:10,781 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog was cancelled or rejected
+2025-08-17 23:50:10,854 [INFO] medical_store_app.ui.main_window: Login cancelled or failed
+2025-08-17 23:50:10,861 [INFO] __main__: Application startup cancelled by user
+2025-08-17 23:51:19,831 [INFO] __main__: Initializing database...
+2025-08-17 23:51:19,833 [INFO] medical_store_app.config.database: Initializing database tables...
+2025-08-17 23:51:19,834 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:51:20,212 [INFO] medical_store_app.config.database: Default users created:
+2025-08-17 23:51:20,213 [INFO] medical_store_app.config.database:   Admin - username: admin, password: admin123
+2025-08-17 23:51:20,214 [INFO] medical_store_app.config.database:   Cashier - username: cashier, password: cashier123
+2025-08-17 23:51:20,333 [INFO] medical_store_app.config.database: Database initialization completed successfully
+2025-08-17 23:51:20,335 [INFO] __main__: Loading application settings...
+2025-08-17 23:51:20,336 [INFO] __main__: Creating main application window...
+2025-08-17 23:51:20,339 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:51:20,340 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 10
+2025-08-17 23:51:20,373 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: dashboard
+2025-08-17 23:51:20,375 [INFO] medical_store_app.ui.components.sidebar: Sidebar navigation component initialized
+2025-08-17 23:51:20,724 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:51:20,726 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:51:21,033 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:51:21,034 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:51:21,080 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-17 23:51:21,157 [INFO] medical_store_app.ui.main_window: Main window initialized with header, sidebar area, and content area
+2025-08-17 23:51:21,158 [INFO] __main__: Starting login process...
+2025-08-17 23:51:21,170 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Welcome to Medical Store Management
+2025-08-17 23:51:21,189 [INFO] medical_store_app.ui.dialogs.startup_info_dialog: Startup info dialog initialized
+2025-08-17 23:51:28,588 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: Login - Medical Store Management
+2025-08-17 23:51:28,713 [INFO] medical_store_app.ui.dialogs.base_dialog: Login dialog initialized
+2025-08-17 23:51:43,038 [INFO] medical_store_app.repositories.user_repository: User authenticated successfully: admin
+2025-08-17 23:51:43,039 [INFO] medical_store_app.managers.auth_manager: User logged in: admin (ID: 1)
+2025-08-17 23:51:43,040 [INFO] medical_store_app.ui.dialogs.base_dialog: Login successful for user: admin
+2025-08-17 23:51:43,120 [INFO] medical_store_app.ui.dialogs.login_dialog: Login dialog completed successfully for user: admin
+2025-08-17 23:51:43,138 [INFO] medical_store_app.ui.main_window: Menu item shown: users
+2025-08-17 23:51:43,152 [INFO] medical_store_app.ui.main_window: Menu item shown: reports
+2025-08-17 23:51:43,185 [INFO] medical_store_app.ui.main_window: Menu item shown: settings
+2025-08-17 23:51:43,189 [INFO] medical_store_app.ui.main_window: Menu item shown: medicine
+2025-08-17 23:51:43,192 [INFO] medical_store_app.ui.main_window: Menu item enabled: users
+2025-08-17 23:51:43,204 [INFO] medical_store_app.ui.main_window: Menu item enabled: medicine
+2025-08-17 23:51:43,205 [INFO] medical_store_app.ui.main_window: Menu item enabled: reports
+2025-08-17 23:51:43,545 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:51:43,548 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:51:43,848 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:51:43,849 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:51:43,897 [INFO] medical_store_app.ui.main_window: Dashboard content displayed with overview cards
+2025-08-17 23:51:43,897 [INFO] medical_store_app.ui.main_window: User logged in successfully: admin
+2025-08-17 23:51:43,978 [INFO] __main__: Medical Store Management Application started successfully
+2025-08-17 23:51:48,413 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: billing
+2025-08-17 23:51:48,414 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: billing
+2025-08-17 23:51:48,415 [INFO] medical_store_app.ui.main_window: Menu item selected: billing
+2025-08-17 23:51:48,529 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:51:48,529 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:51:48,530 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:51:48,530 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:51:48,531 [INFO] medical_store_app.ui.components.billing_widget: Billing widget settings refreshed
+2025-08-17 23:51:48,531 [INFO] medical_store_app.ui.components.billing_widget: Billing display refreshed with current settings
+2025-08-17 23:51:48,532 [INFO] medical_store_app.ui.main_window: Billing widget created successfully
+2025-08-17 23:51:48,566 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:51:48,567 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:51:48,568 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:51:48,568 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:51:48,569 [INFO] medical_store_app.ui.components.billing_widget: Billing widget settings refreshed
+2025-08-17 23:51:48,569 [INFO] medical_store_app.ui.components.billing_widget: Billing display refreshed with current settings
+2025-08-17 23:51:48,569 [INFO] medical_store_app.ui.main_window: Billing content displayed
+2025-08-17 23:51:49,501 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: users
+2025-08-17 23:51:49,502 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: users
+2025-08-17 23:51:49,503 [INFO] medical_store_app.ui.main_window: Menu item selected: users
+2025-08-17 23:51:49,615 [INFO] medical_store_app.ui.dialogs.base_dialog: Base dialog initialized: User Management
+2025-08-17 23:51:49,617 [INFO] medical_store_app.ui.dialogs.base_dialog: Loaded 2 users
+2025-08-17 23:51:49,618 [INFO] medical_store_app.ui.dialogs.base_dialog: User management dialog initialized
+2025-08-17 23:51:50,372 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:51:50,376 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:51:50,523 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:51:50,525 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:51:53,146 [INFO] medical_store_app.ui.main_window: User management dialog displayed
+2025-08-17 23:51:54,061 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: reports
+2025-08-17 23:51:54,063 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: reports
+2025-08-17 23:51:54,064 [INFO] medical_store_app.ui.main_window: Menu item selected: reports
+2025-08-17 23:51:54,169 [INFO] medical_store_app.ui.main_window: Reports widget created successfully
+2025-08-17 23:51:54,217 [INFO] medical_store_app.ui.main_window: Reports content displayed
+2025-08-17 23:51:54,680 [INFO] medical_store_app.managers.report_manager: Generating sales report for 2025-07-19 to 2025-08-17
+2025-08-17 23:51:54,683 [INFO] medical_store_app.managers.report_manager: Sales report generated successfully with 0 daily records
+2025-08-17 23:51:55,533 [INFO] medical_store_app.ui.components.sidebar: Menu item clicked: settings
+2025-08-17 23:51:55,534 [INFO] medical_store_app.ui.components.sidebar: Active menu item set to: settings
+2025-08-17 23:51:55,535 [INFO] medical_store_app.ui.main_window: Menu item selected: settings
+2025-08-17 23:51:55,628 [INFO] medical_store_app.config.database: Database connection established: D:\SAAS\medical_store_app\medical_store_app\data\medical_store.db
+2025-08-17 23:51:55,631 [INFO] medical_store_app.ui.components.settings_widget: Settings loaded from database
+2025-08-17 23:51:55,631 [INFO] medical_store_app.ui.components.settings_widget: Settings widget initialized
+2025-08-17 23:51:55,632 [INFO] medical_store_app.ui.main_window: Settings widget created successfully
+2025-08-17 23:51:55,678 [INFO] medical_store_app.ui.main_window: Settings content displayed
+2025-08-17 23:51:57,624 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: store_name = Medical Store
+2025-08-17 23:51:57,716 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: store_address = 
+2025-08-17 23:51:57,817 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: store_phone = 
+2025-08-17 23:51:57,892 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: store_email = 
+2025-08-17 23:51:57,973 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: store_website = 
+2025-08-17 23:51:58,067 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: currency = USD
+2025-08-17 23:51:58,150 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: tax_rate = 0.0
+2025-08-17 23:51:58,225 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: low_stock_threshold = 10
+2025-08-17 23:51:58,300 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: enable_barcode_scanning = true
+2025-08-17 23:51:58,390 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: auto_backup = false
+2025-08-17 23:51:58,466 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: backup_frequency_days = 7
+2025-08-17 23:51:58,547 [INFO] medical_store_app.ui.main_window: Settings updated: ['auto_backup', 'backup_frequency_days', 'currency', 'enable_barcode_scanning', 'low_stock_threshold', 'store_address', 'store_email', 'store_name', 'store_phone', 'store_website', 'tax_rate']
+2025-08-17 23:51:58,548 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:51:58,549 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:51:58,549 [INFO] medical_store_app.ui.main_window: Sales manager settings refreshed
+2025-08-17 23:51:58,550 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 10
+2025-08-17 23:51:58,550 [INFO] medical_store_app.ui.main_window: Medicine manager settings refreshed
+2025-08-17 23:51:58,551 [INFO] medical_store_app.ui.main_window: Window title updated to: Medical Store
+2025-08-17 23:51:58,552 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:51:58,554 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:51:58,556 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:51:58,557 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:51:58,558 [INFO] medical_store_app.ui.components.billing_widget: Billing widget settings refreshed
+2025-08-17 23:51:58,560 [INFO] medical_store_app.ui.components.billing_widget: Billing display refreshed with current settings
+2025-08-17 23:51:58,561 [INFO] medical_store_app.ui.main_window: Billing widget refreshed with new settings
+2025-08-17 23:51:58,562 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:51:58,562 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:51:58,563 [ERROR] medical_store_app.ui.components.reports_widget: Error refreshing reports display: 'ReportsWidget' object has no attribute '_update_report_display'
+2025-08-17 23:51:58,563 [INFO] medical_store_app.ui.main_window: Reports widget refreshed with new settings
+2025-08-17 23:51:58,564 [INFO] medical_store_app.ui.main_window: All UI components updated with new settings
+2025-08-17 23:51:58,564 [INFO] medical_store_app.ui.components.settings_widget: Settings saved successfully
+2025-08-17 23:52:11,901 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: store_name = Medical Store
+2025-08-17 23:52:11,995 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: store_address = 
+2025-08-17 23:52:12,095 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: store_phone = 
+2025-08-17 23:52:12,168 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: store_email = 
+2025-08-17 23:52:12,245 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: store_website = 
+2025-08-17 23:52:12,337 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: currency = USD
+2025-08-17 23:52:12,418 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: tax_rate = 0.0
+2025-08-17 23:52:12,494 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: low_stock_threshold = 9
+2025-08-17 23:52:12,568 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: enable_barcode_scanning = true
+2025-08-17 23:52:12,636 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: auto_backup = false
+2025-08-17 23:52:12,720 [INFO] medical_store_app.repositories.settings_repository: Setting saved successfully: backup_frequency_days = 7
+2025-08-17 23:52:12,802 [INFO] medical_store_app.ui.main_window: Settings updated: ['auto_backup', 'backup_frequency_days', 'currency', 'enable_barcode_scanning', 'low_stock_threshold', 'store_address', 'store_email', 'store_name', 'store_phone', 'store_website', 'tax_rate']
+2025-08-17 23:52:12,803 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:52:12,803 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:52:12,804 [INFO] medical_store_app.ui.main_window: Sales manager settings refreshed
+2025-08-17 23:52:12,805 [INFO] medical_store_app.managers.medicine_manager: Loaded low stock threshold from settings: 9
+2025-08-17 23:52:12,805 [INFO] medical_store_app.ui.main_window: Medicine manager settings refreshed
+2025-08-17 23:52:12,805 [INFO] medical_store_app.ui.main_window: Window title updated to: Medical Store
+2025-08-17 23:52:12,806 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:52:12,806 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:52:12,807 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:52:12,807 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:52:12,808 [INFO] medical_store_app.ui.components.billing_widget: Billing widget settings refreshed
+2025-08-17 23:52:12,809 [INFO] medical_store_app.ui.components.billing_widget: Billing display refreshed with current settings
+2025-08-17 23:52:12,809 [INFO] medical_store_app.ui.main_window: Billing widget refreshed with new settings
+2025-08-17 23:52:12,810 [INFO] medical_store_app.utils.currency_formatter: Settings refreshed from database
+2025-08-17 23:52:12,810 [INFO] medical_store_app.managers.sales_manager: Tax rate updated from settings: 0.0%
+2025-08-17 23:52:12,811 [ERROR] medical_store_app.ui.components.reports_widget: Error refreshing reports display: 'ReportsWidget' object has no attribute '_update_report_display'
+2025-08-17 23:52:12,811 [INFO] medical_store_app.ui.main_window: Reports widget refreshed with new settings
+2025-08-17 23:52:12,812 [INFO] medical_store_app.ui.main_window: All UI components updated with new settings
+2025-08-17 23:52:12,812 [INFO] medical_store_app.ui.components.settings_widget: Settings saved successfully
+2025-08-17 23:52:13,201 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:52:13,206 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:52:13,365 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:52:13,367 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:52:20,372 [INFO] medical_store_app.ui.components.dashboard: Refreshing dashboard data
+2025-08-17 23:52:20,374 [INFO] medical_store_app.managers.medicine_manager: Generated inventory summary: 0 medicines, $0.00 total value, 0 low stock alerts
+2025-08-17 23:52:20,532 [INFO] medical_store_app.ui.components.sales_chart: Chart updated with 7 data points
+2025-08-17 23:52:20,535 [INFO] medical_store_app.ui.components.dashboard: Dashboard data refreshed - Sales: $0.00, Medicines: 0, Low Stock: 0, Expired: 0
+2025-08-17 23:52:22,581 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-17 23:52:22,886 [INFO] medical_store_app.ui.main_window: Sidebar collapsed
+2025-08-17 23:52:23,782 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: expanded
+2025-08-17 23:52:24,089 [INFO] medical_store_app.ui.main_window: Sidebar expanded
+2025-08-17 23:52:24,413 [INFO] medical_store_app.ui.components.sidebar: Sidebar toggled: collapsed
+2025-08-17 23:52:24,719 [INFO] medical_store_app.ui.main_window: Sidebar collapsed
+2025-08-17 23:52:29,445 [INFO] medical_store_app.ui.main_window: Application closing...
