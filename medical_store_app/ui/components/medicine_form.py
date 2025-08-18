@@ -18,6 +18,7 @@ from .base_components import (
     StyledButton
 )
 from ...managers.medicine_manager import MedicineManager
+from ...utils.validation_decorators import Validation
 
 
 class MedicineFormWorker(QThread):
@@ -207,57 +208,45 @@ class MedicineForm(QWidget):
         self.purchase_price_field.valueChanged.connect(self._update_profit_info)
         self.selling_price_field.valueChanged.connect(self._update_profit_info)
     
+    @Validation.required("Medicine name is required")
+    @Validation.min_length(2, "Medicine name must be at least 2 characters")
+    @Validation.max_length(100, "Medicine name must be less than 100 characters")
     def _validate_name(self, value: str) -> tuple[bool, str]:
         """Validate medicine name"""
-        if not value or not value.strip():
-            return False, "Medicine name is required"
-        if len(value.strip()) < 2:
-            return False, "Medicine name must be at least 2 characters"
-        if len(value.strip()) > 100:
-            return False, "Medicine name must be less than 100 characters"
         return True, ""
     
+    @Validation.required("Category is required")
+    @Validation.max_length(50, "Category must be less than 50 characters")
     def _validate_category(self, value: str) -> tuple[bool, str]:
         """Validate category"""
-        if not value or not value.strip():
-            return False, "Category is required"
-        if len(value.strip()) > 50:
-            return False, "Category must be less than 50 characters"
         return True, ""
     
+    @Validation.required("Batch number is required")
+    @Validation.max_length(50, "Batch number must be less than 50 characters")
     def _validate_batch_number(self, value: str) -> tuple[bool, str]:
         """Validate batch number"""
-        if not value or not value.strip():
-            return False, "Batch number is required"
-        if len(value.strip()) > 50:
-            return False, "Batch number must be less than 50 characters"
         return True, ""
     
+    @Validation.date_future("Expiry date must be in the future")
     def _validate_expiry_date(self, value: QDate) -> tuple[bool, str]:
         """Validate expiry date"""
         if not value.isValid():
             return False, "Invalid expiry date"
-        if value.toPython() <= date.today():
-            return False, "Expiry date must be in the future"
         return True, ""
     
+    @Validation.min_value(0, "Quantity cannot be negative")
     def _validate_quantity(self, value: int) -> tuple[bool, str]:
         """Validate quantity"""
-        if value < 0:
-            return False, "Quantity cannot be negative"
         return True, ""
     
+    @Validation.min_value(0, "Purchase price cannot be negative")
     def _validate_purchase_price(self, value: float) -> tuple[bool, str]:
         """Validate purchase price"""
-        if value < 0:
-            return False, "Purchase price cannot be negative"
         return True, ""
     
+    @Validation.min_value(0, "Selling price cannot be negative")
     def _validate_selling_price(self, value: float) -> tuple[bool, str]:
         """Validate selling price"""
-        if value < 0:
-            return False, "Selling price cannot be negative"
-        
         # Check if selling price is less than purchase price
         purchase_price = self.purchase_price_field.value()
         if purchase_price > 0 and value > 0 and value < purchase_price:

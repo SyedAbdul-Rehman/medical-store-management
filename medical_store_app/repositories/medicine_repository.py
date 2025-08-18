@@ -5,6 +5,7 @@ Handles all database operations for medicine data
 
 import sqlite3
 import logging
+import time
 from typing import List, Optional, Dict, Any
 from datetime import datetime, date, timedelta
 
@@ -398,7 +399,7 @@ class MedicineRepository:
     
     def update_stock(self, medicine_id: int, quantity_change: int) -> bool:
         """
-        Update medicine stock quantity
+        Update medicine stock quantity with transaction and retry logic
         
         Args:
             medicine_id: ID of medicine to update
@@ -407,34 +408,57 @@ class MedicineRepository:
         Returns:
             True if update successful, False otherwise
         """
-        try:
-            # First get current quantity
-            medicine = self.find_by_id(medicine_id)
-            if not medicine:
-                self.logger.error(f"Medicine not found with ID {medicine_id}")
+        retry_count = 0
+        max_retries = 3
+        
+        while retry_count < max_retries:
+            try:
+                with self.db_manager.get_cursor() as cursor:
+                    # Get current quantity within transaction
+                    row = cursor.execute(
+                        "SELECT quantity FROM medicines WHERE id = ? FOR UPDATE",
+                        (medicine_id,)
+                    ).fetchone()
+                    
+                    current_quantity = row['quantity']
+                    new_quantity = current_quantity + quantity_change
+                    
+                    if new_quantity < 0:
+                        self.logger.error(f"Cannot reduce stock below zero. Current: {current_quantity}, Change: {quantity_change}")
+                        return False
+                    
+                    # Update quantity and timestamp
+                    updated_at = datetime.now().isoformat()
+                    cursor.execute("""
+                        UPDATE medicines 
+                        SET quantity = ?, updated_at = ? 
+                        WHERE id = ?
+                    """, (new_quantity, updated_at, medicine_id))
+                        
+                    # Commit transaction
+                    self.db_manager.commit()
+                    
+                    self.logger.info(f"Stock updated for medicine ID {medicine_id}: {current_quantity} -> {new_quantity}")
+                    return True
+                        
+            except sqlite3.OperationalError as e:
+                if "database is locked" in str(e).lower() and retry_count < max_retries - 1:
+                    retry_count += 1
+                    wait_time = 0.1 * (2 ** retry_count)
+                    self.logger.warning(f"Database locked, retrying in {wait_time}s (attempt {retry_count}/{max_retries})")
+                    time.sleep(wait_time)
+                    continue
+                raise
+            except sqlite3.IntegrityError as e:
+                self.logger.error(f"Integrity error updating stock: {e}")
+                self.db_manager.rollback()
                 return False
-            
-            new_quantity = medicine.quantity + quantity_change
-            if new_quantity < 0:
-                self.logger.error(f"Cannot reduce stock below zero. Current: {medicine.quantity}, Change: {quantity_change}")
-                return False
-            
-            # Update quantity and timestamp
-            updated_at = datetime.now().isoformat()
-            rows_affected = self.db_manager.execute_update("""
-                UPDATE medicines SET quantity = ?, updated_at = ? WHERE id = ?
-            """, (new_quantity, updated_at, medicine_id))
-            
-            if rows_affected > 0:
-                self.logger.info(f"Stock updated for medicine ID {medicine_id}: {medicine.quantity} -> {new_quantity}")
-                return True
-            else:
-                self.logger.warning(f"No medicine found with ID {medicine_id}")
+            except Exception as e:
+                self.logger.error(f"Failed to update stock for medicine ID {medicine_id}: {e}")
+                self.db_manager.rollback()
                 return False
                 
-        except Exception as e:
-            self.logger.error(f"Failed to update stock for medicine ID {medicine_id}: {e}")
-            return False
+        return False
     
     def get_total_medicines_count(self) -> int:
         """
