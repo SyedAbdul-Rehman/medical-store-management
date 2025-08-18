@@ -10,7 +10,7 @@ from PySide6.QtWidgets import (
     QFrame, QSizePolicy, QPushButton
 )
 from PySide6.QtCore import Qt, Signal
-from PySide6.QtGui import QFont, QPalette
+from PySide6.QtGui import QFont, QPalette, QIcon
 
 from .components.sidebar import Sidebar
 from .components.dashboard import DashboardWidget
@@ -47,6 +47,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Medical Store Management System")
         self.setMinimumSize(1024, 768)
         self.resize(1200, 800)
+        self.setWindowIcon(QIcon("medical_store_app/resources/icon.ico"))
         
         # Initialize UI components
         self.header_widget = None

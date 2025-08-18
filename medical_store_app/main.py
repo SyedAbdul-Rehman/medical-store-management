@@ -48,6 +48,11 @@ def main():
         app.setApplicationVersion("1.0.0")
         app.setOrganizationName("Medical Store Solutions")
         
+        # Set application icon
+        icon_path = project_root / "medical_store_app" / "resources" / "icon.ico"
+        if icon_path.exists():
+            app.setWindowIcon(QIcon(str(icon_path)))
+        
         # Set application properties for high DPI displays
         # Note: These attributes are deprecated in Qt 6 as high DPI is enabled by default
         # Only set them if they exist and we're not using Qt 6
